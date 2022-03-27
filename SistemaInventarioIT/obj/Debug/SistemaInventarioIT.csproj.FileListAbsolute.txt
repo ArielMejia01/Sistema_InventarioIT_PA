@@ -1,0 +1,10 @@
+C:\Users\Ariel Mejia\Desktop\SistemaInventarioIT\SistemaInventarioIT\bin\Debug\SistemaInventarioIT.exe.config
+C:\Users\Ariel Mejia\Desktop\SistemaInventarioIT\SistemaInventarioIT\bin\Debug\SistemaInventarioIT.exe
+C:\Users\Ariel Mejia\Desktop\SistemaInventarioIT\SistemaInventarioIT\bin\Debug\SistemaInventarioIT.pdb
+C:\Users\Ariel Mejia\Desktop\SistemaInventarioIT\SistemaInventarioIT\obj\Debug\SistemaInventarioIT.csproj.AssemblyReference.cache
+C:\Users\Ariel Mejia\Desktop\SistemaInventarioIT\SistemaInventarioIT\obj\Debug\SistemaInventarioIT.frmMenu.resources
+C:\Users\Ariel Mejia\Desktop\SistemaInventarioIT\SistemaInventarioIT\obj\Debug\SistemaInventarioIT.Properties.Resources.resources
+C:\Users\Ariel Mejia\Desktop\SistemaInventarioIT\SistemaInventarioIT\obj\Debug\SistemaInventarioIT.csproj.GenerateResource.cache
+C:\Users\Ariel Mejia\Desktop\SistemaInventarioIT\SistemaInventarioIT\obj\Debug\SistemaInventarioIT.csproj.CoreCompileInputs.cache
+C:\Users\Ariel Mejia\Desktop\SistemaInventarioIT\SistemaInventarioIT\obj\Debug\SistemaInventarioIT.exe
+C:\Users\Ariel Mejia\Desktop\SistemaInventarioIT\SistemaInventarioIT\obj\Debug\SistemaInventarioIT.pdb
