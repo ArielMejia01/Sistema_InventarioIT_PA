@@ -29,6 +29,7 @@ namespace SistemaInventarioIT
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenu));
             this.panelLateral = new System.Windows.Forms.Panel();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.btnEstanteIzquierdo = new System.Windows.Forms.Button();
@@ -46,9 +47,13 @@ namespace SistemaInventarioIT
             this.btnCentro5 = new System.Windows.Forms.Button();
             this.btnCentro6 = new System.Windows.Forms.Button();
             this.btnUbicacion = new System.Windows.Forms.Button();
+            this.panelInventario = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelLateral.SuspendLayout();
             this.panelSubEstanteIzquierdo.SuspendLayout();
             this.panelSubEstanteCentro.SuspendLayout();
+            this.panelInventario.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelLateral
@@ -311,12 +316,33 @@ namespace SistemaInventarioIT
             this.btnUbicacion.UseVisualStyleBackColor = true;
             this.btnUbicacion.Click += new System.EventHandler(this.btnUbicacion_Click);
             // 
+            // panelInventario
+            // 
+            this.panelInventario.Controls.Add(this.pictureBox1);
+            this.panelInventario.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelInventario.Location = new System.Drawing.Point(180, 0);
+            this.panelInventario.Name = "panelInventario";
+            this.panelInventario.Size = new System.Drawing.Size(688, 439);
+            this.panelInventario.TabIndex = 1;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(140, 129);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(405, 153);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(868, 439);
+            this.Controls.Add(this.panelInventario);
             this.Controls.Add(this.panelLateral);
             this.Name = "frmMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -324,6 +350,8 @@ namespace SistemaInventarioIT
             this.panelLateral.ResumeLayout(false);
             this.panelSubEstanteIzquierdo.ResumeLayout(false);
             this.panelSubEstanteCentro.ResumeLayout(false);
+            this.panelInventario.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -347,6 +375,8 @@ namespace SistemaInventarioIT
         private System.Windows.Forms.Button btnCentro2;
         private System.Windows.Forms.Button btnCentro1;
         private System.Windows.Forms.Button btnEstanteCentro;
+        private System.Windows.Forms.Panel panelInventario;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

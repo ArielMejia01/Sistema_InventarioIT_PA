@@ -47,6 +47,22 @@ namespace SistemaInventarioIT
                 panel.Visible = false;
 
         }
+
+        private Form formularioAbierto = null;
+        //Metodo para abrir los formularios en el panelInventario
+        private void formularioHijoAbiero(Form formularioHijo)
+        {
+            if (formularioAbierto != null)
+                formularioAbierto.Close();
+            formularioAbierto = formularioHijo;
+            formularioHijo.TopLevel = false;
+            formularioHijo.FormBorderStyle = FormBorderStyle.None;
+            formularioHijo.Dock = DockStyle.Fill;
+            panelInventario.Controls.Add(formularioHijo);
+            panelInventario.Tag = formularioHijo;
+            formularioHijo.BringToFront();
+            formularioHijo.Show();
+        }
         private void btnEstanteIzquierdo_Click(object sender, EventArgs e)
         {
             mostrarPaneles(panelSubEstanteIzquierdo);
@@ -54,6 +70,7 @@ namespace SistemaInventarioIT
 
         private void button1_Click(object sender, EventArgs e)
         {
+            formularioHijoAbiero(new Estante_Izquierdo.frmIzquierdaPlaza1());
             ocultarPaneles();
         }
 

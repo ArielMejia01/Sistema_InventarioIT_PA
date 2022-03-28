@@ -8,3 +8,4 @@ C:\Users\Ariel Mejia\Desktop\SistemaInventarioIT\SistemaInventarioIT\obj\Debug\S
 C:\Users\Ariel Mejia\Desktop\SistemaInventarioIT\SistemaInventarioIT\obj\Debug\SistemaInventarioIT.csproj.CoreCompileInputs.cache
 C:\Users\Ariel Mejia\Desktop\SistemaInventarioIT\SistemaInventarioIT\obj\Debug\SistemaInventarioIT.exe
 C:\Users\Ariel Mejia\Desktop\SistemaInventarioIT\SistemaInventarioIT\obj\Debug\SistemaInventarioIT.pdb
+C:\Users\Ariel Mejia\Desktop\SistemaInventarioIT\SistemaInventarioIT\obj\Debug\SistemaInventarioIT.Estante_Izquierdo.frmIzquierdaPlaza1.resources
