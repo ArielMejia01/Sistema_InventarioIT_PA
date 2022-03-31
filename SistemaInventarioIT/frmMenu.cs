@@ -38,30 +38,31 @@ namespace SistemaInventarioIT
         //Metodo para mostrar los paneles
         private void mostrarPaneles(Panel panel)
         {
-            if (panel.Visible == false)
+            if (panel.Visible == false) // si el panel estuviese oculto lo mostraremos
             {
-                ocultarPaneles();
-                panel.Visible = true;
+                ocultarPaneles(); // llamar metodo para ocultar pane si hubiese algun otro abierto
+                panel.Visible = true; // mostramos el panel
             }
             else
                 panel.Visible = false;
 
         }
 
+
         private Form formularioAbierto = null;
         //Metodo para abrir los formularios en el panelInventario
         private void formularioHijoAbiero(Form formularioHijo)
         {
-            if (formularioAbierto != null)
+            if (formularioAbierto != null) // condicion para indicar que si existe un formulario abierto lo cerramos
                 formularioAbierto.Close();
-            formularioAbierto = formularioHijo;
-            formularioHijo.TopLevel = false;
-            formularioHijo.FormBorderStyle = FormBorderStyle.None;
+            formularioAbierto = formularioHijo; // guardamos el formulario que se a abierto en la variable creada
+            formularioHijo.TopLevel = false; // Indicar que este formulario abierto no es superior
+            formularioHijo.FormBorderStyle = FormBorderStyle.None; // quitar borde del formulario via codigo
             formularioHijo.Dock = DockStyle.Fill;
-            panelInventario.Controls.Add(formularioHijo);
-            panelInventario.Tag = formularioHijo;
-            formularioHijo.BringToFront();
-            formularioHijo.Show();
+            panelInventario.Controls.Add(formularioHijo); // agregar el formulario al panel principal
+            panelInventario.Tag = formularioHijo; // juntar el formulario al panel
+            formularioHijo.BringToFront(); // Nos ayudara a traer al frente al formulario en caso que sea necesario
+            formularioHijo.Show(); 
         }
         private void btnEstanteIzquierdo_Click(object sender, EventArgs e)
         {

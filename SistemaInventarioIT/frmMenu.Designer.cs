@@ -235,6 +235,7 @@ namespace SistemaInventarioIT
             // 
             this.btnPlaza4.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnPlaza4.FlatAppearance.BorderSize = 0;
+            this.btnPlaza4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnPlaza4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPlaza4.ForeColor = System.Drawing.Color.White;
             this.btnPlaza4.Location = new System.Drawing.Point(0, 69);
@@ -251,6 +252,7 @@ namespace SistemaInventarioIT
             // 
             this.btnPlaza3.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnPlaza3.FlatAppearance.BorderSize = 0;
+            this.btnPlaza3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnPlaza3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPlaza3.ForeColor = System.Drawing.Color.White;
             this.btnPlaza3.Location = new System.Drawing.Point(0, 46);
@@ -267,6 +269,7 @@ namespace SistemaInventarioIT
             // 
             this.btnPlaza2.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnPlaza2.FlatAppearance.BorderSize = 0;
+            this.btnPlaza2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnPlaza2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPlaza2.ForeColor = System.Drawing.Color.White;
             this.btnPlaza2.Location = new System.Drawing.Point(0, 23);
@@ -283,6 +286,7 @@ namespace SistemaInventarioIT
             // 
             this.btnPlaza1.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnPlaza1.FlatAppearance.BorderSize = 0;
+            this.btnPlaza1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnPlaza1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPlaza1.ForeColor = System.Drawing.Color.White;
             this.btnPlaza1.Location = new System.Drawing.Point(0, 0);

@@ -9,3 +9,7 @@ C:\Users\Ariel Mejia\Desktop\SistemaInventarioIT\SistemaInventarioIT\obj\Debug\S
 C:\Users\Ariel Mejia\Desktop\SistemaInventarioIT\SistemaInventarioIT\obj\Debug\SistemaInventarioIT.exe
 C:\Users\Ariel Mejia\Desktop\SistemaInventarioIT\SistemaInventarioIT\obj\Debug\SistemaInventarioIT.pdb
 C:\Users\Ariel Mejia\Desktop\SistemaInventarioIT\SistemaInventarioIT\obj\Debug\SistemaInventarioIT.Estante_Izquierdo.frmIzquierdaPlaza1.resources
+C:\Users\Ariel Mejia\Desktop\SistemaInventarioIT\SistemaInventarioIT\bin\Debug\EntityFramework.dll
+C:\Users\Ariel Mejia\Desktop\SistemaInventarioIT\SistemaInventarioIT\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Ariel Mejia\Desktop\SistemaInventarioIT\SistemaInventarioIT\bin\Debug\EntityFramework.xml
+C:\Users\Ariel Mejia\Desktop\SistemaInventarioIT\SistemaInventarioIT\bin\Debug\EntityFramework.SqlServer.xml
