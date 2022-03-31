@@ -31,29 +31,32 @@ namespace SistemaInventarioIT
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenu));
             this.panelLateral = new System.Windows.Forms.Panel();
-            this.panelLogo = new System.Windows.Forms.Panel();
-            this.btnEstanteIzquierdo = new System.Windows.Forms.Button();
-            this.panelSubEstanteIzquierdo = new System.Windows.Forms.Panel();
-            this.btnPlaza1 = new System.Windows.Forms.Button();
-            this.btnPlaza2 = new System.Windows.Forms.Button();
-            this.btnPlaza3 = new System.Windows.Forms.Button();
-            this.btnPlaza4 = new System.Windows.Forms.Button();
-            this.btnEstanteCentro = new System.Windows.Forms.Button();
+            this.btnUbicacion = new System.Windows.Forms.Button();
             this.panelSubEstanteCentro = new System.Windows.Forms.Panel();
+            this.btnCentro6 = new System.Windows.Forms.Button();
+            this.btnCentro5 = new System.Windows.Forms.Button();
             this.btnCentro4 = new System.Windows.Forms.Button();
             this.btnCentro3 = new System.Windows.Forms.Button();
             this.btnCentro2 = new System.Windows.Forms.Button();
             this.btnCentro1 = new System.Windows.Forms.Button();
-            this.btnCentro5 = new System.Windows.Forms.Button();
-            this.btnCentro6 = new System.Windows.Forms.Button();
-            this.btnUbicacion = new System.Windows.Forms.Button();
+            this.btnEstanteCentro = new System.Windows.Forms.Button();
+            this.panelSubEstanteIzquierdo = new System.Windows.Forms.Panel();
+            this.btnPlaza4 = new System.Windows.Forms.Button();
+            this.btnPlaza3 = new System.Windows.Forms.Button();
+            this.btnPlaza2 = new System.Windows.Forms.Button();
+            this.btnPlaza1 = new System.Windows.Forms.Button();
+            this.btnEstanteIzquierdo = new System.Windows.Forms.Button();
+            this.panelLogo = new System.Windows.Forms.Panel();
             this.panelInventario = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelLateral.SuspendLayout();
-            this.panelSubEstanteIzquierdo.SuspendLayout();
             this.panelSubEstanteCentro.SuspendLayout();
+            this.panelSubEstanteIzquierdo.SuspendLayout();
+            this.panelLogo.SuspendLayout();
             this.panelInventario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panelLateral
@@ -72,122 +75,21 @@ namespace SistemaInventarioIT
             this.panelLateral.Size = new System.Drawing.Size(180, 439);
             this.panelLateral.TabIndex = 0;
             // 
-            // panelLogo
+            // btnUbicacion
             // 
-            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelLogo.Location = new System.Drawing.Point(0, 0);
-            this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(180, 76);
-            this.panelLogo.TabIndex = 1;
-            // 
-            // btnEstanteIzquierdo
-            // 
-            this.btnEstanteIzquierdo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnEstanteIzquierdo.FlatAppearance.BorderSize = 0;
-            this.btnEstanteIzquierdo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEstanteIzquierdo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnEstanteIzquierdo.Location = new System.Drawing.Point(0, 76);
-            this.btnEstanteIzquierdo.Name = "btnEstanteIzquierdo";
-            this.btnEstanteIzquierdo.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnEstanteIzquierdo.Size = new System.Drawing.Size(180, 30);
-            this.btnEstanteIzquierdo.TabIndex = 2;
-            this.btnEstanteIzquierdo.Text = "Estante Izquierdo";
-            this.btnEstanteIzquierdo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEstanteIzquierdo.UseVisualStyleBackColor = true;
-            this.btnEstanteIzquierdo.Click += new System.EventHandler(this.btnEstanteIzquierdo_Click);
-            // 
-            // panelSubEstanteIzquierdo
-            // 
-            this.panelSubEstanteIzquierdo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(97)))), ((int)(((byte)(146)))));
-            this.panelSubEstanteIzquierdo.Controls.Add(this.btnPlaza4);
-            this.panelSubEstanteIzquierdo.Controls.Add(this.btnPlaza3);
-            this.panelSubEstanteIzquierdo.Controls.Add(this.btnPlaza2);
-            this.panelSubEstanteIzquierdo.Controls.Add(this.btnPlaza1);
-            this.panelSubEstanteIzquierdo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSubEstanteIzquierdo.Location = new System.Drawing.Point(0, 106);
-            this.panelSubEstanteIzquierdo.Name = "panelSubEstanteIzquierdo";
-            this.panelSubEstanteIzquierdo.Size = new System.Drawing.Size(180, 93);
-            this.panelSubEstanteIzquierdo.TabIndex = 3;
-            // 
-            // btnPlaza1
-            // 
-            this.btnPlaza1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnPlaza1.FlatAppearance.BorderSize = 0;
-            this.btnPlaza1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPlaza1.ForeColor = System.Drawing.Color.White;
-            this.btnPlaza1.Location = new System.Drawing.Point(0, 0);
-            this.btnPlaza1.Name = "btnPlaza1";
-            this.btnPlaza1.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.btnPlaza1.Size = new System.Drawing.Size(180, 23);
-            this.btnPlaza1.TabIndex = 0;
-            this.btnPlaza1.Text = "Plaza 1";
-            this.btnPlaza1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPlaza1.UseVisualStyleBackColor = true;
-            this.btnPlaza1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btnPlaza2
-            // 
-            this.btnPlaza2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnPlaza2.FlatAppearance.BorderSize = 0;
-            this.btnPlaza2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPlaza2.ForeColor = System.Drawing.Color.White;
-            this.btnPlaza2.Location = new System.Drawing.Point(0, 23);
-            this.btnPlaza2.Name = "btnPlaza2";
-            this.btnPlaza2.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.btnPlaza2.Size = new System.Drawing.Size(180, 23);
-            this.btnPlaza2.TabIndex = 1;
-            this.btnPlaza2.Text = "Plaza 2";
-            this.btnPlaza2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPlaza2.UseVisualStyleBackColor = true;
-            this.btnPlaza2.Click += new System.EventHandler(this.btnPlaza2_Click);
-            // 
-            // btnPlaza3
-            // 
-            this.btnPlaza3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnPlaza3.FlatAppearance.BorderSize = 0;
-            this.btnPlaza3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPlaza3.ForeColor = System.Drawing.Color.White;
-            this.btnPlaza3.Location = new System.Drawing.Point(0, 46);
-            this.btnPlaza3.Name = "btnPlaza3";
-            this.btnPlaza3.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.btnPlaza3.Size = new System.Drawing.Size(180, 23);
-            this.btnPlaza3.TabIndex = 2;
-            this.btnPlaza3.Text = "Plaza 3";
-            this.btnPlaza3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPlaza3.UseVisualStyleBackColor = true;
-            this.btnPlaza3.Click += new System.EventHandler(this.btnPlaza3_Click);
-            // 
-            // btnPlaza4
-            // 
-            this.btnPlaza4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnPlaza4.FlatAppearance.BorderSize = 0;
-            this.btnPlaza4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPlaza4.ForeColor = System.Drawing.Color.White;
-            this.btnPlaza4.Location = new System.Drawing.Point(0, 69);
-            this.btnPlaza4.Name = "btnPlaza4";
-            this.btnPlaza4.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.btnPlaza4.Size = new System.Drawing.Size(180, 23);
-            this.btnPlaza4.TabIndex = 3;
-            this.btnPlaza4.Text = "Plaza 4";
-            this.btnPlaza4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPlaza4.UseVisualStyleBackColor = true;
-            this.btnPlaza4.Click += new System.EventHandler(this.btnPlaza4_Click);
-            // 
-            // btnEstanteCentro
-            // 
-            this.btnEstanteCentro.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnEstanteCentro.FlatAppearance.BorderSize = 0;
-            this.btnEstanteCentro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEstanteCentro.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnEstanteCentro.Location = new System.Drawing.Point(0, 199);
-            this.btnEstanteCentro.Name = "btnEstanteCentro";
-            this.btnEstanteCentro.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnEstanteCentro.Size = new System.Drawing.Size(180, 30);
-            this.btnEstanteCentro.TabIndex = 4;
-            this.btnEstanteCentro.Text = "Estante Centro";
-            this.btnEstanteCentro.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEstanteCentro.UseVisualStyleBackColor = true;
-            this.btnEstanteCentro.Click += new System.EventHandler(this.btnEstanteCentro_Click);
+            this.btnUbicacion.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnUbicacion.FlatAppearance.BorderSize = 0;
+            this.btnUbicacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUbicacion.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnUbicacion.Location = new System.Drawing.Point(0, 372);
+            this.btnUbicacion.Name = "btnUbicacion";
+            this.btnUbicacion.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnUbicacion.Size = new System.Drawing.Size(180, 30);
+            this.btnUbicacion.TabIndex = 6;
+            this.btnUbicacion.Text = "Ubicación";
+            this.btnUbicacion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUbicacion.UseVisualStyleBackColor = true;
+            this.btnUbicacion.Click += new System.EventHandler(this.btnUbicacion_Click);
             // 
             // panelSubEstanteCentro
             // 
@@ -203,6 +105,38 @@ namespace SistemaInventarioIT
             this.panelSubEstanteCentro.Name = "panelSubEstanteCentro";
             this.panelSubEstanteCentro.Size = new System.Drawing.Size(180, 143);
             this.panelSubEstanteCentro.TabIndex = 5;
+            // 
+            // btnCentro6
+            // 
+            this.btnCentro6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCentro6.FlatAppearance.BorderSize = 0;
+            this.btnCentro6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCentro6.ForeColor = System.Drawing.Color.White;
+            this.btnCentro6.Location = new System.Drawing.Point(0, 115);
+            this.btnCentro6.Name = "btnCentro6";
+            this.btnCentro6.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.btnCentro6.Size = new System.Drawing.Size(180, 23);
+            this.btnCentro6.TabIndex = 5;
+            this.btnCentro6.Text = "Plaza 6";
+            this.btnCentro6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCentro6.UseVisualStyleBackColor = true;
+            this.btnCentro6.Click += new System.EventHandler(this.btnCentro6_Click);
+            // 
+            // btnCentro5
+            // 
+            this.btnCentro5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCentro5.FlatAppearance.BorderSize = 0;
+            this.btnCentro5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCentro5.ForeColor = System.Drawing.Color.White;
+            this.btnCentro5.Location = new System.Drawing.Point(0, 92);
+            this.btnCentro5.Name = "btnCentro5";
+            this.btnCentro5.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.btnCentro5.Size = new System.Drawing.Size(180, 23);
+            this.btnCentro5.TabIndex = 4;
+            this.btnCentro5.Text = "Plaza 5";
+            this.btnCentro5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCentro5.UseVisualStyleBackColor = true;
+            this.btnCentro5.Click += new System.EventHandler(this.btnCentro5_Click);
             // 
             // btnCentro4
             // 
@@ -268,53 +202,123 @@ namespace SistemaInventarioIT
             this.btnCentro1.UseVisualStyleBackColor = true;
             this.btnCentro1.Click += new System.EventHandler(this.btnCentro1_Click);
             // 
-            // btnCentro5
+            // btnEstanteCentro
             // 
-            this.btnCentro5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnCentro5.FlatAppearance.BorderSize = 0;
-            this.btnCentro5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCentro5.ForeColor = System.Drawing.Color.White;
-            this.btnCentro5.Location = new System.Drawing.Point(0, 92);
-            this.btnCentro5.Name = "btnCentro5";
-            this.btnCentro5.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.btnCentro5.Size = new System.Drawing.Size(180, 23);
-            this.btnCentro5.TabIndex = 4;
-            this.btnCentro5.Text = "Plaza 5";
-            this.btnCentro5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCentro5.UseVisualStyleBackColor = true;
-            this.btnCentro5.Click += new System.EventHandler(this.btnCentro5_Click);
+            this.btnEstanteCentro.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnEstanteCentro.FlatAppearance.BorderSize = 0;
+            this.btnEstanteCentro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEstanteCentro.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnEstanteCentro.Location = new System.Drawing.Point(0, 199);
+            this.btnEstanteCentro.Name = "btnEstanteCentro";
+            this.btnEstanteCentro.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnEstanteCentro.Size = new System.Drawing.Size(180, 30);
+            this.btnEstanteCentro.TabIndex = 4;
+            this.btnEstanteCentro.Text = "Estante Centro";
+            this.btnEstanteCentro.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEstanteCentro.UseVisualStyleBackColor = true;
+            this.btnEstanteCentro.Click += new System.EventHandler(this.btnEstanteCentro_Click);
             // 
-            // btnCentro6
+            // panelSubEstanteIzquierdo
             // 
-            this.btnCentro6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnCentro6.FlatAppearance.BorderSize = 0;
-            this.btnCentro6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCentro6.ForeColor = System.Drawing.Color.White;
-            this.btnCentro6.Location = new System.Drawing.Point(0, 115);
-            this.btnCentro6.Name = "btnCentro6";
-            this.btnCentro6.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.btnCentro6.Size = new System.Drawing.Size(180, 23);
-            this.btnCentro6.TabIndex = 5;
-            this.btnCentro6.Text = "Plaza 6";
-            this.btnCentro6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCentro6.UseVisualStyleBackColor = true;
-            this.btnCentro6.Click += new System.EventHandler(this.btnCentro6_Click);
+            this.panelSubEstanteIzquierdo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(97)))), ((int)(((byte)(146)))));
+            this.panelSubEstanteIzquierdo.Controls.Add(this.btnPlaza4);
+            this.panelSubEstanteIzquierdo.Controls.Add(this.btnPlaza3);
+            this.panelSubEstanteIzquierdo.Controls.Add(this.btnPlaza2);
+            this.panelSubEstanteIzquierdo.Controls.Add(this.btnPlaza1);
+            this.panelSubEstanteIzquierdo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelSubEstanteIzquierdo.Location = new System.Drawing.Point(0, 106);
+            this.panelSubEstanteIzquierdo.Name = "panelSubEstanteIzquierdo";
+            this.panelSubEstanteIzquierdo.Size = new System.Drawing.Size(180, 93);
+            this.panelSubEstanteIzquierdo.TabIndex = 3;
             // 
-            // btnUbicacion
+            // btnPlaza4
             // 
-            this.btnUbicacion.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnUbicacion.FlatAppearance.BorderSize = 0;
-            this.btnUbicacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUbicacion.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnUbicacion.Location = new System.Drawing.Point(0, 372);
-            this.btnUbicacion.Name = "btnUbicacion";
-            this.btnUbicacion.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnUbicacion.Size = new System.Drawing.Size(180, 30);
-            this.btnUbicacion.TabIndex = 6;
-            this.btnUbicacion.Text = "Ubicación";
-            this.btnUbicacion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUbicacion.UseVisualStyleBackColor = true;
-            this.btnUbicacion.Click += new System.EventHandler(this.btnUbicacion_Click);
+            this.btnPlaza4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPlaza4.FlatAppearance.BorderSize = 0;
+            this.btnPlaza4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPlaza4.ForeColor = System.Drawing.Color.White;
+            this.btnPlaza4.Location = new System.Drawing.Point(0, 69);
+            this.btnPlaza4.Name = "btnPlaza4";
+            this.btnPlaza4.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.btnPlaza4.Size = new System.Drawing.Size(180, 23);
+            this.btnPlaza4.TabIndex = 3;
+            this.btnPlaza4.Text = "Plaza 4";
+            this.btnPlaza4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPlaza4.UseVisualStyleBackColor = true;
+            this.btnPlaza4.Click += new System.EventHandler(this.btnPlaza4_Click);
+            // 
+            // btnPlaza3
+            // 
+            this.btnPlaza3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPlaza3.FlatAppearance.BorderSize = 0;
+            this.btnPlaza3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPlaza3.ForeColor = System.Drawing.Color.White;
+            this.btnPlaza3.Location = new System.Drawing.Point(0, 46);
+            this.btnPlaza3.Name = "btnPlaza3";
+            this.btnPlaza3.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.btnPlaza3.Size = new System.Drawing.Size(180, 23);
+            this.btnPlaza3.TabIndex = 2;
+            this.btnPlaza3.Text = "Plaza 3";
+            this.btnPlaza3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPlaza3.UseVisualStyleBackColor = true;
+            this.btnPlaza3.Click += new System.EventHandler(this.btnPlaza3_Click);
+            // 
+            // btnPlaza2
+            // 
+            this.btnPlaza2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPlaza2.FlatAppearance.BorderSize = 0;
+            this.btnPlaza2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPlaza2.ForeColor = System.Drawing.Color.White;
+            this.btnPlaza2.Location = new System.Drawing.Point(0, 23);
+            this.btnPlaza2.Name = "btnPlaza2";
+            this.btnPlaza2.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.btnPlaza2.Size = new System.Drawing.Size(180, 23);
+            this.btnPlaza2.TabIndex = 1;
+            this.btnPlaza2.Text = "Plaza 2";
+            this.btnPlaza2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPlaza2.UseVisualStyleBackColor = true;
+            this.btnPlaza2.Click += new System.EventHandler(this.btnPlaza2_Click);
+            // 
+            // btnPlaza1
+            // 
+            this.btnPlaza1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPlaza1.FlatAppearance.BorderSize = 0;
+            this.btnPlaza1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPlaza1.ForeColor = System.Drawing.Color.White;
+            this.btnPlaza1.Location = new System.Drawing.Point(0, 0);
+            this.btnPlaza1.Name = "btnPlaza1";
+            this.btnPlaza1.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.btnPlaza1.Size = new System.Drawing.Size(180, 23);
+            this.btnPlaza1.TabIndex = 0;
+            this.btnPlaza1.Text = "Plaza 1";
+            this.btnPlaza1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPlaza1.UseVisualStyleBackColor = true;
+            this.btnPlaza1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnEstanteIzquierdo
+            // 
+            this.btnEstanteIzquierdo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnEstanteIzquierdo.FlatAppearance.BorderSize = 0;
+            this.btnEstanteIzquierdo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEstanteIzquierdo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnEstanteIzquierdo.Location = new System.Drawing.Point(0, 76);
+            this.btnEstanteIzquierdo.Name = "btnEstanteIzquierdo";
+            this.btnEstanteIzquierdo.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnEstanteIzquierdo.Size = new System.Drawing.Size(180, 30);
+            this.btnEstanteIzquierdo.TabIndex = 2;
+            this.btnEstanteIzquierdo.Text = "Estante Izquierdo";
+            this.btnEstanteIzquierdo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEstanteIzquierdo.UseVisualStyleBackColor = true;
+            this.btnEstanteIzquierdo.Click += new System.EventHandler(this.btnEstanteIzquierdo_Click);
+            // 
+            // panelLogo
+            // 
+            this.panelLogo.Controls.Add(this.pictureBox2);
+            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelLogo.Location = new System.Drawing.Point(0, 0);
+            this.panelLogo.Name = "panelLogo";
+            this.panelLogo.Size = new System.Drawing.Size(180, 76);
+            this.panelLogo.TabIndex = 1;
             // 
             // panelInventario
             // 
@@ -336,6 +340,16 @@ namespace SistemaInventarioIT
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(50, 23);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(79, 33);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -344,14 +358,16 @@ namespace SistemaInventarioIT
             this.ClientSize = new System.Drawing.Size(868, 439);
             this.Controls.Add(this.panelInventario);
             this.Controls.Add(this.panelLateral);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
             this.panelLateral.ResumeLayout(false);
-            this.panelSubEstanteIzquierdo.ResumeLayout(false);
             this.panelSubEstanteCentro.ResumeLayout(false);
+            this.panelSubEstanteIzquierdo.ResumeLayout(false);
+            this.panelLogo.ResumeLayout(false);
             this.panelInventario.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -377,6 +393,7 @@ namespace SistemaInventarioIT
         private System.Windows.Forms.Button btnEstanteCentro;
         private System.Windows.Forms.Panel panelInventario;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
 
