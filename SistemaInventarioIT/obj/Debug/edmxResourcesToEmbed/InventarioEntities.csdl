@@ -15,6 +15,8 @@
     <Property Name="Modelo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="Garantia" Type="DateTime" Precision="0" />
     <NavigationProperty Name="Ubicacion" Relationship="Self.FK_Inventario_Ubicacion" FromRole="Inventario" ToRole="Ubicacion" />
+    <Property Name="FkPlaza" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Plaza" Relationship="DBInventarioITPAModel.FK_Inventario_Plaza" FromRole="Inventario" ToRole="Plaza" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
@@ -31,7 +33,7 @@
       <PropertyRef Name="IdUbicacion" />
     </Key>
     <Property Name="IdUbicacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Ubicacion1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Ubicacion1" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Descripcion" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="Inventario" Relationship="Self.FK_Inventario_Ubicacion" FromRole="Ubicacion" ToRole="Inventario" />
   </EntityType>
@@ -55,5 +57,31 @@
       <End Role="Ubicacion" EntitySet="Ubicacion" />
       <End Role="Inventario" EntitySet="Inventario" />
     </AssociationSet>
+    <EntitySet Name="Plaza" EntityType="DBInventarioITPAModel.Plaza" />
+    <AssociationSet Name="FK_Inventario_Plaza" Association="DBInventarioITPAModel.FK_Inventario_Plaza">
+      <End Role="Plaza" EntitySet="Plaza" />
+      <End Role="Inventario" EntitySet="Inventario" />
+    </AssociationSet>
   </EntityContainer>
+  <EntityType Name="Plaza">
+    <Key>
+      <PropertyRef Name="IdPlaza" />
+    </Key>
+    <Property Name="IdPlaza" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Plaza1" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Inventario" Relationship="DBInventarioITPAModel.FK_Inventario_Plaza" FromRole="Plaza" ToRole="Inventario" />
+  </EntityType>
+  <Association Name="FK_Inventario_Plaza">
+    <End Type="DBInventarioITPAModel.Plaza" Role="Plaza" Multiplicity="1" />
+    <End Type="DBInventarioITPAModel.Inventario" Role="Inventario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Plaza">
+        <PropertyRef Name="IdPlaza" />
+      </Principal>
+      <Dependent Role="Inventario">
+        <PropertyRef Name="FkPlaza" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

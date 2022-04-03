@@ -12,21 +12,19 @@ namespace SistemaInventarioIT
     using System;
     using System.Collections.Generic;
     
-    public partial class Inventario
+    public partial class Plaza
     {
-        public int IdInventario { get; set; }
-        public string Nombre { get; set; }
-        public int FkUbicacion { get; set; }
-        public string Serial { get; set; }
-        public Nullable<int> Cantidad { get; set; }
-        public string Descripcion { get; set; }
-        public string Categoria { get; set; }
-        public bool Estado { get; set; }
-        public string Modelo { get; set; }
-        public Nullable<System.DateTime> Garantia { get; set; }
-        public int FkPlaza { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Plaza()
+        {
+            this.Inventario = new HashSet<Inventario>();
+        }
     
-        public virtual Ubicacion Ubicacion { get; set; }
-        public virtual Plaza Plaza { get; set; }
+        public int IdPlaza { get; set; }
+        public string Plaza1 { get; set; }
+        public string Descripcion { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Inventario> Inventario { get; set; }
     }
 }

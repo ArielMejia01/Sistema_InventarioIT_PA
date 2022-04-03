@@ -7,6 +7,7 @@
     <Property Name="IdInventario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Nombre" Type="nvarchar" MaxLength="500" Nullable="false" />
     <Property Name="FkUbicacion" Type="int" Nullable="false" />
+    <Property Name="FkPlaza" Type="int" Nullable="false" />
     <Property Name="Serial" Type="nvarchar" MaxLength="200" />
     <Property Name="Cantidad" Type="int" />
     <Property Name="Descripcion" Type="nvarchar" MaxLength="500" />
@@ -14,6 +15,14 @@
     <Property Name="Estado" Type="bit" Nullable="false" />
     <Property Name="Modelo" Type="nvarchar" MaxLength="100" />
     <Property Name="Garantia" Type="date" />
+  </EntityType>
+  <EntityType Name="Plaza">
+    <Key>
+      <PropertyRef Name="IdPlaza" />
+    </Key>
+    <Property Name="IdPlaza" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Plaza" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="200" Nullable="false" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
@@ -30,9 +39,21 @@
       <PropertyRef Name="IdUbicacion" />
     </Key>
     <Property Name="IdUbicacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Ubicacion" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Ubicacion" Type="nvarchar" MaxLength="200" Nullable="false" />
     <Property Name="Descripcion" Type="nvarchar" MaxLength="150" Nullable="false" />
   </EntityType>
+  <Association Name="FK_Inventario_Plaza">
+    <End Role="Plaza" Type="Self.Plaza" Multiplicity="1" />
+    <End Role="Inventario" Type="Self.Inventario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Plaza">
+        <PropertyRef Name="IdPlaza" />
+      </Principal>
+      <Dependent Role="Inventario">
+        <PropertyRef Name="FkPlaza" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Inventario_Ubicacion">
     <End Role="Ubicacion" Type="Self.Ubicacion" Multiplicity="1" />
     <End Role="Inventario" Type="Self.Inventario" Multiplicity="*" />
@@ -47,8 +68,13 @@
   </Association>
   <EntityContainer Name="DBInventarioITPAModelStoreContainer">
     <EntitySet Name="Inventario" EntityType="Self.Inventario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Plaza" EntityType="Self.Plaza" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Ubicacion" EntityType="Self.Ubicacion" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Inventario_Plaza" Association="Self.FK_Inventario_Plaza">
+      <End Role="Plaza" EntitySet="Plaza" />
+      <End Role="Inventario" EntitySet="Inventario" />
+    </AssociationSet>
     <AssociationSet Name="FK_Inventario_Ubicacion" Association="Self.FK_Inventario_Ubicacion">
       <End Role="Ubicacion" EntitySet="Ubicacion" />
       <End Role="Inventario" EntitySet="Inventario" />

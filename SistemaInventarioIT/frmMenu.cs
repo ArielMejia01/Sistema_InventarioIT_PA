@@ -16,31 +16,31 @@ namespace SistemaInventarioIT
         {
             InitializeComponent();
             //En el constructor llamaremos el metodo creado.
-            panelDesign();
+            //panelDesign();
         }
 
         //Metodo para ocultar los paneles subEstanteIzquierdo y subEstanteCentro.
-        private void panelDesign()
+        /*private void panelDesign()
         {
             panelSubEstanteCentro.Visible = false;
             panelSubEstanteIzquierdo.Visible = false;
-        }
+        }*/
 
         //Metodo para ocultar los paneles que se han mostrado anteriormente.
-        private void ocultarPaneles()
+        /*private void ocultarPaneles()
         {
             if (panelSubEstanteIzquierdo.Visible == true)
                 panelSubEstanteIzquierdo.Visible = false;
             if (panelSubEstanteCentro.Visible == true)
                 panelSubEstanteCentro.Visible = false;
-        }
+        }*/
 
         //Metodo para mostrar los paneles
         private void mostrarPaneles(Panel panel)
         {
             if (panel.Visible == false) // si el panel estuviese oculto lo mostraremos
             {
-                ocultarPaneles(); // llamar metodo para ocultar pane si hubiese algun otro abierto
+                //ocultarPaneles(); // llamar metodo para ocultar pane si hubiese algun otro abierto
                 panel.Visible = true; // mostramos el panel
             }
             else
@@ -66,68 +66,69 @@ namespace SistemaInventarioIT
         }
         private void btnEstanteIzquierdo_Click(object sender, EventArgs e)
         {
-            mostrarPaneles(panelSubEstanteIzquierdo);
+            //mostrarPaneles(panelSubEstanteIzquierdo);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             formularioHijoAbiero(new Estante_Izquierdo.frmIzquierdaPlaza1());
-            ocultarPaneles();
+            //ocultarPaneles();
         }
 
         private void btnPlaza2_Click(object sender, EventArgs e)
         {
-            ocultarPaneles();
+            //ocultarPaneles();
         }
 
         private void btnPlaza3_Click(object sender, EventArgs e)
         {
-            ocultarPaneles();
+            //ocultarPaneles();
         }
 
         private void btnPlaza4_Click(object sender, EventArgs e)
         {
-            ocultarPaneles();
+            //ocultarPaneles();
         }
 
         private void btnEstanteCentro_Click(object sender, EventArgs e)
         {
-            mostrarPaneles(panelSubEstanteCentro);
+            //mostrarPaneles(panelSubEstanteCentro);
         }
 
         private void btnCentro1_Click(object sender, EventArgs e)
         {
-            ocultarPaneles();
+            //ocultarPaneles();
         }
 
         private void btnCentro2_Click(object sender, EventArgs e)
         {
-            ocultarPaneles();
+            //ocultarPaneles();
         }
 
         private void btnCentro3_Click(object sender, EventArgs e)
         {
-            ocultarPaneles();
+            //ocultarPaneles();
         }
 
         private void btnCentro4_Click(object sender, EventArgs e)
         {
-            ocultarPaneles();
+            //ocultarPaneles();
         }
 
         private void btnCentro5_Click(object sender, EventArgs e)
         {
-            ocultarPaneles();
+            //ocultarPaneles();
         }
 
         private void btnCentro6_Click(object sender, EventArgs e)
         {
-            ocultarPaneles();
+            //ocultarPaneles();
         }
 
         private void btnUbicacion_Click(object sender, EventArgs e)
         {
-            ocultarPaneles();
+            formularioHijoAbiero(new Estante_Izquierdo.frmIzquierdaPlaza1());
+            //ocultarPaneles();
         }
     }
 }

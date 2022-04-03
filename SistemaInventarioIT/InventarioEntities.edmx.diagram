@@ -9,6 +9,8 @@
         <EntityTypeShape EntityType="DBInventarioITPAModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DBInventarioITPAModel.Ubicacion" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
         <AssociationConnector Association="DBInventarioITPAModel.FK_Inventario_Ubicacion" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="DBInventarioITPAModel.Plaza" Width="1.5" PointX="5.5" PointY="3.625" />
+        <AssociationConnector Association="DBInventarioITPAModel.FK_Inventario_Plaza" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
