@@ -26,8 +26,7 @@ namespace SistemaInventarioIT
         }
     
         public virtual DbSet<Inventario> Inventario { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
-        public virtual DbSet<Ubicacion> Ubicacion { get; set; }
         public virtual DbSet<Plaza> Plaza { get; set; }
+        public virtual DbSet<Ubicacion> Ubicacion { get; set; }
     }
 }

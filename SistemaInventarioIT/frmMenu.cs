@@ -66,6 +66,7 @@ namespace SistemaInventarioIT
         }
         private void btnEstanteIzquierdo_Click(object sender, EventArgs e)
         {
+            formularioHijoAbiero(new frmEstanteIzquierdo());
             //mostrarPaneles(panelSubEstanteIzquierdo);
         }
 

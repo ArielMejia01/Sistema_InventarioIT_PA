@@ -42,7 +42,8 @@ namespace SistemaInventarioIT.Estante_Izquierdo
                                {
                                    i.IdInventario,
                                    i.Nombre,
-                                   i.FkUbicacion,
+                                   i.Ubicacion,
+                                   i.Plaza,
                                    i.Serial,
                                    i.Cantidad,
                                    i.Descripcion,

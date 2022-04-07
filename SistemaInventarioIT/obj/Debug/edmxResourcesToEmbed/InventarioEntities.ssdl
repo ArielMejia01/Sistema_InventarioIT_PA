@@ -6,8 +6,8 @@
     </Key>
     <Property Name="IdInventario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Nombre" Type="nvarchar" MaxLength="500" Nullable="false" />
-    <Property Name="FkUbicacion" Type="int" Nullable="false" />
-    <Property Name="FkPlaza" Type="int" Nullable="false" />
+    <Property Name="Ubicacion" Type="int" Nullable="false" />
+    <Property Name="Plaza" Type="int" Nullable="false" />
     <Property Name="Serial" Type="nvarchar" MaxLength="200" />
     <Property Name="Cantidad" Type="int" />
     <Property Name="Descripcion" Type="nvarchar" MaxLength="500" />
@@ -23,16 +23,6 @@
     <Property Name="IdPlaza" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Plaza" Type="varchar" MaxLength="200" Nullable="false" />
     <Property Name="Descripcion" Type="varchar" MaxLength="200" Nullable="false" />
-  </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-    <Property Name="principal_id" Type="int" Nullable="false" />
-    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="version" Type="int" />
-    <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
   <EntityType Name="Ubicacion">
     <Key>
@@ -50,7 +40,7 @@
         <PropertyRef Name="IdPlaza" />
       </Principal>
       <Dependent Role="Inventario">
-        <PropertyRef Name="FkPlaza" />
+        <PropertyRef Name="Plaza" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -62,14 +52,13 @@
         <PropertyRef Name="IdUbicacion" />
       </Principal>
       <Dependent Role="Inventario">
-        <PropertyRef Name="FkUbicacion" />
+        <PropertyRef Name="Ubicacion" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="DBInventarioITPAModelStoreContainer">
     <EntitySet Name="Inventario" EntityType="Self.Inventario" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Plaza" EntityType="Self.Plaza" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Ubicacion" EntityType="Self.Ubicacion" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_Inventario_Plaza" Association="Self.FK_Inventario_Plaza">
       <End Role="Plaza" EntitySet="Plaza" />

@@ -16,7 +16,8 @@ namespace SistemaInventarioIT
     {
         public int IdInventario { get; set; }
         public string Nombre { get; set; }
-        public int FkUbicacion { get; set; }
+        public int Ubicacion { get; set; }
+        public int Plaza { get; set; }
         public string Serial { get; set; }
         public Nullable<int> Cantidad { get; set; }
         public string Descripcion { get; set; }
@@ -24,9 +25,8 @@ namespace SistemaInventarioIT
         public bool Estado { get; set; }
         public string Modelo { get; set; }
         public Nullable<System.DateTime> Garantia { get; set; }
-        public int FkPlaza { get; set; }
     
-        public virtual Ubicacion Ubicacion { get; set; }
-        public virtual Plaza Plaza { get; set; }
+        public virtual Plaza Plaza1 { get; set; }
+        public virtual Ubicacion Ubicacion1 { get; set; }
     }
 }

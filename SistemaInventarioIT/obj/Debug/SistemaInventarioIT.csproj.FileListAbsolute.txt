@@ -13,3 +13,4 @@ C:\Users\Ariel Mejia\Desktop\SistemaInventarioIT\SistemaInventarioIT\bin\Debug\E
 C:\Users\Ariel Mejia\Desktop\SistemaInventarioIT\SistemaInventarioIT\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Ariel Mejia\Desktop\SistemaInventarioIT\SistemaInventarioIT\bin\Debug\EntityFramework.xml
 C:\Users\Ariel Mejia\Desktop\SistemaInventarioIT\SistemaInventarioIT\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Ariel Mejia\Desktop\SistemaInventarioIT\SistemaInventarioIT\obj\Debug\SistemaInventarioIT.frmEstanteIzquierdo.resources
