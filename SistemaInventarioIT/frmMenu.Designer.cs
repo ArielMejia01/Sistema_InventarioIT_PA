@@ -31,14 +31,14 @@ namespace SistemaInventarioIT
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenu));
             this.panelLateral = new System.Windows.Forms.Panel();
-            this.btnPlaza = new System.Windows.Forms.Button();
-            this.btnUbicacion = new System.Windows.Forms.Button();
-            this.btnEstanteCentro = new System.Windows.Forms.Button();
-            this.btnEstanteIzquierdo = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelInventario = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ibEstanteIzquierdo = new FontAwesome.Sharp.IconButton();
+            this.ibEstanteCentro = new FontAwesome.Sharp.IconButton();
+            this.ibUbicación = new FontAwesome.Sharp.IconButton();
+            this.ibPlaza = new FontAwesome.Sharp.IconButton();
             this.panelLateral.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -50,79 +50,16 @@ namespace SistemaInventarioIT
             // 
             this.panelLateral.AutoScroll = true;
             this.panelLateral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(59)))), ((int)(((byte)(120)))));
-            this.panelLateral.Controls.Add(this.btnPlaza);
-            this.panelLateral.Controls.Add(this.btnUbicacion);
-            this.panelLateral.Controls.Add(this.btnEstanteCentro);
-            this.panelLateral.Controls.Add(this.btnEstanteIzquierdo);
+            this.panelLateral.Controls.Add(this.ibPlaza);
+            this.panelLateral.Controls.Add(this.ibUbicación);
+            this.panelLateral.Controls.Add(this.ibEstanteCentro);
+            this.panelLateral.Controls.Add(this.ibEstanteIzquierdo);
             this.panelLateral.Controls.Add(this.panelLogo);
             this.panelLateral.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLateral.Location = new System.Drawing.Point(0, 0);
             this.panelLateral.Name = "panelLateral";
             this.panelLateral.Size = new System.Drawing.Size(180, 439);
             this.panelLateral.TabIndex = 0;
-            // 
-            // btnPlaza
-            // 
-            this.btnPlaza.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnPlaza.FlatAppearance.BorderSize = 0;
-            this.btnPlaza.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPlaza.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnPlaza.Location = new System.Drawing.Point(0, 210);
-            this.btnPlaza.Name = "btnPlaza";
-            this.btnPlaza.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnPlaza.Size = new System.Drawing.Size(180, 45);
-            this.btnPlaza.TabIndex = 7;
-            this.btnPlaza.Text = "Plaza";
-            this.btnPlaza.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPlaza.UseVisualStyleBackColor = true;
-            // 
-            // btnUbicacion
-            // 
-            this.btnUbicacion.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnUbicacion.FlatAppearance.BorderSize = 0;
-            this.btnUbicacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUbicacion.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnUbicacion.Location = new System.Drawing.Point(0, 165);
-            this.btnUbicacion.Name = "btnUbicacion";
-            this.btnUbicacion.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnUbicacion.Size = new System.Drawing.Size(180, 45);
-            this.btnUbicacion.TabIndex = 6;
-            this.btnUbicacion.Text = "Ubicación";
-            this.btnUbicacion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUbicacion.UseVisualStyleBackColor = true;
-            this.btnUbicacion.Click += new System.EventHandler(this.btnUbicacion_Click);
-            // 
-            // btnEstanteCentro
-            // 
-            this.btnEstanteCentro.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnEstanteCentro.FlatAppearance.BorderSize = 0;
-            this.btnEstanteCentro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEstanteCentro.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnEstanteCentro.Location = new System.Drawing.Point(0, 120);
-            this.btnEstanteCentro.Name = "btnEstanteCentro";
-            this.btnEstanteCentro.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnEstanteCentro.Size = new System.Drawing.Size(180, 45);
-            this.btnEstanteCentro.TabIndex = 4;
-            this.btnEstanteCentro.Text = "Estante Centro";
-            this.btnEstanteCentro.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEstanteCentro.UseVisualStyleBackColor = true;
-            this.btnEstanteCentro.Click += new System.EventHandler(this.btnEstanteCentro_Click);
-            // 
-            // btnEstanteIzquierdo
-            // 
-            this.btnEstanteIzquierdo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnEstanteIzquierdo.FlatAppearance.BorderSize = 0;
-            this.btnEstanteIzquierdo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEstanteIzquierdo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnEstanteIzquierdo.Location = new System.Drawing.Point(0, 75);
-            this.btnEstanteIzquierdo.Name = "btnEstanteIzquierdo";
-            this.btnEstanteIzquierdo.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnEstanteIzquierdo.Size = new System.Drawing.Size(180, 45);
-            this.btnEstanteIzquierdo.TabIndex = 2;
-            this.btnEstanteIzquierdo.Text = "Estante Izquierdo";
-            this.btnEstanteIzquierdo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEstanteIzquierdo.UseVisualStyleBackColor = true;
-            this.btnEstanteIzquierdo.Click += new System.EventHandler(this.btnEstanteIzquierdo_Click);
             // 
             // panelLogo
             // 
@@ -131,7 +68,7 @@ namespace SistemaInventarioIT
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(180, 75);
+            this.panelLogo.Size = new System.Drawing.Size(180, 87);
             this.panelLogo.TabIndex = 1;
             // 
             // pictureBox2
@@ -164,6 +101,96 @@ namespace SistemaInventarioIT
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // ibEstanteIzquierdo
+            // 
+            this.ibEstanteIzquierdo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(59)))), ((int)(((byte)(120)))));
+            this.ibEstanteIzquierdo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ibEstanteIzquierdo.FlatAppearance.BorderSize = 0;
+            this.ibEstanteIzquierdo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ibEstanteIzquierdo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ibEstanteIzquierdo.IconChar = FontAwesome.Sharp.IconChar.Buffer;
+            this.ibEstanteIzquierdo.IconColor = System.Drawing.Color.White;
+            this.ibEstanteIzquierdo.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ibEstanteIzquierdo.IconSize = 26;
+            this.ibEstanteIzquierdo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ibEstanteIzquierdo.Location = new System.Drawing.Point(0, 87);
+            this.ibEstanteIzquierdo.Name = "ibEstanteIzquierdo";
+            this.ibEstanteIzquierdo.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.ibEstanteIzquierdo.Size = new System.Drawing.Size(180, 45);
+            this.ibEstanteIzquierdo.TabIndex = 1;
+            this.ibEstanteIzquierdo.Text = "Icono Estante Izquierdo";
+            this.ibEstanteIzquierdo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ibEstanteIzquierdo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ibEstanteIzquierdo.UseVisualStyleBackColor = false;
+            this.ibEstanteIzquierdo.Click += new System.EventHandler(this.ibEstanteIzquierdo_Click);
+            // 
+            // ibEstanteCentro
+            // 
+            this.ibEstanteCentro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(59)))), ((int)(((byte)(120)))));
+            this.ibEstanteCentro.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ibEstanteCentro.FlatAppearance.BorderSize = 0;
+            this.ibEstanteCentro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ibEstanteCentro.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ibEstanteCentro.IconChar = FontAwesome.Sharp.IconChar.Buffer;
+            this.ibEstanteCentro.IconColor = System.Drawing.Color.White;
+            this.ibEstanteCentro.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ibEstanteCentro.IconSize = 26;
+            this.ibEstanteCentro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ibEstanteCentro.Location = new System.Drawing.Point(0, 132);
+            this.ibEstanteCentro.Name = "ibEstanteCentro";
+            this.ibEstanteCentro.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.ibEstanteCentro.Size = new System.Drawing.Size(180, 45);
+            this.ibEstanteCentro.TabIndex = 8;
+            this.ibEstanteCentro.Text = "Icono Estante Centro";
+            this.ibEstanteCentro.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ibEstanteCentro.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ibEstanteCentro.UseVisualStyleBackColor = false;
+            // 
+            // ibUbicación
+            // 
+            this.ibUbicación.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(59)))), ((int)(((byte)(120)))));
+            this.ibUbicación.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ibUbicación.FlatAppearance.BorderSize = 0;
+            this.ibUbicación.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ibUbicación.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ibUbicación.IconChar = FontAwesome.Sharp.IconChar.LocationArrow;
+            this.ibUbicación.IconColor = System.Drawing.Color.White;
+            this.ibUbicación.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ibUbicación.IconSize = 26;
+            this.ibUbicación.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ibUbicación.Location = new System.Drawing.Point(0, 177);
+            this.ibUbicación.Name = "ibUbicación";
+            this.ibUbicación.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.ibUbicación.Size = new System.Drawing.Size(180, 45);
+            this.ibUbicación.TabIndex = 9;
+            this.ibUbicación.Text = "Icono Ubicación";
+            this.ibUbicación.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ibUbicación.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ibUbicación.UseVisualStyleBackColor = false;
+            this.ibUbicación.Click += new System.EventHandler(this.ibUbicación_Click);
+            // 
+            // ibPlaza
+            // 
+            this.ibPlaza.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(59)))), ((int)(((byte)(120)))));
+            this.ibPlaza.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ibPlaza.FlatAppearance.BorderSize = 0;
+            this.ibPlaza.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ibPlaza.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ibPlaza.IconChar = FontAwesome.Sharp.IconChar.Cubes;
+            this.ibPlaza.IconColor = System.Drawing.Color.White;
+            this.ibPlaza.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ibPlaza.IconSize = 25;
+            this.ibPlaza.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ibPlaza.Location = new System.Drawing.Point(0, 222);
+            this.ibPlaza.Name = "ibPlaza";
+            this.ibPlaza.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.ibPlaza.Size = new System.Drawing.Size(180, 45);
+            this.ibPlaza.TabIndex = 10;
+            this.ibPlaza.Text = "Icono Plaza";
+            this.ibPlaza.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ibPlaza.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ibPlaza.UseVisualStyleBackColor = false;
+            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -172,6 +199,7 @@ namespace SistemaInventarioIT
             this.ClientSize = new System.Drawing.Size(868, 439);
             this.Controls.Add(this.panelInventario);
             this.Controls.Add(this.panelLateral);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -187,14 +215,14 @@ namespace SistemaInventarioIT
         #endregion
 
         private System.Windows.Forms.Panel panelLateral;
-        private System.Windows.Forms.Button btnEstanteIzquierdo;
         private System.Windows.Forms.Panel panelLogo;
-        private System.Windows.Forms.Button btnUbicacion;
-        private System.Windows.Forms.Button btnEstanteCentro;
         private System.Windows.Forms.Panel panelInventario;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button btnPlaza;
+        private FontAwesome.Sharp.IconButton ibEstanteIzquierdo;
+        private FontAwesome.Sharp.IconButton ibPlaza;
+        private FontAwesome.Sharp.IconButton ibUbicación;
+        private FontAwesome.Sharp.IconButton ibEstanteCentro;
     }
 }
 

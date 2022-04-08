@@ -64,7 +64,7 @@ namespace SistemaInventarioIT
             formularioHijo.BringToFront(); // Nos ayudara a traer al frente al formulario en caso que sea necesario
             formularioHijo.Show(); 
         }
-        private void btnEstanteIzquierdo_Click(object sender, EventArgs e)
+        /*private void btnEstanteIzquierdo_Click(object sender, EventArgs e)
         {
             formularioHijoAbiero(new frmEstanteIzquierdo());
             //mostrarPaneles(panelSubEstanteIzquierdo);
@@ -130,6 +130,16 @@ namespace SistemaInventarioIT
         {
             formularioHijoAbiero(new Estante_Izquierdo.frmIzquierdaPlaza1());
             //ocultarPaneles();
+        }*/
+
+        private void ibEstanteIzquierdo_Click(object sender, EventArgs e)
+        {
+            formularioHijoAbiero(new frmEstanteIzquierdo());
+        }
+
+        private void ibUbicación_Click(object sender, EventArgs e)
+        {
+            formularioHijoAbiero(new Estante_Izquierdo.frmIzquierdaPlaza1());
         }
     }
 }
