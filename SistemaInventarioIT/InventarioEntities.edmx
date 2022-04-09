@@ -34,7 +34,7 @@
             <PropertyRef Name="IdUbicacion" />
           </Key>
           <Property Name="IdUbicacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Ubicacion" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Nombre_Ubicacion" Type="nvarchar" MaxLength="200" Nullable="false" />
           <Property Name="Descripcion" Type="nvarchar" MaxLength="150" Nullable="false" />
         </EntityType>
         <Association Name="FK_Inventario_Plaza">
@@ -81,11 +81,11 @@
         <EntityContainer Name="DBInventarioITPAEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Inventario" EntityType="DBInventarioITPAModel.Inventario" />
           <EntitySet Name="Plaza" EntityType="DBInventarioITPAModel.Plaza" />
-          <EntitySet Name="Ubicacion" EntityType="DBInventarioITPAModel.Ubicacion" />
           <AssociationSet Name="FK_Inventario_Plaza" Association="DBInventarioITPAModel.FK_Inventario_Plaza">
             <End Role="Plaza" EntitySet="Plaza" />
             <End Role="Inventario" EntitySet="Inventario" />
           </AssociationSet>
+          <EntitySet Name="Ubicacion" EntityType="DBInventarioITPAModel.Ubicacion" />
           <AssociationSet Name="FK_Inventario_Ubicacion" Association="DBInventarioITPAModel.FK_Inventario_Ubicacion">
             <End Role="Ubicacion" EntitySet="Ubicacion" />
             <End Role="Inventario" EntitySet="Inventario" />
@@ -118,15 +118,6 @@
           <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Inventario" Relationship="DBInventarioITPAModel.FK_Inventario_Plaza" FromRole="Plaza" ToRole="Inventario" />
         </EntityType>
-        <EntityType Name="Ubicacion">
-          <Key>
-            <PropertyRef Name="IdUbicacion" />
-          </Key>
-          <Property Name="IdUbicacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Ubicacion1" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Inventario" Relationship="DBInventarioITPAModel.FK_Inventario_Ubicacion" FromRole="Ubicacion" ToRole="Inventario" />
-        </EntityType>
         <Association Name="FK_Inventario_Plaza">
           <End Type="DBInventarioITPAModel.Plaza" Role="Plaza" Multiplicity="1" />
           <End Type="DBInventarioITPAModel.Inventario" Role="Inventario" Multiplicity="*" />
@@ -139,6 +130,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Ubicacion">
+          <Key>
+            <PropertyRef Name="IdUbicacion" />
+          </Key>
+          <Property Name="IdUbicacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre_Ubicacion" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Inventario" Relationship="DBInventarioITPAModel.FK_Inventario_Ubicacion" FromRole="Ubicacion" ToRole="Inventario" />
+        </EntityType>
         <Association Name="FK_Inventario_Ubicacion">
           <End Type="DBInventarioITPAModel.Ubicacion" Role="Ubicacion" Multiplicity="1" />
           <End Type="DBInventarioITPAModel.Inventario" Role="Inventario" Multiplicity="*" />
@@ -187,7 +187,7 @@
             <EntityTypeMapping TypeName="DBInventarioITPAModel.Ubicacion">
               <MappingFragment StoreEntitySet="Ubicacion">
                 <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
-                <ScalarProperty Name="Ubicacion1" ColumnName="Ubicacion" />
+                <ScalarProperty Name="Nombre_Ubicacion" ColumnName="Nombre_Ubicacion" />
                 <ScalarProperty Name="IdUbicacion" ColumnName="IdUbicacion" />
               </MappingFragment>
             </EntityTypeMapping>

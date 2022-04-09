@@ -139,6 +139,11 @@ namespace SistemaInventarioIT
 
         private void ibUbicación_Click(object sender, EventArgs e)
         {
+            formularioHijoAbiero(new frmUbicacion());
+        }
+
+        private void ibEstanteCentro_Click(object sender, EventArgs e)
+        {
             formularioHijoAbiero(new Estante_Izquierdo.frmIzquierdaPlaza1());
         }
     }

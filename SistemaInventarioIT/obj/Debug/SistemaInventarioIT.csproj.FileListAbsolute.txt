@@ -15,3 +15,4 @@ C:\Users\Ariel Mejia\Desktop\SistemaInventarioIT\SistemaInventarioIT\bin\Debug\E
 C:\Users\Ariel Mejia\Desktop\SistemaInventarioIT\SistemaInventarioIT\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Ariel Mejia\Desktop\SistemaInventarioIT\SistemaInventarioIT\obj\Debug\SistemaInventarioIT.frmEstanteIzquierdo.resources
 C:\Users\Ariel Mejia\Desktop\SistemaInventarioIT\SistemaInventarioIT\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\Ariel Mejia\Desktop\SistemaInventarioIT\SistemaInventarioIT\obj\Debug\SistemaInventarioIT.frmUbicacion.resources

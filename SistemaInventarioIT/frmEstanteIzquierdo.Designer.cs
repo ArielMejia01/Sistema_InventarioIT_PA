@@ -51,7 +51,10 @@ namespace SistemaInventarioIT
             this.cmbPlaza = new System.Windows.Forms.ComboBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ibAgregar = new FontAwesome.Sharp.IconButton();
             this.panelTitle.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -114,7 +117,7 @@ namespace SistemaInventarioIT
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(50, 214);
+            this.label6.Location = new System.Drawing.Point(361, 68);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(49, 13);
             this.label6.TabIndex = 28;
@@ -123,7 +126,7 @@ namespace SistemaInventarioIT
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(350, 68);
+            this.label7.Location = new System.Drawing.Point(49, 211);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(63, 13);
             this.label7.TabIndex = 29;
@@ -132,7 +135,7 @@ namespace SistemaInventarioIT
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(361, 139);
+            this.label8.Location = new System.Drawing.Point(361, 104);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(52, 13);
             this.label8.TabIndex = 30;
@@ -141,7 +144,7 @@ namespace SistemaInventarioIT
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(361, 177);
+            this.label9.Location = new System.Drawing.Point(361, 142);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(40, 13);
             this.label9.TabIndex = 31;
@@ -150,7 +153,7 @@ namespace SistemaInventarioIT
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(359, 214);
+            this.label10.Location = new System.Drawing.Point(359, 179);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(42, 13);
             this.label10.TabIndex = 32;
@@ -159,7 +162,7 @@ namespace SistemaInventarioIT
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(361, 249);
+            this.label11.Location = new System.Drawing.Point(361, 214);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(47, 13);
             this.label11.TabIndex = 33;
@@ -169,43 +172,43 @@ namespace SistemaInventarioIT
             // 
             this.txtNombre.Location = new System.Drawing.Point(125, 61);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(136, 20);
+            this.txtNombre.Size = new System.Drawing.Size(197, 20);
             this.txtNombre.TabIndex = 34;
             // 
             // txtSerial
             // 
             this.txtSerial.Location = new System.Drawing.Point(125, 170);
             this.txtSerial.Name = "txtSerial";
-            this.txtSerial.Size = new System.Drawing.Size(136, 20);
+            this.txtSerial.Size = new System.Drawing.Size(197, 20);
             this.txtSerial.TabIndex = 35;
             // 
             // txtCantidad
             // 
-            this.txtCantidad.Location = new System.Drawing.Point(125, 211);
+            this.txtCantidad.Location = new System.Drawing.Point(436, 65);
             this.txtCantidad.Name = "txtCantidad";
-            this.txtCantidad.Size = new System.Drawing.Size(136, 20);
+            this.txtCantidad.Size = new System.Drawing.Size(197, 20);
             this.txtCantidad.TabIndex = 36;
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(433, 61);
+            this.txtDescripcion.Location = new System.Drawing.Point(125, 211);
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(136, 56);
+            this.txtDescripcion.Size = new System.Drawing.Size(197, 41);
             this.txtDescripcion.TabIndex = 37;
             // 
             // txtCategoria
             // 
-            this.txtCategoria.Location = new System.Drawing.Point(433, 131);
+            this.txtCategoria.Location = new System.Drawing.Point(433, 101);
             this.txtCategoria.Name = "txtCategoria";
-            this.txtCategoria.Size = new System.Drawing.Size(136, 20);
+            this.txtCategoria.Size = new System.Drawing.Size(200, 20);
             this.txtCategoria.TabIndex = 38;
             // 
             // txtModelo
             // 
-            this.txtModelo.Location = new System.Drawing.Point(433, 211);
+            this.txtModelo.Location = new System.Drawing.Point(433, 176);
             this.txtModelo.Name = "txtModelo";
-            this.txtModelo.Size = new System.Drawing.Size(136, 20);
+            this.txtModelo.Size = new System.Drawing.Size(200, 20);
             this.txtModelo.TabIndex = 40;
             // 
             // cmbUbicacion
@@ -213,7 +216,7 @@ namespace SistemaInventarioIT
             this.cmbUbicacion.FormattingEnabled = true;
             this.cmbUbicacion.Location = new System.Drawing.Point(125, 96);
             this.cmbUbicacion.Name = "cmbUbicacion";
-            this.cmbUbicacion.Size = new System.Drawing.Size(136, 21);
+            this.cmbUbicacion.Size = new System.Drawing.Size(197, 21);
             this.cmbUbicacion.TabIndex = 42;
             // 
             // cmbPlaza
@@ -221,13 +224,13 @@ namespace SistemaInventarioIT
             this.cmbPlaza.FormattingEnabled = true;
             this.cmbPlaza.Location = new System.Drawing.Point(125, 131);
             this.cmbPlaza.Name = "cmbPlaza";
-            this.cmbPlaza.Size = new System.Drawing.Size(136, 21);
+            this.cmbPlaza.Size = new System.Drawing.Size(197, 21);
             this.cmbPlaza.TabIndex = 43;
             // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(433, 173);
+            this.checkBox1.Location = new System.Drawing.Point(433, 138);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(148, 17);
             this.checkBox1.TabIndex = 44;
@@ -236,16 +239,42 @@ namespace SistemaInventarioIT
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(433, 249);
+            this.dateTimePicker1.Location = new System.Drawing.Point(433, 214);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 45;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(53, 285);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(580, 118);
+            this.dataGridView1.TabIndex = 46;
+            // 
+            // ibAgregar
+            // 
+            this.ibAgregar.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+            this.ibAgregar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(71)))), ((int)(((byte)(135)))));
+            this.ibAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ibAgregar.IconSize = 30;
+            this.ibAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ibAgregar.Location = new System.Drawing.Point(94, 418);
+            this.ibAgregar.Name = "ibAgregar";
+            this.ibAgregar.Size = new System.Drawing.Size(92, 34);
+            this.ibAgregar.TabIndex = 47;
+            this.ibAgregar.Text = "Agregar";
+            this.ibAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ibAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ibAgregar.UseVisualStyleBackColor = true;
             // 
             // frmEstanteIzquierdo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(688, 439);
+            this.ClientSize = new System.Drawing.Size(688, 476);
+            this.Controls.Add(this.ibAgregar);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.cmbPlaza);
@@ -271,6 +300,7 @@ namespace SistemaInventarioIT
             this.Text = "frmEstanteIzquierdo";
             this.panelTitle.ResumeLayout(false);
             this.panelTitle.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -300,5 +330,7 @@ namespace SistemaInventarioIT
         private System.Windows.Forms.ComboBox cmbPlaza;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private FontAwesome.Sharp.IconButton ibAgregar;
     }
 }

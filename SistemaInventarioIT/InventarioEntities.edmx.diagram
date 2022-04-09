@@ -7,8 +7,8 @@
       <Diagram DiagramId="a24fbe2204cb477ab79f65dfa6d32d95" Name="Diagram1">
         <EntityTypeShape EntityType="DBInventarioITPAModel.Inventario" Width="1.5" PointX="4" PointY="0.625" />
         <EntityTypeShape EntityType="DBInventarioITPAModel.Plaza" Width="1.5" PointX="6.5" PointY="1.375" />
-        <EntityTypeShape EntityType="DBInventarioITPAModel.Ubicacion" Width="1.5" PointX="1.375" PointY="1.375" />
         <AssociationConnector Association="DBInventarioITPAModel.FK_Inventario_Plaza" />
+        <EntityTypeShape EntityType="DBInventarioITPAModel.Ubicacion" Width="1.5" PointX="1.75" PointY="1.5" />
         <AssociationConnector Association="DBInventarioITPAModel.FK_Inventario_Ubicacion" />
       </Diagram>
     </edmx:Diagrams>
