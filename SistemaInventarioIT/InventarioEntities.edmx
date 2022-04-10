@@ -26,7 +26,7 @@
             <PropertyRef Name="IdPlaza" />
           </Key>
           <Property Name="IdPlaza" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Plaza" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="Nombre_Plaza" Type="varchar" MaxLength="200" Nullable="false" />
           <Property Name="Descripcion" Type="varchar" MaxLength="200" Nullable="false" />
         </EntityType>
         <EntityType Name="Ubicacion">
@@ -80,14 +80,14 @@
       <Schema Namespace="DBInventarioITPAModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="DBInventarioITPAEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Inventario" EntityType="DBInventarioITPAModel.Inventario" />
-          <EntitySet Name="Plaza" EntityType="DBInventarioITPAModel.Plaza" />
-          <AssociationSet Name="FK_Inventario_Plaza" Association="DBInventarioITPAModel.FK_Inventario_Plaza">
-            <End Role="Plaza" EntitySet="Plaza" />
-            <End Role="Inventario" EntitySet="Inventario" />
-          </AssociationSet>
           <EntitySet Name="Ubicacion" EntityType="DBInventarioITPAModel.Ubicacion" />
           <AssociationSet Name="FK_Inventario_Ubicacion" Association="DBInventarioITPAModel.FK_Inventario_Ubicacion">
             <End Role="Ubicacion" EntitySet="Ubicacion" />
+            <End Role="Inventario" EntitySet="Inventario" />
+          </AssociationSet>
+          <EntitySet Name="Plaza" EntityType="DBInventarioITPAModel.Plaza" />
+          <AssociationSet Name="FK_Inventario_Plaza" Association="DBInventarioITPAModel.FK_Inventario_Plaza">
+            <End Role="Plaza" EntitySet="Plaza" />
             <End Role="Inventario" EntitySet="Inventario" />
           </AssociationSet>
         </EntityContainer>
@@ -106,30 +106,9 @@
           <Property Name="Estado" Type="Boolean" Nullable="false" />
           <Property Name="Modelo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Garantia" Type="DateTime" Precision="0" />
-          <NavigationProperty Name="Plaza1" Relationship="DBInventarioITPAModel.FK_Inventario_Plaza" FromRole="Inventario" ToRole="Plaza" />
           <NavigationProperty Name="Ubicacion1" Relationship="DBInventarioITPAModel.FK_Inventario_Ubicacion" FromRole="Inventario" ToRole="Ubicacion" />
+          <NavigationProperty Name="Plaza1" Relationship="DBInventarioITPAModel.FK_Inventario_Plaza" FromRole="Inventario" ToRole="Plaza" />
         </EntityType>
-        <EntityType Name="Plaza">
-          <Key>
-            <PropertyRef Name="IdPlaza" />
-          </Key>
-          <Property Name="IdPlaza" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Plaza1" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Inventario" Relationship="DBInventarioITPAModel.FK_Inventario_Plaza" FromRole="Plaza" ToRole="Inventario" />
-        </EntityType>
-        <Association Name="FK_Inventario_Plaza">
-          <End Type="DBInventarioITPAModel.Plaza" Role="Plaza" Multiplicity="1" />
-          <End Type="DBInventarioITPAModel.Inventario" Role="Inventario" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Plaza">
-              <PropertyRef Name="IdPlaza" />
-            </Principal>
-            <Dependent Role="Inventario">
-              <PropertyRef Name="Plaza" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="Ubicacion">
           <Key>
             <PropertyRef Name="IdUbicacion" />
@@ -148,6 +127,27 @@
             </Principal>
             <Dependent Role="Inventario">
               <PropertyRef Name="Ubicacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Plaza">
+          <Key>
+            <PropertyRef Name="IdPlaza" />
+          </Key>
+          <Property Name="IdPlaza" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre_Plaza" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Inventario" Relationship="DBInventarioITPAModel.FK_Inventario_Plaza" FromRole="Plaza" ToRole="Inventario" />
+        </EntityType>
+        <Association Name="FK_Inventario_Plaza">
+          <End Type="DBInventarioITPAModel.Plaza" Role="Plaza" Multiplicity="1" />
+          <End Type="DBInventarioITPAModel.Inventario" Role="Inventario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Plaza">
+              <PropertyRef Name="IdPlaza" />
+            </Principal>
+            <Dependent Role="Inventario">
+              <PropertyRef Name="Plaza" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -174,21 +174,21 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Plaza">
-            <EntityTypeMapping TypeName="DBInventarioITPAModel.Plaza">
-              <MappingFragment StoreEntitySet="Plaza">
-                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
-                <ScalarProperty Name="Plaza1" ColumnName="Plaza" />
-                <ScalarProperty Name="IdPlaza" ColumnName="IdPlaza" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Ubicacion">
             <EntityTypeMapping TypeName="DBInventarioITPAModel.Ubicacion">
               <MappingFragment StoreEntitySet="Ubicacion">
                 <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
                 <ScalarProperty Name="Nombre_Ubicacion" ColumnName="Nombre_Ubicacion" />
                 <ScalarProperty Name="IdUbicacion" ColumnName="IdUbicacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Plaza">
+            <EntityTypeMapping TypeName="DBInventarioITPAModel.Plaza">
+              <MappingFragment StoreEntitySet="Plaza">
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Nombre_Plaza" ColumnName="Nombre_Plaza" />
+                <ScalarProperty Name="IdPlaza" ColumnName="IdPlaza" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

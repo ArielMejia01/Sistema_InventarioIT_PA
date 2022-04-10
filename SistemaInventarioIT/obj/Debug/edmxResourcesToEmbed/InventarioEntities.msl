@@ -18,21 +18,21 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Plaza">
-      <EntityTypeMapping TypeName="DBInventarioITPAModel.Plaza">
-        <MappingFragment StoreEntitySet="Plaza">
-          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
-          <ScalarProperty Name="Plaza1" ColumnName="Plaza" />
-          <ScalarProperty Name="IdPlaza" ColumnName="IdPlaza" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Ubicacion">
       <EntityTypeMapping TypeName="DBInventarioITPAModel.Ubicacion">
         <MappingFragment StoreEntitySet="Ubicacion">
           <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
-          <ScalarProperty Name="Ubicacion1" ColumnName="Ubicacion" />
+          <ScalarProperty Name="Nombre_Ubicacion" ColumnName="Nombre_Ubicacion" />
           <ScalarProperty Name="IdUbicacion" ColumnName="IdUbicacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Plaza">
+      <EntityTypeMapping TypeName="DBInventarioITPAModel.Plaza">
+        <MappingFragment StoreEntitySet="Plaza">
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Nombre_Plaza" ColumnName="Nombre_Plaza" />
+          <ScalarProperty Name="IdPlaza" ColumnName="IdPlaza" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

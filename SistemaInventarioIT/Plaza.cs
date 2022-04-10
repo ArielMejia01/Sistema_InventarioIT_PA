@@ -21,7 +21,7 @@ namespace SistemaInventarioIT
         }
     
         public int IdPlaza { get; set; }
-        public string Plaza1 { get; set; }
+        public string Nombre_Plaza { get; set; }
         public string Descripcion { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

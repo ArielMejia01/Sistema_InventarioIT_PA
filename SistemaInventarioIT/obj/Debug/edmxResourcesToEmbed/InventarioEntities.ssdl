@@ -21,7 +21,7 @@
       <PropertyRef Name="IdPlaza" />
     </Key>
     <Property Name="IdPlaza" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Plaza" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Nombre_Plaza" Type="varchar" MaxLength="200" Nullable="false" />
     <Property Name="Descripcion" Type="varchar" MaxLength="200" Nullable="false" />
   </EntityType>
   <EntityType Name="Ubicacion">
@@ -29,7 +29,7 @@
       <PropertyRef Name="IdUbicacion" />
     </Key>
     <Property Name="IdUbicacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Ubicacion" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Nombre_Ubicacion" Type="nvarchar" MaxLength="200" Nullable="false" />
     <Property Name="Descripcion" Type="nvarchar" MaxLength="150" Nullable="false" />
   </EntityType>
   <Association Name="FK_Inventario_Plaza">

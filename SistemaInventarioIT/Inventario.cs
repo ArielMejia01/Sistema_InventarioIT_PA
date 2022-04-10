@@ -26,7 +26,7 @@ namespace SistemaInventarioIT
         public string Modelo { get; set; }
         public Nullable<System.DateTime> Garantia { get; set; }
     
-        public virtual Plaza Plaza1 { get; set; }
         public virtual Ubicacion Ubicacion1 { get; set; }
+        public virtual Plaza Plaza1 { get; set; }
     }
 }

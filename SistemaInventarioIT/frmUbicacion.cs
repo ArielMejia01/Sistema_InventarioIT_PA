@@ -27,6 +27,8 @@ namespace SistemaInventarioIT
                                  i.Nombre_Ubicacion,
                                  i.Descripcion
                              };
+            dgUbicacion.DataSource = iUbicacion.CopyAnonymusToDataTable();
+            dgUbicacion.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }
     }
 }

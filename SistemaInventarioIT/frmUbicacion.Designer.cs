@@ -35,10 +35,10 @@ namespace SistemaInventarioIT
             this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgUbicacion = new System.Windows.Forms.DataGridView();
             this.ibAgregar = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgUbicacion)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -97,13 +97,13 @@ namespace SistemaInventarioIT
             this.textBox2.Size = new System.Drawing.Size(197, 47);
             this.textBox2.TabIndex = 4;
             // 
-            // dataGridView1
+            // dgUbicacion
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(113, 252);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(461, 112);
-            this.dataGridView1.TabIndex = 5;
+            this.dgUbicacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgUbicacion.Location = new System.Drawing.Point(113, 252);
+            this.dgUbicacion.Name = "dgUbicacion";
+            this.dgUbicacion.Size = new System.Drawing.Size(461, 112);
+            this.dgUbicacion.TabIndex = 5;
             // 
             // ibAgregar
             // 
@@ -127,7 +127,7 @@ namespace SistemaInventarioIT
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(688, 476);
             this.Controls.Add(this.ibAgregar);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgUbicacion);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label3);
@@ -138,7 +138,7 @@ namespace SistemaInventarioIT
             this.Load += new System.EventHandler(this.frmUbicacion_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgUbicacion)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -152,7 +152,7 @@ namespace SistemaInventarioIT
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgUbicacion;
         private FontAwesome.Sharp.IconButton ibAgregar;
     }
 }
