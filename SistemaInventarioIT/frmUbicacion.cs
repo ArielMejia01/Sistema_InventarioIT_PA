@@ -13,6 +13,8 @@ namespace SistemaInventarioIT
     public partial class frmUbicacion : Form
     {
         DBInventarioITPAEntities entityInventario = new DBInventarioITPAEntities();
+        bool edit = false;
+        int idUbicacion = 0;
         public frmUbicacion()
         {
             InitializeComponent();
@@ -29,6 +31,36 @@ namespace SistemaInventarioIT
                              };
             dgUbicacion.DataSource = iUbicacion.CopyAnonymusToDataTable();
             dgUbicacion.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+        }
+
+        private void ibAgregar_Click(object sender, EventArgs e)
+        {
+            if (txtUbicacion.Text.Equals(""))
+            {
+                MessageBox.Show("¡Ingrese el nombre de la ubicación!");
+                return;
+            }
+            if (txtDescripcion.Text.Equals(""))
+            {
+                MessageBox.Show("¡Ingrese la descripción de la ubicación!");
+                return;
+            }
+            if (edit)
+            {
+                var tUbicacion = entityInventario.Ubicacion.FirstOrDefault(u => u.IdUbicacion == idUbicacion);
+                tUbicacion.Nombre_Ubicacion = txtUbicacion.Text;
+                tUbicacion.Descripcion = txtDescripcion.Text;
+                entityInventario.SaveChanges();
+                MessageBox.Show("¡Cambios Guardados!");
+            }
+            else
+            {
+                Ubicacion tNombreUbicacion = new Ubicacion();
+                tNombreUbicacion.Nombre_Ubicacion = txtUbicacion.Text;
+                tNombreUbicacion.Descripcion = txtDescripcion.Text;
+                entityInventario.Ubicacion.Add(tNombreUbicacion);
+                entityInventario.SaveChanges();
+            }
         }
     }
 }
