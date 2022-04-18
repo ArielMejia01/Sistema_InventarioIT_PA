@@ -62,5 +62,10 @@ namespace SistemaInventarioIT
                 entityInventario.SaveChanges();
             }
         }
+
+        private void ibNuevo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

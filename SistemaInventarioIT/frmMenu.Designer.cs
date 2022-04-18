@@ -82,6 +82,7 @@ namespace SistemaInventarioIT
             this.ibPlaza.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ibPlaza.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.ibPlaza.UseVisualStyleBackColor = false;
+            this.ibPlaza.Click += new System.EventHandler(this.ibPlaza_Click);
             // 
             // ibUbicación
             // 

@@ -80,6 +80,12 @@
     <Compile Include="frmMenu.Designer.cs">
       <DependentUpon>frmMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPlaza.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPlaza.Designer.cs">
+      <DependentUpon>frmPlaza.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmUbicacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +127,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMenu.resx">
       <DependentUpon>frmMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPlaza.resx">
+      <DependentUpon>frmPlaza.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmUbicacion.resx">
       <DependentUpon>frmUbicacion.cs</DependentUpon>

@@ -146,5 +146,10 @@ namespace SistemaInventarioIT
         {
             formularioHijoAbiero(new Estante_Izquierdo.frmIzquierdaPlaza1());
         }
+
+        private void ibPlaza_Click(object sender, EventArgs e)
+        {
+            formularioHijoAbiero(new frmPlaza());
+        }
     }
 }
