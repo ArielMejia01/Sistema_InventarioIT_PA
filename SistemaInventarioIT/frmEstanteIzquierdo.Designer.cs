@@ -51,10 +51,10 @@ namespace SistemaInventarioIT
             this.cmbPlaza = new System.Windows.Forms.ComboBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgEstanteIzquierdo = new System.Windows.Forms.DataGridView();
             this.ibAgregar = new FontAwesome.Sharp.IconButton();
             this.panelTitle.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgEstanteIzquierdo)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -244,13 +244,13 @@ namespace SistemaInventarioIT
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 45;
             // 
-            // dataGridView1
+            // dgEstanteIzquierdo
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(53, 285);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(580, 118);
-            this.dataGridView1.TabIndex = 46;
+            this.dgEstanteIzquierdo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgEstanteIzquierdo.Location = new System.Drawing.Point(53, 285);
+            this.dgEstanteIzquierdo.Name = "dgEstanteIzquierdo";
+            this.dgEstanteIzquierdo.Size = new System.Drawing.Size(580, 118);
+            this.dgEstanteIzquierdo.TabIndex = 46;
             // 
             // ibAgregar
             // 
@@ -274,7 +274,7 @@ namespace SistemaInventarioIT
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(688, 476);
             this.Controls.Add(this.ibAgregar);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgEstanteIzquierdo);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.cmbPlaza);
@@ -298,9 +298,10 @@ namespace SistemaInventarioIT
             this.Controls.Add(this.panelTitle);
             this.Name = "frmEstanteIzquierdo";
             this.Text = "frmEstanteIzquierdo";
+            this.Load += new System.EventHandler(this.frmEstanteIzquierdo_Load);
             this.panelTitle.ResumeLayout(false);
             this.panelTitle.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgEstanteIzquierdo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -330,7 +331,7 @@ namespace SistemaInventarioIT
         private System.Windows.Forms.ComboBox cmbPlaza;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgEstanteIzquierdo;
         private FontAwesome.Sharp.IconButton ibAgregar;
     }
 }

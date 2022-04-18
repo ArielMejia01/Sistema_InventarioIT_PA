@@ -20,18 +20,7 @@ namespace SistemaInventarioIT
             InitializeComponent();
         }
 
-        private void frmUbicacion_Load(object sender, EventArgs e)
-        {
-            var iUbicacion = from i in entityInventario.Ubicacion
-                             select new
-                             {
-                                 i.IdUbicacion,
-                                 i.Nombre_Ubicacion,
-                                 i.Descripcion
-                             };
-            dgUbicacion.DataSource = iUbicacion.CopyAnonymusToDataTable();
-            dgUbicacion.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-        }
+        
 
         private void ibAgregar_Click(object sender, EventArgs e)
         {
@@ -61,11 +50,44 @@ namespace SistemaInventarioIT
                 entityInventario.Ubicacion.Add(tNombreUbicacion);
                 entityInventario.SaveChanges();
             }
+            idUbicacion = 0;
+            edit = false;
+            carga_form();
         }
 
         private void ibNuevo_Click(object sender, EventArgs e)
         {
+            txtUbicacion.Text = "";
+            txtDescripcion.Text = "";
+            idUbicacion = 0;
+            edit = false;
+        }
 
+        private void carga_form()
+        {
+            var iUbicacion = from i in entityInventario.Ubicacion
+                         select new
+                         {
+                             i.IdUbicacion,
+                             i.Nombre_Ubicacion,
+                             i.Descripcion
+                         };
+            dgUbicacion.DataSource = iUbicacion.CopyAnonymusToDataTable();
+            dgUbicacion.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+        }
+
+        private void frmUbicacion_Load(object sender, EventArgs e)
+        {
+            /*var iUbicacion = from i in entityInventario.Ubicacion
+                             select new
+                             {
+                                 i.IdUbicacion,
+                                 i.Nombre_Ubicacion,
+                                 i.Descripcion
+                             };
+            dgUbicacion.DataSource = iUbicacion.CopyAnonymusToDataTable();
+            dgUbicacion.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;*/
+            carga_form();
         }
     }
 }
