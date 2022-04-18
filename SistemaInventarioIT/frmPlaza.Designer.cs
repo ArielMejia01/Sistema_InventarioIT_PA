@@ -33,13 +33,13 @@ namespace SistemaInventarioIT
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.txtPlaza = new System.Windows.Forms.TextBox();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.dgPlaza = new System.Windows.Forms.DataGridView();
             this.ibNuevo = new FontAwesome.Sharp.IconButton();
             this.ibAgregar = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgPlaza)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -83,27 +83,29 @@ namespace SistemaInventarioIT
             this.label3.TabIndex = 2;
             this.label3.Text = "Descripción";
             // 
-            // textBox1
+            // txtPlaza
             // 
-            this.textBox1.Location = new System.Drawing.Point(313, 97);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(197, 20);
-            this.textBox1.TabIndex = 3;
+            this.txtPlaza.Location = new System.Drawing.Point(313, 97);
+            this.txtPlaza.Name = "txtPlaza";
+            this.txtPlaza.Size = new System.Drawing.Size(197, 20);
+            this.txtPlaza.TabIndex = 3;
             // 
-            // textBox2
+            // txtDescripcion
             // 
-            this.textBox2.Location = new System.Drawing.Point(313, 160);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(197, 20);
-            this.textBox2.TabIndex = 4;
+            this.txtDescripcion.Location = new System.Drawing.Point(313, 160);
+            this.txtDescripcion.Multiline = true;
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(197, 47);
+            this.txtDescripcion.TabIndex = 4;
             // 
-            // dataGridView1
+            // dgPlaza
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(119, 246);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(461, 112);
-            this.dataGridView1.TabIndex = 5;
+            this.dgPlaza.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgPlaza.Location = new System.Drawing.Point(119, 246);
+            this.dgPlaza.Name = "dgPlaza";
+            this.dgPlaza.Size = new System.Drawing.Size(461, 112);
+            this.dgPlaza.TabIndex = 5;
+            this.dgPlaza.SelectionChanged += new System.EventHandler(this.dgPlaza_SelectionChanged);
             // 
             // ibNuevo
             // 
@@ -119,6 +121,7 @@ namespace SistemaInventarioIT
             this.ibNuevo.Text = "Nuevo";
             this.ibNuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.ibNuevo.UseVisualStyleBackColor = true;
+            this.ibNuevo.Click += new System.EventHandler(this.ibNuevo_Click);
             // 
             // ibAgregar
             // 
@@ -135,6 +138,7 @@ namespace SistemaInventarioIT
             this.ibAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ibAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.ibAgregar.UseVisualStyleBackColor = true;
+            this.ibAgregar.Click += new System.EventHandler(this.ibAgregar_Click);
             // 
             // frmPlaza
             // 
@@ -143,17 +147,18 @@ namespace SistemaInventarioIT
             this.ClientSize = new System.Drawing.Size(688, 476);
             this.Controls.Add(this.ibAgregar);
             this.Controls.Add(this.ibNuevo);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.dgPlaza);
+            this.Controls.Add(this.txtDescripcion);
+            this.Controls.Add(this.txtPlaza);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
             this.Name = "frmPlaza";
             this.Text = "frmPlaza";
+            this.Load += new System.EventHandler(this.frmPlaza_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgPlaza)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -165,9 +170,9 @@ namespace SistemaInventarioIT
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox txtPlaza;
+        private System.Windows.Forms.TextBox txtDescripcion;
+        private System.Windows.Forms.DataGridView dgPlaza;
         private FontAwesome.Sharp.IconButton ibNuevo;
         private FontAwesome.Sharp.IconButton ibAgregar;
     }
