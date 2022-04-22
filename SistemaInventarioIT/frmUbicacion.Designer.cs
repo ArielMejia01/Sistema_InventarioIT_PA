@@ -105,6 +105,7 @@ namespace SistemaInventarioIT
             this.dgUbicacion.Name = "dgUbicacion";
             this.dgUbicacion.Size = new System.Drawing.Size(461, 112);
             this.dgUbicacion.TabIndex = 5;
+            this.dgUbicacion.SelectionChanged += new System.EventHandler(this.dgUbicacion_SelectionChanged);
             // 
             // ibAgregar
             // 

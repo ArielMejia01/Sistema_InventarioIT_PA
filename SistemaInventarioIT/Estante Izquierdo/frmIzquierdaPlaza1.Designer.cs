@@ -51,6 +51,8 @@ namespace SistemaInventarioIT.Estante_Izquierdo
             this.btnAgregar = new System.Windows.Forms.Button();
             this.panelTitle = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cmbPlaza = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIzquierda1)).BeginInit();
             this.panelTitle.SuspendLayout();
             this.SuspendLayout();
@@ -69,7 +71,7 @@ namespace SistemaInventarioIT.Estante_Izquierdo
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(57, 90);
+            this.label3.Location = new System.Drawing.Point(57, 72);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(44, 13);
             this.label3.TabIndex = 3;
@@ -78,7 +80,7 @@ namespace SistemaInventarioIT.Estante_Izquierdo
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(57, 118);
+            this.label4.Location = new System.Drawing.Point(57, 100);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(55, 13);
             this.label4.TabIndex = 4;
@@ -149,7 +151,7 @@ namespace SistemaInventarioIT.Estante_Izquierdo
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(139, 87);
+            this.textBox1.Location = new System.Drawing.Point(139, 69);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(121, 20);
             this.textBox1.TabIndex = 12;
@@ -157,7 +159,7 @@ namespace SistemaInventarioIT.Estante_Izquierdo
             // cmbUbicacion
             // 
             this.cmbUbicacion.FormattingEnabled = true;
-            this.cmbUbicacion.Location = new System.Drawing.Point(139, 118);
+            this.cmbUbicacion.Location = new System.Drawing.Point(139, 100);
             this.cmbUbicacion.Name = "cmbUbicacion";
             this.cmbUbicacion.Size = new System.Drawing.Size(121, 21);
             this.cmbUbicacion.TabIndex = 13;
@@ -218,7 +220,7 @@ namespace SistemaInventarioIT.Estante_Izquierdo
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(130, 384);
+            this.btnAgregar.Location = new System.Drawing.Point(129, 404);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 23);
             this.btnAgregar.TabIndex = 21;
@@ -247,11 +249,30 @@ namespace SistemaInventarioIT.Estante_Izquierdo
             this.label1.TabIndex = 0;
             this.label1.Text = "ESTANTE IZQUIERDO";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(57, 129);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(33, 13);
+            this.label2.TabIndex = 23;
+            this.label2.Text = "Plaza";
+            // 
+            // cmbPlaza
+            // 
+            this.cmbPlaza.FormattingEnabled = true;
+            this.cmbPlaza.Location = new System.Drawing.Point(139, 127);
+            this.cmbPlaza.Name = "cmbPlaza";
+            this.cmbPlaza.Size = new System.Drawing.Size(121, 21);
+            this.cmbPlaza.TabIndex = 24;
+            // 
             // frmIzquierdaPlaza1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(688, 439);
+            this.Controls.Add(this.cmbPlaza);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.panelTitle);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.richTextBox1);
@@ -308,5 +329,7 @@ namespace SistemaInventarioIT.Estante_Izquierdo
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Panel panelTitle;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cmbPlaza;
     }
 }

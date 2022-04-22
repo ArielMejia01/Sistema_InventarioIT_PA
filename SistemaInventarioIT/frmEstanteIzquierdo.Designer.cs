@@ -49,8 +49,8 @@ namespace SistemaInventarioIT
             this.txtModelo = new System.Windows.Forms.TextBox();
             this.cmbUbicacion = new System.Windows.Forms.ComboBox();
             this.cmbPlaza = new System.Windows.Forms.ComboBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.chkEstado = new System.Windows.Forms.CheckBox();
+            this.dtFecha = new System.Windows.Forms.DateTimePicker();
             this.dgEstanteIzquierdo = new System.Windows.Forms.DataGridView();
             this.ibAgregar = new FontAwesome.Sharp.IconButton();
             this.panelTitle.SuspendLayout();
@@ -227,22 +227,22 @@ namespace SistemaInventarioIT
             this.cmbPlaza.Size = new System.Drawing.Size(197, 21);
             this.cmbPlaza.TabIndex = 43;
             // 
-            // checkBox1
+            // chkEstado
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(433, 138);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(148, 17);
-            this.checkBox1.TabIndex = 44;
-            this.checkBox1.Text = "Habilitado / Deshabilitado";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.chkEstado.AutoSize = true;
+            this.chkEstado.Location = new System.Drawing.Point(433, 138);
+            this.chkEstado.Name = "chkEstado";
+            this.chkEstado.Size = new System.Drawing.Size(148, 17);
+            this.chkEstado.TabIndex = 44;
+            this.chkEstado.Text = "Habilitado / Deshabilitado";
+            this.chkEstado.UseVisualStyleBackColor = true;
             // 
-            // dateTimePicker1
+            // dtFecha
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(433, 214);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 45;
+            this.dtFecha.Location = new System.Drawing.Point(433, 214);
+            this.dtFecha.Name = "dtFecha";
+            this.dtFecha.Size = new System.Drawing.Size(200, 20);
+            this.dtFecha.TabIndex = 45;
             // 
             // dgEstanteIzquierdo
             // 
@@ -251,6 +251,7 @@ namespace SistemaInventarioIT
             this.dgEstanteIzquierdo.Name = "dgEstanteIzquierdo";
             this.dgEstanteIzquierdo.Size = new System.Drawing.Size(580, 118);
             this.dgEstanteIzquierdo.TabIndex = 46;
+            this.dgEstanteIzquierdo.SelectionChanged += new System.EventHandler(this.dgEstanteIzquierdo_SelectionChanged);
             // 
             // ibAgregar
             // 
@@ -267,6 +268,7 @@ namespace SistemaInventarioIT
             this.ibAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ibAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.ibAgregar.UseVisualStyleBackColor = true;
+            this.ibAgregar.Click += new System.EventHandler(this.ibAgregar_Click);
             // 
             // frmEstanteIzquierdo
             // 
@@ -275,8 +277,8 @@ namespace SistemaInventarioIT
             this.ClientSize = new System.Drawing.Size(688, 476);
             this.Controls.Add(this.ibAgregar);
             this.Controls.Add(this.dgEstanteIzquierdo);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.dtFecha);
+            this.Controls.Add(this.chkEstado);
             this.Controls.Add(this.cmbPlaza);
             this.Controls.Add(this.cmbUbicacion);
             this.Controls.Add(this.txtModelo);
@@ -329,8 +331,8 @@ namespace SistemaInventarioIT
         private System.Windows.Forms.TextBox txtModelo;
         private System.Windows.Forms.ComboBox cmbUbicacion;
         private System.Windows.Forms.ComboBox cmbPlaza;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.CheckBox chkEstado;
+        private System.Windows.Forms.DateTimePicker dtFecha;
         private System.Windows.Forms.DataGridView dgEstanteIzquierdo;
         private FontAwesome.Sharp.IconButton ibAgregar;
     }

@@ -14,7 +14,7 @@ namespace SistemaInventarioIT
     {
         DBInventarioITPAEntities entityInventario = new DBInventarioITPAEntities();
         bool edit = false;
-        int idUbicacion = 0;
+        long idUbicacion = 0;
         public frmUbicacion()
         {
             InitializeComponent();
@@ -49,6 +49,7 @@ namespace SistemaInventarioIT
                 tNombreUbicacion.Descripcion = txtDescripcion.Text;
                 entityInventario.Ubicacion.Add(tNombreUbicacion);
                 entityInventario.SaveChanges();
+                MessageBox.Show("¡Datos Guardados!");
             }
             idUbicacion = 0;
             edit = false;
@@ -88,6 +89,25 @@ namespace SistemaInventarioIT
             dgUbicacion.DataSource = iUbicacion.CopyAnonymusToDataTable();
             dgUbicacion.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;*/
             carga_form();
+        }
+
+        private void dgUbicacion_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgUbicacion.RowCount > 0)
+            {
+                try
+                {
+                    idUbicacion = Convert.ToInt64(dgUbicacion.SelectedCells[0].Value);
+                    var tUbicacion = entityInventario.Ubicacion.FirstOrDefault(x => x.IdUbicacion == idUbicacion);
+                    txtUbicacion.Text = tUbicacion.Nombre_Ubicacion;
+                    txtDescripcion.Text = tUbicacion.Descripcion;
+                    edit = true;
+                }
+                catch(Exception)
+                {
+                    dgUbicacion.ClearSelection();
+                }
+            }
         }
     }
 }
