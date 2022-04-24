@@ -97,7 +97,8 @@ namespace SistemaInventarioIT
             {
                 try
                 {
-                    idUbicacion = Convert.ToInt64(dgUbicacion.SelectedCells[0].Value);
+                    idUbicacion = (int)Convert.ToInt64(dgUbicacion.SelectedCells[0].Value);
+                    //idUbicacion = Convert.ToInt64(dgUbicacion.SelectedCells[0].Value);
                     var tUbicacion = entityInventario.Ubicacion.FirstOrDefault(x => x.IdUbicacion == idUbicacion);
                     txtUbicacion.Text = tUbicacion.Nombre_Ubicacion;
                     txtDescripcion.Text = tUbicacion.Descripcion;
@@ -109,5 +110,7 @@ namespace SistemaInventarioIT
                 }
             }
         }
+
+        
     }
 }

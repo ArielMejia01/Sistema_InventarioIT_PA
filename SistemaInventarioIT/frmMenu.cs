@@ -132,10 +132,7 @@ namespace SistemaInventarioIT
             //ocultarPaneles();
         }*/
 
-        private void ibEstanteIzquierdo_Click(object sender, EventArgs e)
-        {
-            formularioHijoAbiero(new frmEstanteIzquierdo());
-        }
+        
 
         private void ibUbicación_Click(object sender, EventArgs e)
         {
@@ -150,6 +147,11 @@ namespace SistemaInventarioIT
         private void ibPlaza_Click(object sender, EventArgs e)
         {
             formularioHijoAbiero(new frmPlaza());
+        }
+
+        private void ibInventario_Click(object sender, EventArgs e)
+        {
+            formularioHijoAbiero(new frmInventario());
         }
     }
 }

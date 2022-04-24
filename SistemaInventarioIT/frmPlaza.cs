@@ -25,10 +25,12 @@ namespace SistemaInventarioIT
             if (txtPlaza.Text.Equals(""))
             {
                 MessageBox.Show("!Ingrese el nombre de la plaza¡");
+                return;
             }
             if (txtDescripcion.Text.Equals(""))
             {
                 MessageBox.Show("!Ingrese la descripción¡");
+                return;
             }
             if (edit)
             {

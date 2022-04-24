@@ -68,11 +68,11 @@
     <Compile Include="Estante Izquierdo\frmIzquierdaPlaza1.Designer.cs">
       <DependentUpon>frmIzquierdaPlaza1.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmEstanteIzquierdo.cs">
+    <Compile Include="frmInventario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmEstanteIzquierdo.Designer.cs">
-      <DependentUpon>frmEstanteIzquierdo.cs</DependentUpon>
+    <Compile Include="frmInventario.Designer.cs">
+      <DependentUpon>frmInventario.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMenu.cs">
       <SubType>Form</SubType>
@@ -122,8 +122,8 @@
     <EmbeddedResource Include="Estante Izquierdo\frmIzquierdaPlaza1.resx">
       <DependentUpon>frmIzquierdaPlaza1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmEstanteIzquierdo.resx">
-      <DependentUpon>frmEstanteIzquierdo.cs</DependentUpon>
+    <EmbeddedResource Include="frmInventario.resx">
+      <DependentUpon>frmInventario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMenu.resx">
       <DependentUpon>frmMenu.cs</DependentUpon>

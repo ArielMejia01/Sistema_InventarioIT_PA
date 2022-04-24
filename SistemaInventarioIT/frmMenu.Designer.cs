@@ -34,7 +34,7 @@ namespace SistemaInventarioIT
             this.ibPlaza = new FontAwesome.Sharp.IconButton();
             this.ibUbicación = new FontAwesome.Sharp.IconButton();
             this.ibEstanteCentro = new FontAwesome.Sharp.IconButton();
-            this.ibEstanteIzquierdo = new FontAwesome.Sharp.IconButton();
+            this.ibInventario = new FontAwesome.Sharp.IconButton();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelInventario = new System.Windows.Forms.Panel();
@@ -53,7 +53,7 @@ namespace SistemaInventarioIT
             this.panelLateral.Controls.Add(this.ibPlaza);
             this.panelLateral.Controls.Add(this.ibUbicación);
             this.panelLateral.Controls.Add(this.ibEstanteCentro);
-            this.panelLateral.Controls.Add(this.ibEstanteIzquierdo);
+            this.panelLateral.Controls.Add(this.ibInventario);
             this.panelLateral.Controls.Add(this.panelLogo);
             this.panelLateral.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLateral.Location = new System.Drawing.Point(0, 0);
@@ -130,28 +130,28 @@ namespace SistemaInventarioIT
             this.ibEstanteCentro.UseVisualStyleBackColor = false;
             this.ibEstanteCentro.Click += new System.EventHandler(this.ibEstanteCentro_Click);
             // 
-            // ibEstanteIzquierdo
+            // ibInventario
             // 
-            this.ibEstanteIzquierdo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(59)))), ((int)(((byte)(120)))));
-            this.ibEstanteIzquierdo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ibEstanteIzquierdo.FlatAppearance.BorderSize = 0;
-            this.ibEstanteIzquierdo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ibEstanteIzquierdo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ibEstanteIzquierdo.IconChar = FontAwesome.Sharp.IconChar.Buffer;
-            this.ibEstanteIzquierdo.IconColor = System.Drawing.Color.White;
-            this.ibEstanteIzquierdo.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ibEstanteIzquierdo.IconSize = 26;
-            this.ibEstanteIzquierdo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ibEstanteIzquierdo.Location = new System.Drawing.Point(0, 87);
-            this.ibEstanteIzquierdo.Name = "ibEstanteIzquierdo";
-            this.ibEstanteIzquierdo.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.ibEstanteIzquierdo.Size = new System.Drawing.Size(180, 45);
-            this.ibEstanteIzquierdo.TabIndex = 1;
-            this.ibEstanteIzquierdo.Text = "Estante Izquierdo";
-            this.ibEstanteIzquierdo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ibEstanteIzquierdo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.ibEstanteIzquierdo.UseVisualStyleBackColor = false;
-            this.ibEstanteIzquierdo.Click += new System.EventHandler(this.ibEstanteIzquierdo_Click);
+            this.ibInventario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(59)))), ((int)(((byte)(120)))));
+            this.ibInventario.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ibInventario.FlatAppearance.BorderSize = 0;
+            this.ibInventario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ibInventario.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ibInventario.IconChar = FontAwesome.Sharp.IconChar.Buffer;
+            this.ibInventario.IconColor = System.Drawing.Color.White;
+            this.ibInventario.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ibInventario.IconSize = 26;
+            this.ibInventario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ibInventario.Location = new System.Drawing.Point(0, 87);
+            this.ibInventario.Name = "ibInventario";
+            this.ibInventario.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.ibInventario.Size = new System.Drawing.Size(180, 45);
+            this.ibInventario.TabIndex = 1;
+            this.ibInventario.Text = "Inventario";
+            this.ibInventario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ibInventario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ibInventario.UseVisualStyleBackColor = false;
+            this.ibInventario.Click += new System.EventHandler(this.ibInventario_Click);
             // 
             // panelLogo
             // 
@@ -221,7 +221,7 @@ namespace SistemaInventarioIT
         private System.Windows.Forms.Panel panelInventario;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private FontAwesome.Sharp.IconButton ibEstanteIzquierdo;
+        private FontAwesome.Sharp.IconButton ibInventario;
         private FontAwesome.Sharp.IconButton ibPlaza;
         private FontAwesome.Sharp.IconButton ibUbicación;
         private FontAwesome.Sharp.IconButton ibEstanteCentro;

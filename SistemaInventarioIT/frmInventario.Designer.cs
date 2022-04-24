@@ -1,7 +1,7 @@
 ﻿
 namespace SistemaInventarioIT
 {
-    partial class frmEstanteIzquierdo
+    partial class frmInventario
     {
         /// <summary>
         /// Required designer variable.
@@ -51,10 +51,11 @@ namespace SistemaInventarioIT
             this.cmbPlaza = new System.Windows.Forms.ComboBox();
             this.chkEstado = new System.Windows.Forms.CheckBox();
             this.dtFecha = new System.Windows.Forms.DateTimePicker();
-            this.dgEstanteIzquierdo = new System.Windows.Forms.DataGridView();
+            this.dgInventario = new System.Windows.Forms.DataGridView();
             this.ibAgregar = new FontAwesome.Sharp.IconButton();
+            this.ibNuevo = new FontAwesome.Sharp.IconButton();
             this.panelTitle.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgEstanteIzquierdo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgInventario)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -62,11 +63,11 @@ namespace SistemaInventarioIT
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(234, 9);
+            this.label1.Location = new System.Drawing.Point(279, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(179, 18);
+            this.label1.Size = new System.Drawing.Size(106, 18);
             this.label1.TabIndex = 0;
-            this.label1.Text = "ESTANTE IZQUIERDO";
+            this.label1.Text = "INVENTARIO";
             // 
             // panelTitle
             // 
@@ -244,14 +245,14 @@ namespace SistemaInventarioIT
             this.dtFecha.Size = new System.Drawing.Size(200, 20);
             this.dtFecha.TabIndex = 45;
             // 
-            // dgEstanteIzquierdo
+            // dgInventario
             // 
-            this.dgEstanteIzquierdo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgEstanteIzquierdo.Location = new System.Drawing.Point(53, 285);
-            this.dgEstanteIzquierdo.Name = "dgEstanteIzquierdo";
-            this.dgEstanteIzquierdo.Size = new System.Drawing.Size(580, 118);
-            this.dgEstanteIzquierdo.TabIndex = 46;
-            this.dgEstanteIzquierdo.SelectionChanged += new System.EventHandler(this.dgEstanteIzquierdo_SelectionChanged);
+            this.dgInventario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgInventario.Location = new System.Drawing.Point(53, 285);
+            this.dgInventario.Name = "dgInventario";
+            this.dgInventario.Size = new System.Drawing.Size(580, 118);
+            this.dgInventario.TabIndex = 46;
+            this.dgInventario.SelectionChanged += new System.EventHandler(this.dgInventario_SelectionChanged);
             // 
             // ibAgregar
             // 
@@ -270,13 +271,30 @@ namespace SistemaInventarioIT
             this.ibAgregar.UseVisualStyleBackColor = true;
             this.ibAgregar.Click += new System.EventHandler(this.ibAgregar_Click);
             // 
-            // frmEstanteIzquierdo
+            // ibNuevo
+            // 
+            this.ibNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ibNuevo.IconChar = FontAwesome.Sharp.IconChar.Clipboard;
+            this.ibNuevo.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(71)))), ((int)(((byte)(135)))));
+            this.ibNuevo.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ibNuevo.IconSize = 25;
+            this.ibNuevo.Location = new System.Drawing.Point(210, 418);
+            this.ibNuevo.Name = "ibNuevo";
+            this.ibNuevo.Size = new System.Drawing.Size(92, 34);
+            this.ibNuevo.TabIndex = 52;
+            this.ibNuevo.Text = "Nuevo";
+            this.ibNuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ibNuevo.UseVisualStyleBackColor = true;
+            this.ibNuevo.Click += new System.EventHandler(this.ibNuevo_Click);
+            // 
+            // frmInventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(688, 476);
+            this.Controls.Add(this.ibNuevo);
             this.Controls.Add(this.ibAgregar);
-            this.Controls.Add(this.dgEstanteIzquierdo);
+            this.Controls.Add(this.dgInventario);
             this.Controls.Add(this.dtFecha);
             this.Controls.Add(this.chkEstado);
             this.Controls.Add(this.cmbPlaza);
@@ -298,12 +316,12 @@ namespace SistemaInventarioIT
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panelTitle);
-            this.Name = "frmEstanteIzquierdo";
+            this.Name = "frmInventario";
             this.Text = "frmEstanteIzquierdo";
-            this.Load += new System.EventHandler(this.frmEstanteIzquierdo_Load);
+            this.Load += new System.EventHandler(this.frmInventario_Load);
             this.panelTitle.ResumeLayout(false);
             this.panelTitle.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgEstanteIzquierdo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgInventario)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -333,7 +351,8 @@ namespace SistemaInventarioIT
         private System.Windows.Forms.ComboBox cmbPlaza;
         private System.Windows.Forms.CheckBox chkEstado;
         private System.Windows.Forms.DateTimePicker dtFecha;
-        private System.Windows.Forms.DataGridView dgEstanteIzquierdo;
+        private System.Windows.Forms.DataGridView dgInventario;
         private FontAwesome.Sharp.IconButton ibAgregar;
+        private FontAwesome.Sharp.IconButton ibNuevo;
     }
 }
