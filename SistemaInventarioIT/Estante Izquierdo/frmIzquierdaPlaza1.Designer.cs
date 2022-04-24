@@ -39,15 +39,15 @@ namespace SistemaInventarioIT.Estante_Izquierdo
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
             this.cmbUbicacion = new System.Windows.Forms.ComboBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.txtSerial = new System.Windows.Forms.TextBox();
+            this.txtCantidad = new System.Windows.Forms.TextBox();
+            this.txtCategoria = new System.Windows.Forms.TextBox();
+            this.chkEstado = new System.Windows.Forms.CheckBox();
+            this.txtModelo = new System.Windows.Forms.TextBox();
+            this.dtFecha = new System.Windows.Forms.DateTimePicker();
+            this.txtDescripcion = new System.Windows.Forms.RichTextBox();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.panelTitle = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -67,6 +67,7 @@ namespace SistemaInventarioIT.Estante_Izquierdo
             this.dgvIzquierda1.Name = "dgvIzquierda1";
             this.dgvIzquierda1.Size = new System.Drawing.Size(456, 72);
             this.dgvIzquierda1.TabIndex = 0;
+            this.dgvIzquierda1.SelectionChanged += new System.EventHandler(this.dgvIzquierda1_SelectionChanged);
             // 
             // label3
             // 
@@ -149,12 +150,12 @@ namespace SistemaInventarioIT.Estante_Izquierdo
             this.label11.TabIndex = 11;
             this.label11.Text = "Garantia";
             // 
-            // textBox1
+            // txtNombre
             // 
-            this.textBox1.Location = new System.Drawing.Point(139, 69);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(121, 20);
-            this.textBox1.TabIndex = 12;
+            this.txtNombre.Location = new System.Drawing.Point(139, 69);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(121, 20);
+            this.txtNombre.TabIndex = 12;
             // 
             // cmbUbicacion
             // 
@@ -164,59 +165,59 @@ namespace SistemaInventarioIT.Estante_Izquierdo
             this.cmbUbicacion.Size = new System.Drawing.Size(121, 21);
             this.cmbUbicacion.TabIndex = 13;
             // 
-            // textBox2
+            // txtSerial
             // 
-            this.textBox2.Location = new System.Drawing.Point(139, 151);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(121, 20);
-            this.textBox2.TabIndex = 14;
+            this.txtSerial.Location = new System.Drawing.Point(139, 151);
+            this.txtSerial.Name = "txtSerial";
+            this.txtSerial.Size = new System.Drawing.Size(121, 20);
+            this.txtSerial.TabIndex = 14;
             // 
-            // textBox3
+            // txtCantidad
             // 
-            this.textBox3.Location = new System.Drawing.Point(139, 185);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(121, 20);
-            this.textBox3.TabIndex = 15;
+            this.txtCantidad.Location = new System.Drawing.Point(139, 185);
+            this.txtCantidad.Name = "txtCantidad";
+            this.txtCantidad.Size = new System.Drawing.Size(121, 20);
+            this.txtCantidad.TabIndex = 15;
             // 
-            // textBox4
+            // txtCategoria
             // 
-            this.textBox4.Location = new System.Drawing.Point(420, 83);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 16;
+            this.txtCategoria.Location = new System.Drawing.Point(420, 83);
+            this.txtCategoria.Name = "txtCategoria";
+            this.txtCategoria.Size = new System.Drawing.Size(100, 20);
+            this.txtCategoria.TabIndex = 16;
             // 
-            // checkBox1
+            // chkEstado
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(420, 125);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(148, 17);
-            this.checkBox1.TabIndex = 17;
-            this.checkBox1.Text = "Habilitado / Deshabilitado";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.chkEstado.AutoSize = true;
+            this.chkEstado.Location = new System.Drawing.Point(420, 125);
+            this.chkEstado.Name = "chkEstado";
+            this.chkEstado.Size = new System.Drawing.Size(148, 17);
+            this.chkEstado.TabIndex = 17;
+            this.chkEstado.Text = "Habilitado / Deshabilitado";
+            this.chkEstado.UseVisualStyleBackColor = true;
             // 
-            // textBox5
+            // txtModelo
             // 
-            this.textBox5.Location = new System.Drawing.Point(420, 151);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 18;
+            this.txtModelo.Location = new System.Drawing.Point(420, 151);
+            this.txtModelo.Name = "txtModelo";
+            this.txtModelo.Size = new System.Drawing.Size(100, 20);
+            this.txtModelo.TabIndex = 18;
             // 
-            // dateTimePicker1
+            // dtFecha
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(420, 186);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 19;
+            this.dtFecha.Location = new System.Drawing.Point(420, 186);
+            this.dtFecha.Name = "dtFecha";
+            this.dtFecha.Size = new System.Drawing.Size(200, 20);
+            this.dtFecha.TabIndex = 19;
             // 
-            // richTextBox1
+            // txtDescripcion
             // 
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.richTextBox1.Location = new System.Drawing.Point(139, 222);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(187, 52);
-            this.richTextBox1.TabIndex = 20;
-            this.richTextBox1.Text = "";
+            this.txtDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDescripcion.Location = new System.Drawing.Point(139, 222);
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(187, 52);
+            this.txtDescripcion.TabIndex = 20;
+            this.txtDescripcion.Text = "";
             // 
             // btnAgregar
             // 
@@ -275,15 +276,15 @@ namespace SistemaInventarioIT.Estante_Izquierdo
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panelTitle);
             this.Controls.Add(this.btnAgregar);
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtDescripcion);
+            this.Controls.Add(this.dtFecha);
+            this.Controls.Add(this.txtModelo);
+            this.Controls.Add(this.chkEstado);
+            this.Controls.Add(this.txtCategoria);
+            this.Controls.Add(this.txtCantidad);
+            this.Controls.Add(this.txtSerial);
             this.Controls.Add(this.cmbUbicacion);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
@@ -317,15 +318,15 @@ namespace SistemaInventarioIT.Estante_Izquierdo
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.ComboBox cmbUbicacion;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.TextBox txtSerial;
+        private System.Windows.Forms.TextBox txtCantidad;
+        private System.Windows.Forms.TextBox txtCategoria;
+        private System.Windows.Forms.CheckBox chkEstado;
+        private System.Windows.Forms.TextBox txtModelo;
+        private System.Windows.Forms.DateTimePicker dtFecha;
+        private System.Windows.Forms.RichTextBox txtDescripcion;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Panel panelTitle;
         private System.Windows.Forms.Label label1;

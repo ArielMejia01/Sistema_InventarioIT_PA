@@ -38,12 +38,20 @@ namespace SistemaInventarioIT
             cmbPlaza.DisplayMember = dtPlaza.Columns[1].ColumnName;
             cmbPlaza.ValueMember = dtPlaza.Columns[0].ColumnName;
 
-            var tEstanteIzquierdo = from t in entityInventario.Inventario
+            /*var tCompras = from Detalle in Variables.DetalleDeCompra
+                           join Compras
+                           in Variables.Compra on Detalle.IdCompra equals Compras.IdCompra
+                           join Proveedor in Variables.Proveedor on Detalle.IdProveedor
+                           equals Proveedor.IdProveedor
+                           select new*/
+
+        var tEstanteIzquierdo = from t in entityInventario.Inventario
+
                                     select new
                                     {
                                         t.IdInventario,
                                         t.Nombre,
-                                        t.Ubicacion,
+                                        //t.Ubicacion,
                                         t.Plaza,
                                         t.Serial,
                                         t.Cantidad,
@@ -161,6 +169,7 @@ namespace SistemaInventarioIT
             {
                 try
                 {
+                    idInventario = (int)Convert.ToInt64(dgEstanteIzquierdo.SelectedCells[0].Value);
                     var tEstanteIzquierdo = entityInventario.Inventario.FirstOrDefault(x => x.IdInventario == idInventario);
                     txtNombre.Text = tEstanteIzquierdo.Nombre;
                     txtSerial.Text = tEstanteIzquierdo.Serial;
@@ -200,8 +209,8 @@ namespace SistemaInventarioIT
                                     {
                                         t.IdInventario,
                                         t.Nombre,
-                                        t.Ubicacion,
-                                        t.Plaza,
+                                        //t.Ubicacion,
+                                        //t.Plaza,
                                         t.Serial,
                                         t.Cantidad,
                                         t.Descripcion,
