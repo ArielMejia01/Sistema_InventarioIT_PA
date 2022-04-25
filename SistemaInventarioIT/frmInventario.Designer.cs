@@ -54,6 +54,7 @@ namespace SistemaInventarioIT
             this.dgInventario = new System.Windows.Forms.DataGridView();
             this.ibAgregar = new FontAwesome.Sharp.IconButton();
             this.ibNuevo = new FontAwesome.Sharp.IconButton();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
             this.panelTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgInventario)).BeginInit();
             this.SuspendLayout();
@@ -287,11 +288,21 @@ namespace SistemaInventarioIT
             this.ibNuevo.UseVisualStyleBackColor = true;
             this.ibNuevo.Click += new System.EventHandler(this.ibNuevo_Click);
             // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Location = new System.Drawing.Point(386, 429);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(247, 20);
+            this.txtBuscar.TabIndex = 53;
+            this.txtBuscar.Text = "Buscar\r\n";
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
+            // 
             // frmInventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(688, 476);
+            this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.ibNuevo);
             this.Controls.Add(this.ibAgregar);
             this.Controls.Add(this.dgInventario);
@@ -354,5 +365,6 @@ namespace SistemaInventarioIT
         private System.Windows.Forms.DataGridView dgInventario;
         private FontAwesome.Sharp.IconButton ibAgregar;
         private FontAwesome.Sharp.IconButton ibNuevo;
+        private System.Windows.Forms.TextBox txtBuscar;
     }
 }

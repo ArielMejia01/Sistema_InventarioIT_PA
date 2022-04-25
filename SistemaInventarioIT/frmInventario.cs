@@ -138,7 +138,7 @@ namespace SistemaInventarioIT
             cmbPlaza.ValueMember = dtPlaza.Columns[0].ColumnName;
 
            
-            var izquierdaUno = from i in entityInventario.Inventario
+            var inventario = from i in entityInventario.Inventario
                                join y
                                in entityInventario.Ubicacion on i.Ubicacion equals y.IdUbicacion
                                join p
@@ -158,7 +158,7 @@ namespace SistemaInventarioIT
                                    i.Garantia
                                };
 
-            dgInventario.DataSource = izquierdaUno.CopyAnonymusToDataTable();
+            dgInventario.DataSource = inventario.CopyAnonymusToDataTable();
             dgInventario.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }
 
@@ -210,6 +210,34 @@ namespace SistemaInventarioIT
             idInventario = 0;
             editar = false;
             dgInventario.ClearSelection();
+        }
+
+        private void FiltrarInventario(string nombre)
+        {
+            var fInventario = from i in entityInventario.Inventario
+                              where i.Nombre.Contains(nombre)
+                              select new
+                              {
+                                  i.IdInventario,
+                                  i.Nombre,
+                                  i.Ubicacion,
+                                  i.Plaza,
+                                  i.Serial,
+                                  i.Cantidad,
+                                  i.Descripcion,
+                                  i.Categoria,
+                                  i.Estado,
+                                  i.Modelo,
+                                  i.Garantia
+                              };
+            dgInventario.DataSource = fInventario.CopyAnonymusToDataTable();
+            dgInventario.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            FiltrarInventario(txtBuscar.Text);
         }
     }
 }
