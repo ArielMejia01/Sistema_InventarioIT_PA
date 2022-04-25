@@ -290,12 +290,15 @@ namespace SistemaInventarioIT
             // 
             // txtBuscar
             // 
+            this.txtBuscar.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.txtBuscar.Location = new System.Drawing.Point(386, 429);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(247, 20);
             this.txtBuscar.TabIndex = 53;
-            this.txtBuscar.Text = "Buscar\r\n";
+            this.txtBuscar.Text = "Buscar...";
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
+            this.txtBuscar.Enter += new System.EventHandler(this.txtBuscar_Enter);
+            this.txtBuscar.Leave += new System.EventHandler(this.txtBuscar_Leave);
             // 
             // frmInventario
             // 

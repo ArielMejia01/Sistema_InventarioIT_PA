@@ -165,7 +165,7 @@ namespace SistemaInventarioIT
         private void frmInventario_Load(object sender, EventArgs e)
         {
             carga_form();
-
+            //txtBuscar.Text = "Buscar...";
             cmbUbicacion.Text = "Seleccionar...";
             cmbPlaza.Text = "Seleccionar...";
 
@@ -238,6 +238,22 @@ namespace SistemaInventarioIT
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
             FiltrarInventario(txtBuscar.Text);
+        }
+
+        private void txtBuscar_Enter(object sender, EventArgs e)
+        {
+            if(txtBuscar.Text == "Buscar...")
+            {
+                txtBuscar.Text = "";
+            }
+        }
+
+        private void txtBuscar_Leave(object sender, EventArgs e)
+        {
+            if (txtBuscar.Text == "")
+            {
+                txtBuscar.Text = "Buscar...";
+            }
         }
     }
 }
