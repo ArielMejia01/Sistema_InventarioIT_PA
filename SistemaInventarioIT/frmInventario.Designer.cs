@@ -215,6 +215,7 @@ namespace SistemaInventarioIT
             // 
             // cmbUbicacion
             // 
+            this.cmbUbicacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbUbicacion.FormattingEnabled = true;
             this.cmbUbicacion.Location = new System.Drawing.Point(125, 96);
             this.cmbUbicacion.Name = "cmbUbicacion";
@@ -223,6 +224,7 @@ namespace SistemaInventarioIT
             // 
             // cmbPlaza
             // 
+            this.cmbPlaza.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPlaza.FormattingEnabled = true;
             this.cmbPlaza.Location = new System.Drawing.Point(125, 131);
             this.cmbPlaza.Name = "cmbPlaza";
@@ -248,9 +250,13 @@ namespace SistemaInventarioIT
             // 
             // dgInventario
             // 
+            this.dgInventario.AllowUserToAddRows = false;
+            this.dgInventario.AllowUserToDeleteRows = false;
             this.dgInventario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgInventario.Location = new System.Drawing.Point(53, 285);
             this.dgInventario.Name = "dgInventario";
+            this.dgInventario.ReadOnly = true;
+            this.dgInventario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgInventario.Size = new System.Drawing.Size(580, 118);
             this.dgInventario.TabIndex = 46;
             this.dgInventario.SelectionChanged += new System.EventHandler(this.dgInventario_SelectionChanged);

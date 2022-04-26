@@ -50,7 +50,7 @@ namespace SistemaInventarioIT
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(688, 40);
-            this.panel1.TabIndex = 0;            
+            this.panel1.TabIndex = 0;
             // 
             // label1
             // 
@@ -100,9 +100,13 @@ namespace SistemaInventarioIT
             // 
             // dgUbicacion
             // 
+            this.dgUbicacion.AllowUserToAddRows = false;
+            this.dgUbicacion.AllowUserToDeleteRows = false;
             this.dgUbicacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgUbicacion.Location = new System.Drawing.Point(113, 252);
             this.dgUbicacion.Name = "dgUbicacion";
+            this.dgUbicacion.ReadOnly = true;
+            this.dgUbicacion.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgUbicacion.Size = new System.Drawing.Size(461, 112);
             this.dgUbicacion.TabIndex = 5;
             this.dgUbicacion.SelectionChanged += new System.EventHandler(this.dgUbicacion_SelectionChanged);

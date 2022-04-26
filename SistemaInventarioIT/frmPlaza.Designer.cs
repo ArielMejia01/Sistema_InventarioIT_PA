@@ -100,9 +100,13 @@ namespace SistemaInventarioIT
             // 
             // dgPlaza
             // 
+            this.dgPlaza.AllowUserToAddRows = false;
+            this.dgPlaza.AllowUserToDeleteRows = false;
             this.dgPlaza.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgPlaza.Location = new System.Drawing.Point(119, 246);
             this.dgPlaza.Name = "dgPlaza";
+            this.dgPlaza.ReadOnly = true;
+            this.dgPlaza.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgPlaza.Size = new System.Drawing.Size(461, 112);
             this.dgPlaza.TabIndex = 5;
             this.dgPlaza.SelectionChanged += new System.EventHandler(this.dgPlaza_SelectionChanged);
