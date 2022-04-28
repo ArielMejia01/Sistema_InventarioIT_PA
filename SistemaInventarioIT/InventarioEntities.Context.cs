@@ -25,8 +25,10 @@ namespace SistemaInventarioIT
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Categoria> Categoria { get; set; }
+        public virtual DbSet<Estado> Estado { get; set; }
         public virtual DbSet<Inventario> Inventario { get; set; }
-        public virtual DbSet<Ubicacion> Ubicacion { get; set; }
         public virtual DbSet<Plaza> Plaza { get; set; }
+        public virtual DbSet<Ubicacion> Ubicacion { get; set; }
     }
 }

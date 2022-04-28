@@ -12,18 +12,18 @@ namespace SistemaInventarioIT
     using System;
     using System.Collections.Generic;
     
-    public partial class Plaza
+    public partial class Estado
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Plaza()
+        public Estado()
         {
             this.Inventario = new HashSet<Inventario>();
         }
     
-        public int IdPlaza { get; set; }
-        public string Nombre_Plaza { get; set; }
+        public int IdEstado { get; set; }
+        public string Nombre_Estado { get; set; }
         public string Descripcion { get; set; }
-        public bool Estado_Plaza { get; set; }
+        public bool Estado_Estado { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Inventario> Inventario { get; set; }

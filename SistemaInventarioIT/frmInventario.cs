@@ -82,8 +82,8 @@ namespace SistemaInventarioIT
                 tInventario.Serial = txtSerial.Text;
                 tInventario.Descripcion = txtDescripcion.Text;
                 tInventario.Cantidad = Convert.ToInt32(txtCantidad.Text);
-                tInventario.Categoria = txtCategoria.Text;
-                tInventario.Estado = chkEstado.Checked;
+                //tInventario.Categoria = txtCategoria.Text;
+                //tInventario.Estado = chkEstado.Checked;
                 tInventario.Modelo = txtModelo.Text;
                 tInventario.Garantia = dtFecha.Value;
 
@@ -101,8 +101,8 @@ namespace SistemaInventarioIT
                 inventario.Serial = txtSerial.Text;
                 inventario.Descripcion = txtDescripcion.Text;
                 inventario.Cantidad = Convert.ToInt32(txtCantidad.Text);
-                inventario.Categoria = txtCategoria.Text;
-                inventario.Estado = chkEstado.Checked;
+                //inventario.Categoria = txtCategoria.Text;
+                //inventario.Estado = chkEstado.Checked;
                 inventario.Modelo = txtModelo.Text;
                 inventario.Garantia = dtFecha.Value;
 
@@ -152,8 +152,8 @@ namespace SistemaInventarioIT
                                    i.Serial,
                                    i.Cantidad,
                                    i.Descripcion,
-                                   i.Categoria,
-                                   i.Estado,
+                                   //i.Categoria,
+                                   //i.Estado,
                                    i.Modelo,
                                    i.Garantia
                                };
@@ -185,8 +185,8 @@ namespace SistemaInventarioIT
                     txtSerial.Text = tInventario.Serial;
                     txtDescripcion.Text = tInventario.Descripcion;
                     txtCantidad.Text = Convert.ToString(tInventario.Cantidad);
-                    txtCategoria.Text = tInventario.Categoria;
-                    chkEstado.Checked = tInventario.Estado;
+                    //txtCategoria.Text = tInventario.Categoria;
+                    //chkEstado.Checked = tInventario.Estado;
                     txtModelo.Text = tInventario.Modelo;
                     dtFecha.Value = (DateTime)tInventario.Garantia;
                     editar = true;
@@ -225,8 +225,8 @@ namespace SistemaInventarioIT
                                   i.Serial,
                                   i.Cantidad,
                                   i.Descripcion,
-                                  i.Categoria,
-                                  i.Estado,
+                                  //i.Categoria,
+                                  //i.Estado,
                                   i.Modelo,
                                   i.Garantia
                               };

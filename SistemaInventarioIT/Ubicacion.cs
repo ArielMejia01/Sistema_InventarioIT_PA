@@ -23,6 +23,7 @@ namespace SistemaInventarioIT
         public int IdUbicacion { get; set; }
         public string Nombre_Ubicacion { get; set; }
         public string Descripcion { get; set; }
+        public bool Estado_Ubicacion { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Inventario> Inventario { get; set; }

@@ -21,12 +21,15 @@ namespace SistemaInventarioIT
         public string Serial { get; set; }
         public Nullable<int> Cantidad { get; set; }
         public string Descripcion { get; set; }
-        public string Categoria { get; set; }
-        public bool Estado { get; set; }
+        public int Categoria { get; set; }
+        public int Estado { get; set; }
         public string Modelo { get; set; }
         public Nullable<System.DateTime> Garantia { get; set; }
+        public string FechaRegistro { get; set; }
     
-        public virtual Ubicacion Ubicacion1 { get; set; }
+        public virtual Categoria Categoria1 { get; set; }
+        public virtual Estado Estado1 { get; set; }
         public virtual Plaza Plaza1 { get; set; }
+        public virtual Ubicacion Ubicacion1 { get; set; }
     }
 }
