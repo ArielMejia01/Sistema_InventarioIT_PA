@@ -204,8 +204,8 @@ namespace SistemaInventarioIT
             txtSerial.Text = "";
             txtDescripcion.Text = "";
             txtCantidad.Text = "";
-            txtCategoria.Text = "";
-            chkEstado.Checked = false;
+            //txtCategoria.Text = "";
+            //chkEstado.Checked = false;
             txtModelo.Text = "";
             idInventario = 0;
             editar = false;

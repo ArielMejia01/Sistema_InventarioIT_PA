@@ -62,11 +62,29 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Categoria.cs">
+      <DependentUpon>InventarioEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Estado.cs">
+      <DependentUpon>InventarioEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="Estante Izquierdo\frmIzquierdaPlaza1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Estante Izquierdo\frmIzquierdaPlaza1.Designer.cs">
       <DependentUpon>frmIzquierdaPlaza1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCategoria.Designer.cs">
+      <DependentUpon>frmCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEstado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEstado.Designer.cs">
+      <DependentUpon>frmEstado.cs</DependentUpon>
     </Compile>
     <Compile Include="frmInventario.cs">
       <SubType>Form</SubType>
@@ -121,6 +139,12 @@
     </Compile>
     <EmbeddedResource Include="Estante Izquierdo\frmIzquierdaPlaza1.resx">
       <DependentUpon>frmIzquierdaPlaza1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCategoria.resx">
+      <DependentUpon>frmCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEstado.resx">
+      <DependentUpon>frmEstado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmInventario.resx">
       <DependentUpon>frmInventario.cs</DependentUpon>
