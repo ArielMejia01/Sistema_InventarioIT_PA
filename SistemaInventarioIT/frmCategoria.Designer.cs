@@ -33,15 +33,15 @@ namespace SistemaInventarioIT
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.chkEstado = new System.Windows.Forms.CheckBox();
+            this.dgCategoria = new System.Windows.Forms.DataGridView();
             this.ibAgregar = new FontAwesome.Sharp.IconButton();
             this.ibNuevo = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgCategoria)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -86,19 +86,19 @@ namespace SistemaInventarioIT
             this.label3.TabIndex = 2;
             this.label3.Text = "Descripción";
             // 
-            // textBox1
+            // txtNombre
             // 
-            this.textBox1.Location = new System.Drawing.Point(310, 78);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(197, 20);
-            this.textBox1.TabIndex = 3;
+            this.txtNombre.Location = new System.Drawing.Point(310, 78);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(197, 20);
+            this.txtNombre.TabIndex = 3;
             // 
-            // textBox2
+            // txtDescripcion
             // 
-            this.textBox2.Location = new System.Drawing.Point(310, 140);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(197, 20);
-            this.textBox2.TabIndex = 4;
+            this.txtDescripcion.Location = new System.Drawing.Point(310, 140);
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(197, 20);
+            this.txtDescripcion.TabIndex = 4;
             // 
             // label4
             // 
@@ -110,24 +110,25 @@ namespace SistemaInventarioIT
             this.label4.TabIndex = 5;
             this.label4.Text = "Estado";
             // 
-            // checkBox1
+            // chkEstado
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(310, 203);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(183, 20);
-            this.checkBox1.TabIndex = 6;
-            this.checkBox1.Text = "Habilitado / Deshabilitado";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.chkEstado.AutoSize = true;
+            this.chkEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkEstado.Location = new System.Drawing.Point(310, 203);
+            this.chkEstado.Name = "chkEstado";
+            this.chkEstado.Size = new System.Drawing.Size(183, 20);
+            this.chkEstado.TabIndex = 6;
+            this.chkEstado.Text = "Habilitado / Deshabilitado";
+            this.chkEstado.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dgCategoria
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(119, 256);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(461, 112);
-            this.dataGridView1.TabIndex = 7;
+            this.dgCategoria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgCategoria.Location = new System.Drawing.Point(119, 256);
+            this.dgCategoria.Name = "dgCategoria";
+            this.dgCategoria.Size = new System.Drawing.Size(461, 112);
+            this.dgCategoria.TabIndex = 7;
+            this.dgCategoria.SelectionChanged += new System.EventHandler(this.dgCategoria_SelectionChanged);
             // 
             // ibAgregar
             // 
@@ -144,6 +145,7 @@ namespace SistemaInventarioIT
             this.ibAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ibAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.ibAgregar.UseVisualStyleBackColor = true;
+            this.ibAgregar.Click += new System.EventHandler(this.ibAgregar_Click);
             // 
             // ibNuevo
             // 
@@ -159,6 +161,7 @@ namespace SistemaInventarioIT
             this.ibNuevo.Text = "Nuevo";
             this.ibNuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.ibNuevo.UseVisualStyleBackColor = true;
+            this.ibNuevo.Click += new System.EventHandler(this.ibNuevo_Click);
             // 
             // frmCategoria
             // 
@@ -167,19 +170,20 @@ namespace SistemaInventarioIT
             this.ClientSize = new System.Drawing.Size(688, 476);
             this.Controls.Add(this.ibNuevo);
             this.Controls.Add(this.ibAgregar);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.dgCategoria);
+            this.Controls.Add(this.chkEstado);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtDescripcion);
+            this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
             this.Name = "frmCategoria";
             this.Text = "frmCategoria";
+            this.Load += new System.EventHandler(this.frmCategoria_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgCategoria)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -191,11 +195,11 @@ namespace SistemaInventarioIT
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.CheckBox chkEstado;
+        private System.Windows.Forms.DataGridView dgCategoria;
         private FontAwesome.Sharp.IconButton ibAgregar;
         private FontAwesome.Sharp.IconButton ibNuevo;
     }

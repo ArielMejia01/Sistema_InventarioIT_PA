@@ -35,8 +35,8 @@ namespace SistemaInventarioIT.Estante_Izquierdo
                     tInventario.Serial = txtSerial.Text;
                     tInventario.Descripcion = txtDescripcion.Text;
                     tInventario.Cantidad = Convert.ToInt32(txtCantidad.Text);
-                    tInventario.Categoria = txtCategoria.Text;
-                    tInventario.Estado = chkEstado.Checked;
+                    //tInventario.Categoria = txtCategoria.Text;
+                    //tInventario.Estado = chkEstado.Checked;
                     tInventario.Modelo = txtModelo.Text;
                     tInventario.Garantia = dtFecha.Value;
 
@@ -54,8 +54,8 @@ namespace SistemaInventarioIT.Estante_Izquierdo
                     inventario.Serial = txtSerial.Text;
                     inventario.Descripcion = txtDescripcion.Text;     
                     inventario.Cantidad = Convert.ToInt32(txtCantidad.Text);               
-                    inventario.Categoria = txtCategoria.Text;         
-                    inventario.Estado = chkEstado.Checked;        
+                    //inventario.Categoria = txtCategoria.Text;         
+                    //inventario.Estado = chkEstado.Checked;        
                     inventario.Modelo = txtModelo.Text;                  
                     inventario.Garantia = dtFecha.Value;
 
@@ -135,8 +135,8 @@ namespace SistemaInventarioIT.Estante_Izquierdo
                     txtSerial.Text = tEstanteIzquierdo.Serial;
                     txtDescripcion.Text = tEstanteIzquierdo.Descripcion;
                     txtCantidad.Text = Convert.ToString(tEstanteIzquierdo.Cantidad);
-                    txtCategoria.Text = tEstanteIzquierdo.Categoria;
-                    chkEstado.Checked = tEstanteIzquierdo.Estado;
+                    //txtCategoria.Text = tEstanteIzquierdo.Categoria;
+                    //chkEstado.Checked = tEstanteIzquierdo.Estado;
                     txtModelo.Text = tEstanteIzquierdo.Modelo;
                     dtFecha.Value = (DateTime)tEstanteIzquierdo.Garantia;
                     editar = true;

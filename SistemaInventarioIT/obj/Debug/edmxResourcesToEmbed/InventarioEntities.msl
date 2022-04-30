@@ -1,9 +1,30 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="DBInventarioITPAModelStoreContainer" CdmEntityContainer="DBInventarioITPAEntities">
+    <EntitySetMapping Name="Categoria">
+      <EntityTypeMapping TypeName="DBInventarioITPAModel.Categoria">
+        <MappingFragment StoreEntitySet="Categoria">
+          <ScalarProperty Name="Estado_Categoria" ColumnName="Estado_Categoria" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Nombre_Categoria" ColumnName="Nombre_Categoria" />
+          <ScalarProperty Name="IdCategoria" ColumnName="IdCategoria" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Estado">
+      <EntityTypeMapping TypeName="DBInventarioITPAModel.Estado">
+        <MappingFragment StoreEntitySet="Estado">
+          <ScalarProperty Name="Estado_Estado" ColumnName="Estado_Estado" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Nombre_Estado" ColumnName="Nombre_Estado" />
+          <ScalarProperty Name="IdEstado" ColumnName="IdEstado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Inventario">
       <EntityTypeMapping TypeName="DBInventarioITPAModel.Inventario">
         <MappingFragment StoreEntitySet="Inventario">
+          <ScalarProperty Name="FechaRegistro" ColumnName="FechaRegistro" />
           <ScalarProperty Name="Garantia" ColumnName="Garantia" />
           <ScalarProperty Name="Modelo" ColumnName="Modelo" />
           <ScalarProperty Name="Estado" ColumnName="Estado" />
@@ -18,21 +39,23 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Ubicacion">
-      <EntityTypeMapping TypeName="DBInventarioITPAModel.Ubicacion">
-        <MappingFragment StoreEntitySet="Ubicacion">
-          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
-          <ScalarProperty Name="Nombre_Ubicacion" ColumnName="Nombre_Ubicacion" />
-          <ScalarProperty Name="IdUbicacion" ColumnName="IdUbicacion" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Plaza">
       <EntityTypeMapping TypeName="DBInventarioITPAModel.Plaza">
         <MappingFragment StoreEntitySet="Plaza">
+          <ScalarProperty Name="Estado_Plaza" ColumnName="Estado_Plaza" />
           <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
           <ScalarProperty Name="Nombre_Plaza" ColumnName="Nombre_Plaza" />
           <ScalarProperty Name="IdPlaza" ColumnName="IdPlaza" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ubicacion">
+      <EntityTypeMapping TypeName="DBInventarioITPAModel.Ubicacion">
+        <MappingFragment StoreEntitySet="Ubicacion">
+          <ScalarProperty Name="Estado_Ubicacion" ColumnName="Estado_Ubicacion" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Nombre_Ubicacion" ColumnName="Nombre_Ubicacion" />
+          <ScalarProperty Name="IdUbicacion" ColumnName="IdUbicacion" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

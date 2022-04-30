@@ -1,5 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="DBInventarioITPAModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Categoria">
+    <Key>
+      <PropertyRef Name="IdCategoria" />
+    </Key>
+    <Property Name="IdCategoria" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre_Categoria" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar" MaxLength="250" />
+    <Property Name="Estado_Categoria" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Estado">
+    <Key>
+      <PropertyRef Name="IdEstado" />
+    </Key>
+    <Property Name="IdEstado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre_Estado" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Estado_Estado" Type="bit" Nullable="false" />
+  </EntityType>
   <EntityType Name="Inventario">
     <Key>
       <PropertyRef Name="IdInventario" />
@@ -11,10 +29,11 @@
     <Property Name="Serial" Type="nvarchar" MaxLength="200" />
     <Property Name="Cantidad" Type="int" />
     <Property Name="Descripcion" Type="nvarchar" MaxLength="500" />
-    <Property Name="Categoria" Type="nvarchar" MaxLength="100" />
-    <Property Name="Estado" Type="bit" Nullable="false" />
+    <Property Name="Categoria" Type="int" Nullable="false" />
+    <Property Name="Estado" Type="int" Nullable="false" />
     <Property Name="Modelo" Type="nvarchar" MaxLength="100" />
     <Property Name="Garantia" Type="date" />
+    <Property Name="FechaRegistro" Type="varchar" MaxLength="30" />
   </EntityType>
   <EntityType Name="Plaza">
     <Key>
@@ -23,6 +42,7 @@
     <Property Name="IdPlaza" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Nombre_Plaza" Type="varchar" MaxLength="200" Nullable="false" />
     <Property Name="Descripcion" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Estado_Plaza" Type="bit" Nullable="false" />
   </EntityType>
   <EntityType Name="Ubicacion">
     <Key>
@@ -31,7 +51,32 @@
     <Property Name="IdUbicacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Nombre_Ubicacion" Type="nvarchar" MaxLength="200" Nullable="false" />
     <Property Name="Descripcion" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="Estado_Ubicacion" Type="bit" Nullable="false" />
   </EntityType>
+  <Association Name="FK_Inventario_Categoria">
+    <End Role="Categoria" Type="Self.Categoria" Multiplicity="1" />
+    <End Role="Inventario" Type="Self.Inventario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categoria">
+        <PropertyRef Name="IdCategoria" />
+      </Principal>
+      <Dependent Role="Inventario">
+        <PropertyRef Name="Categoria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Inventario_Estado">
+    <End Role="Estado" Type="Self.Estado" Multiplicity="1" />
+    <End Role="Inventario" Type="Self.Inventario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estado">
+        <PropertyRef Name="IdEstado" />
+      </Principal>
+      <Dependent Role="Inventario">
+        <PropertyRef Name="Estado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Inventario_Plaza">
     <End Role="Plaza" Type="Self.Plaza" Multiplicity="1" />
     <End Role="Inventario" Type="Self.Inventario" Multiplicity="*" />
@@ -57,9 +102,19 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="DBInventarioITPAModelStoreContainer">
+    <EntitySet Name="Categoria" EntityType="Self.Categoria" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Estado" EntityType="Self.Estado" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Inventario" EntityType="Self.Inventario" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Plaza" EntityType="Self.Plaza" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Ubicacion" EntityType="Self.Ubicacion" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Inventario_Categoria" Association="Self.FK_Inventario_Categoria">
+      <End Role="Categoria" EntitySet="Categoria" />
+      <End Role="Inventario" EntitySet="Inventario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Inventario_Estado" Association="Self.FK_Inventario_Estado">
+      <End Role="Estado" EntitySet="Estado" />
+      <End Role="Inventario" EntitySet="Inventario" />
+    </AssociationSet>
     <AssociationSet Name="FK_Inventario_Plaza" Association="Self.FK_Inventario_Plaza">
       <End Role="Plaza" EntitySet="Plaza" />
       <End Role="Inventario" EntitySet="Inventario" />

@@ -153,5 +153,15 @@ namespace SistemaInventarioIT
         {
             formularioHijoAbiero(new frmInventario());
         }
+
+        private void ibCategoria_Click(object sender, EventArgs e)
+        {
+            formularioHijoAbiero(new frmCategoria());
+        }
+
+        private void ibEstado_Click(object sender, EventArgs e)
+        {
+            formularioHijoAbiero(new frmEstado());
+        }
     }
 }
