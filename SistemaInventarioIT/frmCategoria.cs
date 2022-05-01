@@ -15,6 +15,7 @@ namespace SistemaInventarioIT
         DBInventarioITPAEntities entityInventario = new DBInventarioITPAEntities();
         bool edit = false;
         long idCategoria = 0;
+        int vacio;
         public frmCategoria()
         {
             InitializeComponent();
@@ -22,8 +23,8 @@ namespace SistemaInventarioIT
 
         private void frmCategoria_Load(object sender, EventArgs e)
         {
-            carga_form();
-            cleanText();
+            carga_form();            
+            vacio = 1;
         }
 
         private void carga_form()
@@ -44,6 +45,7 @@ namespace SistemaInventarioIT
         {
             txtNombre.Text = "";
             txtDescripcion.Text = "";
+            chkEstado.Checked = false;
             dgCategoria.ClearSelection();
         }
 
@@ -86,30 +88,29 @@ namespace SistemaInventarioIT
 
         private void ibNuevo_Click(object sender, EventArgs e)
         {
-            txtNombre.Text = "";
-            txtDescripcion.Text = "";
-            idCategoria = 0;
-            edit = false;   
+            cleanText();
         }
 
         private void dgCategoria_SelectionChanged(object sender, EventArgs e)
         {
-            if (dgCategoria.RowCount > 0)
+            try
             {
-                try
+                if (vacio == 1)
                 {
-                    idCategoria = Convert.ToInt64(dgCategoria.SelectedCells[0].Value);
-                    var tCategoria = entityInventario.Categoria.FirstOrDefault(x => x.IdCategoria == idCategoria);
-                    txtNombre.Text = tCategoria.Nombre_Categoria;
-                    txtDescripcion.Text = tCategoria.Descripcion;
-                    chkEstado.Checked = tCategoria.Estado_Categoria;
-                    edit = true;
+                    cleanText();
                 }
-                catch (Exception)
-                {
-                    dgCategoria.ClearSelection();
-                }
+                idCategoria = Convert.ToInt64(dgCategoria.SelectedCells[0].Value);
+                var tCategoria = entityInventario.Categoria.FirstOrDefault(x => x.IdCategoria == idCategoria);
+                txtNombre.Text = tCategoria.Nombre_Categoria;
+                txtDescripcion.Text = tCategoria.Descripcion;
+                chkEstado.Checked = tCategoria.Estado_Categoria;
+                edit = true;
             }
+            catch (Exception)
+            {
+                dgCategoria.ClearSelection();
+            }
+            
         }
     }
 }

@@ -126,6 +126,7 @@ namespace SistemaInventarioIT
             this.dgCategoria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgCategoria.Location = new System.Drawing.Point(119, 256);
             this.dgCategoria.Name = "dgCategoria";
+            this.dgCategoria.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgCategoria.Size = new System.Drawing.Size(461, 112);
             this.dgCategoria.TabIndex = 7;
             this.dgCategoria.SelectionChanged += new System.EventHandler(this.dgCategoria_SelectionChanged);
