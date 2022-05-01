@@ -49,12 +49,12 @@ namespace SistemaInventarioIT
             this.cmbUbicacion = new System.Windows.Forms.ComboBox();
             this.cmbPlaza = new System.Windows.Forms.ComboBox();
             this.dtFecha = new System.Windows.Forms.DateTimePicker();
-            this.dgInventario = new System.Windows.Forms.DataGridView();
             this.ibAgregar = new FontAwesome.Sharp.IconButton();
             this.ibNuevo = new FontAwesome.Sharp.IconButton();
             this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cmbCategoria = new System.Windows.Forms.ComboBox();
+            this.cmbEstado = new System.Windows.Forms.ComboBox();
+            this.dgInventario = new System.Windows.Forms.DataGridView();
             this.panelTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgInventario)).BeginInit();
             this.SuspendLayout();
@@ -231,19 +231,6 @@ namespace SistemaInventarioIT
             this.dtFecha.Size = new System.Drawing.Size(200, 20);
             this.dtFecha.TabIndex = 45;
             // 
-            // dgInventario
-            // 
-            this.dgInventario.AllowUserToAddRows = false;
-            this.dgInventario.AllowUserToDeleteRows = false;
-            this.dgInventario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgInventario.Location = new System.Drawing.Point(53, 285);
-            this.dgInventario.Name = "dgInventario";
-            this.dgInventario.ReadOnly = true;
-            this.dgInventario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgInventario.Size = new System.Drawing.Size(580, 118);
-            this.dgInventario.TabIndex = 46;
-            this.dgInventario.SelectionChanged += new System.EventHandler(this.dgInventario_SelectionChanged);
-            // 
             // ibAgregar
             // 
             this.ibAgregar.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
@@ -289,35 +276,44 @@ namespace SistemaInventarioIT
             this.txtBuscar.Enter += new System.EventHandler(this.txtBuscar_Enter);
             this.txtBuscar.Leave += new System.EventHandler(this.txtBuscar_Leave);
             // 
-            // comboBox1
+            // cmbCategoria
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(433, 101);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(197, 21);
-            this.comboBox1.TabIndex = 54;
+            this.cmbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCategoria.FormattingEnabled = true;
+            this.cmbCategoria.Location = new System.Drawing.Point(433, 101);
+            this.cmbCategoria.Name = "cmbCategoria";
+            this.cmbCategoria.Size = new System.Drawing.Size(197, 21);
+            this.cmbCategoria.TabIndex = 54;
             // 
-            // comboBox2
+            // cmbEstado
             // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(433, 136);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(197, 21);
-            this.comboBox2.TabIndex = 55;
+            this.cmbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbEstado.FormattingEnabled = true;
+            this.cmbEstado.Location = new System.Drawing.Point(433, 136);
+            this.cmbEstado.Name = "cmbEstado";
+            this.cmbEstado.Size = new System.Drawing.Size(197, 21);
+            this.cmbEstado.TabIndex = 55;
+            // 
+            // dgInventario
+            // 
+            this.dgInventario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgInventario.Location = new System.Drawing.Point(81, 275);
+            this.dgInventario.Name = "dgInventario";
+            this.dgInventario.Size = new System.Drawing.Size(517, 108);
+            this.dgInventario.TabIndex = 56;
+            this.dgInventario.SelectionChanged += new System.EventHandler(this.dgInventario_SelectionChanged_1);
             // 
             // frmInventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(688, 476);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.dgInventario);
+            this.Controls.Add(this.cmbEstado);
+            this.Controls.Add(this.cmbCategoria);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.ibNuevo);
             this.Controls.Add(this.ibAgregar);
-            this.Controls.Add(this.dgInventario);
             this.Controls.Add(this.dtFecha);
             this.Controls.Add(this.cmbPlaza);
             this.Controls.Add(this.cmbUbicacion);
@@ -370,11 +366,11 @@ namespace SistemaInventarioIT
         private System.Windows.Forms.ComboBox cmbUbicacion;
         private System.Windows.Forms.ComboBox cmbPlaza;
         private System.Windows.Forms.DateTimePicker dtFecha;
-        private System.Windows.Forms.DataGridView dgInventario;
         private FontAwesome.Sharp.IconButton ibAgregar;
         private FontAwesome.Sharp.IconButton ibNuevo;
         private System.Windows.Forms.TextBox txtBuscar;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cmbCategoria;
+        private System.Windows.Forms.ComboBox cmbEstado;
+        private System.Windows.Forms.DataGridView dgInventario;
     }
 }

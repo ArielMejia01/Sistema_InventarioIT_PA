@@ -43,7 +43,6 @@ namespace SistemaInventarioIT.Estante_Izquierdo
             this.cmbUbicacion = new System.Windows.Forms.ComboBox();
             this.txtSerial = new System.Windows.Forms.TextBox();
             this.txtCantidad = new System.Windows.Forms.TextBox();
-            this.txtCategoria = new System.Windows.Forms.TextBox();
             this.chkEstado = new System.Windows.Forms.CheckBox();
             this.txtModelo = new System.Windows.Forms.TextBox();
             this.dtFecha = new System.Windows.Forms.DateTimePicker();
@@ -53,6 +52,7 @@ namespace SistemaInventarioIT.Estante_Izquierdo
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cmbPlaza = new System.Windows.Forms.ComboBox();
+            this.txtCategoria = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIzquierda1)).BeginInit();
             this.panelTitle.SuspendLayout();
             this.SuspendLayout();
@@ -179,13 +179,6 @@ namespace SistemaInventarioIT.Estante_Izquierdo
             this.txtCantidad.Size = new System.Drawing.Size(121, 20);
             this.txtCantidad.TabIndex = 15;
             // 
-            // txtCategoria
-            // 
-            this.txtCategoria.Location = new System.Drawing.Point(420, 83);
-            this.txtCategoria.Name = "txtCategoria";
-            this.txtCategoria.Size = new System.Drawing.Size(100, 20);
-            this.txtCategoria.TabIndex = 16;
-            // 
             // chkEstado
             // 
             this.chkEstado.AutoSize = true;
@@ -267,6 +260,13 @@ namespace SistemaInventarioIT.Estante_Izquierdo
             this.cmbPlaza.Size = new System.Drawing.Size(121, 21);
             this.cmbPlaza.TabIndex = 24;
             // 
+            // txtCategoria
+            // 
+            this.txtCategoria.Location = new System.Drawing.Point(420, 83);
+            this.txtCategoria.Name = "txtCategoria";
+            this.txtCategoria.Size = new System.Drawing.Size(100, 20);
+            this.txtCategoria.TabIndex = 16;
+            // 
             // frmIzquierdaPlaza1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -322,7 +322,6 @@ namespace SistemaInventarioIT.Estante_Izquierdo
         private System.Windows.Forms.ComboBox cmbUbicacion;
         private System.Windows.Forms.TextBox txtSerial;
         private System.Windows.Forms.TextBox txtCantidad;
-        private System.Windows.Forms.TextBox txtCategoria;
         private System.Windows.Forms.CheckBox chkEstado;
         private System.Windows.Forms.TextBox txtModelo;
         private System.Windows.Forms.DateTimePicker dtFecha;
@@ -332,5 +331,6 @@ namespace SistemaInventarioIT.Estante_Izquierdo
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cmbPlaza;
+        private System.Windows.Forms.TextBox txtCategoria;
     }
 }

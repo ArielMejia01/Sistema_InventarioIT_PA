@@ -96,6 +96,9 @@ namespace SistemaInventarioIT.Estante_Izquierdo
             cmbPlaza.DisplayMember = dtPlaza.Columns[1].ColumnName;
             cmbPlaza.ValueMember = dtPlaza.Columns[0].ColumnName;
 
+            var categoria = from c in entityInventario.Categoria
+                            select c;
+
             //Cargar la informacion al "cargar" el formulario
             var izquierdaUno = from i in entityInventario.Inventario
                                join y

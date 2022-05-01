@@ -15,6 +15,7 @@ namespace SistemaInventarioIT
         DBInventarioITPAEntities entityInventario = new DBInventarioITPAEntities();
         bool edit = false;
         int idPlaza = 0;
+        int vacio;
         public frmPlaza()
         {
             InitializeComponent();
@@ -70,8 +71,15 @@ namespace SistemaInventarioIT
         private void frmPlaza_Load(object sender, EventArgs e)
         {
             carga_form();
+            vacio = 1;
         }
 
+        private void cleanText()
+        {
+            txtPlaza.Text = "";
+            txtDescripcion.Text = "";
+            dgPlaza.ClearSelection();
+        }
         private void ibNuevo_Click(object sender, EventArgs e)
         {
             txtPlaza.Text = "";
@@ -82,21 +90,22 @@ namespace SistemaInventarioIT
 
         private void dgPlaza_SelectionChanged(object sender, EventArgs e)
         {
-            if (dgPlaza.SelectedRows.Count > 0)
+            try
             {
-                try
+                if (vacio == 1)
                 {
-                    idPlaza = (int)Convert.ToInt64(dgPlaza.SelectedCells[0].Value);
+                    cleanText();
+                }
+                idPlaza = (int)Convert.ToInt64(dgPlaza.SelectedCells[0].Value);
                     var iPlaza = entityInventario.Plaza.FirstOrDefault(x => x.IdPlaza == idPlaza);
                     txtPlaza.Text = iPlaza.Nombre_Plaza;
                     txtDescripcion.Text = iPlaza.Descripcion;
                     edit = true;
-                }
-                catch (Exception)
-                {
-                    dgPlaza.ClearSelection();
-                }
             }
-        }
+            catch (Exception)
+            {
+                dgPlaza.ClearSelection();
+            }
+        }        
     }
 }

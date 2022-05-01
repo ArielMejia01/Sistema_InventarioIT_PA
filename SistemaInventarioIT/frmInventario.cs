@@ -137,12 +137,32 @@ namespace SistemaInventarioIT
             cmbPlaza.DisplayMember = dtPlaza.Columns[1].ColumnName;
             cmbPlaza.ValueMember = dtPlaza.Columns[0].ColumnName;
 
+            var categoria = from c in entityInventario.Categoria
+                            select c;
+            DataTable dtCategoria = new DataTable();
+            dtCategoria = categoria.CopyAnonymusToDataTable();
+            cmbCategoria.DataSource = dtCategoria;
+            cmbCategoria.DisplayMember = dtCategoria.Columns[1].ColumnName;
+            cmbCategoria.ValueMember = dtCategoria.Columns[0].ColumnName;
+
+            var estado = from e in entityInventario.Estado
+                         select e;
+            DataTable dtEstado = new DataTable();
+            dtEstado = estado.CopyAnonymusToDataTable();
+            cmbEstado.DataSource = dtEstado;
+            cmbEstado.DisplayMember = dtEstado.Columns[1].ColumnName;
+            cmbEstado.ValueMember = dtEstado.Columns[0].ColumnName;
+
            
             var inventario = from i in entityInventario.Inventario
                                join y
                                in entityInventario.Ubicacion on i.Ubicacion equals y.IdUbicacion
                                join p
                                in entityInventario.Plaza on i.Plaza equals p.IdPlaza
+                               join c
+                               in entityInventario.Categoria on i.Categoria equals c.IdCategoria
+                               join e
+                               in entityInventario.Estado on i.Estado equals e.IdEstado
                                select new
                                {
                                    i.IdInventario,
@@ -152,8 +172,8 @@ namespace SistemaInventarioIT
                                    i.Serial,
                                    i.Cantidad,
                                    i.Descripcion,
-                                   //i.Categoria,
-                                   //i.Estado,
+                                   c.Nombre_Categoria,
+                                   e.Nombre_Estado,
                                    i.Modelo,
                                    i.Garantia
                                };
@@ -185,8 +205,8 @@ namespace SistemaInventarioIT
                     txtSerial.Text = tInventario.Serial;
                     txtDescripcion.Text = tInventario.Descripcion;
                     txtCantidad.Text = Convert.ToString(tInventario.Cantidad);
-                    //txtCategoria.Text = tInventario.Categoria;
-                    //chkEstado.Checked = tInventario.Estado;
+                    cmbCategoria.SelectedValue = tInventario.Categoria;
+                    cmbEstado.SelectedValue = tInventario.Estado;
                     txtModelo.Text = tInventario.Modelo;
                     dtFecha.Value = (DateTime)tInventario.Garantia;
                     editar = true;
@@ -225,8 +245,8 @@ namespace SistemaInventarioIT
                                   i.Serial,
                                   i.Cantidad,
                                   i.Descripcion,
-                                  //i.Categoria,
-                                  //i.Estado,
+                                  i.Categoria,
+                                  i.Estado,
                                   i.Modelo,
                                   i.Garantia
                               };
@@ -254,6 +274,11 @@ namespace SistemaInventarioIT
             {
                 txtBuscar.Text = "Buscar...";
             }
+        }
+
+        private void dgInventario_SelectionChanged_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

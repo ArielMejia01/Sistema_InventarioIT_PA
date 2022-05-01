@@ -80,7 +80,7 @@ namespace SistemaInventarioIT
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(191, 140);
+            this.label3.Location = new System.Drawing.Point(191, 127);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(92, 20);
             this.label3.TabIndex = 2;
@@ -95,9 +95,10 @@ namespace SistemaInventarioIT
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(310, 140);
+            this.txtDescripcion.Location = new System.Drawing.Point(310, 127);
+            this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(197, 20);
+            this.txtDescripcion.Size = new System.Drawing.Size(197, 47);
             this.txtDescripcion.TabIndex = 4;
             // 
             // label4

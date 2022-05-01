@@ -38,6 +38,8 @@ namespace SistemaInventarioIT
             this.dgPlaza = new System.Windows.Forms.DataGridView();
             this.ibNuevo = new FontAwesome.Sharp.IconButton();
             this.ibAgregar = new FontAwesome.Sharp.IconButton();
+            this.label4 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgPlaza)).BeginInit();
             this.SuspendLayout();
@@ -67,7 +69,7 @@ namespace SistemaInventarioIT
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(164, 97);
+            this.label2.Location = new System.Drawing.Point(178, 80);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(48, 20);
             this.label2.TabIndex = 1;
@@ -77,7 +79,7 @@ namespace SistemaInventarioIT
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(164, 160);
+            this.label3.Location = new System.Drawing.Point(178, 129);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(92, 20);
             this.label3.TabIndex = 2;
@@ -85,14 +87,14 @@ namespace SistemaInventarioIT
             // 
             // txtPlaza
             // 
-            this.txtPlaza.Location = new System.Drawing.Point(313, 97);
+            this.txtPlaza.Location = new System.Drawing.Point(313, 79);
             this.txtPlaza.Name = "txtPlaza";
             this.txtPlaza.Size = new System.Drawing.Size(197, 20);
             this.txtPlaza.TabIndex = 3;
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(313, 160);
+            this.txtDescripcion.Location = new System.Drawing.Point(313, 128);
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(197, 47);
@@ -144,11 +146,34 @@ namespace SistemaInventarioIT
             this.ibAgregar.UseVisualStyleBackColor = true;
             this.ibAgregar.Click += new System.EventHandler(this.ibAgregar_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(182, 199);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(60, 20);
+            this.label4.TabIndex = 53;
+            this.label4.Text = "Estado";
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox1.Location = new System.Drawing.Point(312, 199);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(183, 20);
+            this.checkBox1.TabIndex = 54;
+            this.checkBox1.Text = "Habilitado / Deshabilitado";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
             // frmPlaza
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(688, 476);
+            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.ibAgregar);
             this.Controls.Add(this.ibNuevo);
             this.Controls.Add(this.dgPlaza);
@@ -179,5 +204,7 @@ namespace SistemaInventarioIT
         private System.Windows.Forms.DataGridView dgPlaza;
         private FontAwesome.Sharp.IconButton ibNuevo;
         private FontAwesome.Sharp.IconButton ibAgregar;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
