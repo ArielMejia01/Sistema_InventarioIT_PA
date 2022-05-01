@@ -185,7 +185,6 @@ namespace SistemaInventarioIT
         private void frmInventario_Load(object sender, EventArgs e)
         {
             carga_form();
-            //txtBuscar.Text = "Buscar...";
             cmbUbicacion.Text = "Seleccionar...";
             cmbPlaza.Text = "Seleccionar...";
 
@@ -278,7 +277,29 @@ namespace SistemaInventarioIT
 
         private void dgInventario_SelectionChanged_1(object sender, EventArgs e)
         {
+            if (dgInventario.RowCount > 0)
+            {
+                try
+                {
+                    idInventario = Convert.ToInt32(dgInventario.SelectedCells[0].Value);
+                    var tInventario = entityInventario.Inventario.FirstOrDefault(x => x.IdInventario == idInventario);
+                    txtNombre.Text = tInventario.Nombre;
+                    cmbUbicacion.SelectedValue = tInventario.Ubicacion;
+                    cmbPlaza.SelectedValue = tInventario.Plaza;
+                    txtSerial.Text = tInventario.Serial;
+                    txtDescripcion.Text = tInventario.Descripcion;
+                    txtCantidad.Text = Convert.ToString(tInventario.Cantidad);
+                    cmbCategoria.SelectedValue = tInventario.Categoria;
+                    cmbEstado.SelectedValue = tInventario.Estado;
+                    txtModelo.Text = tInventario.Modelo;
+                    dtFecha.Value = (DateTime)tInventario.Garantia;
+                    editar = true;
+                }
+                catch (Exception)
+                {
 
+                }
+            }
         }
     }
 }

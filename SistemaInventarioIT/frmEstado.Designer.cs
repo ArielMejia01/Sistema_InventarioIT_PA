@@ -121,9 +121,13 @@ namespace SistemaInventarioIT
             // 
             // dgEstado
             // 
+            this.dgEstado.AllowUserToAddRows = false;
+            this.dgEstado.AllowUserToDeleteRows = false;
             this.dgEstado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgEstado.Location = new System.Drawing.Point(112, 249);
             this.dgEstado.Name = "dgEstado";
+            this.dgEstado.ReadOnly = true;
+            this.dgEstado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgEstado.Size = new System.Drawing.Size(461, 112);
             this.dgEstado.TabIndex = 7;
             this.dgEstado.SelectionChanged += new System.EventHandler(this.dgEstado_SelectionChanged);

@@ -15,6 +15,7 @@ namespace SistemaInventarioIT
         DBInventarioITPAEntities entityInventario = new DBInventarioITPAEntities();
         bool edit = false;
         long idUbicacion = 0;
+        int vacio;
         public frmUbicacion()
         {
             InitializeComponent();
@@ -39,6 +40,7 @@ namespace SistemaInventarioIT
                 var tUbicacion = entityInventario.Ubicacion.FirstOrDefault(u => u.IdUbicacion == idUbicacion);
                 tUbicacion.Nombre_Ubicacion = txtUbicacion.Text;
                 tUbicacion.Descripcion = txtDescripcion.Text;
+                tUbicacion.Estado_Ubicacion = chkEstado.Checked;
                 entityInventario.SaveChanges();
                 MessageBox.Show("¡Cambios Guardados!");
             }
@@ -47,6 +49,7 @@ namespace SistemaInventarioIT
                 Ubicacion tNombreUbicacion = new Ubicacion();
                 tNombreUbicacion.Nombre_Ubicacion = txtUbicacion.Text;
                 tNombreUbicacion.Descripcion = txtDescripcion.Text;
+                tNombreUbicacion.Estado_Ubicacion = chkEstado.Checked;
                 entityInventario.Ubicacion.Add(tNombreUbicacion);
                 entityInventario.SaveChanges();
                 MessageBox.Show("¡Datos Guardados!");
@@ -54,14 +57,20 @@ namespace SistemaInventarioIT
             idUbicacion = 0;
             edit = false;
             carga_form();
+            cleanText();
+        }
+
+        private void cleanText()
+        {
+            txtUbicacion.Text = "";
+            txtDescripcion.Text = "";
+            chkEstado.Checked = false;
+            dgUbicacion.ClearSelection();
         }
 
         private void ibNuevo_Click(object sender, EventArgs e)
         {
-            txtUbicacion.Text = "";
-            txtDescripcion.Text = "";
-            idUbicacion = 0;
-            edit = false;
+            cleanText();
         }
 
         private void carga_form()
@@ -71,7 +80,8 @@ namespace SistemaInventarioIT
                          {
                              i.IdUbicacion,
                              i.Nombre_Ubicacion,
-                             i.Descripcion
+                             i.Descripcion,
+                             i.Estado_Ubicacion
                          };
             dgUbicacion.DataSource = iUbicacion.CopyAnonymusToDataTable();
             dgUbicacion.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
@@ -89,28 +99,30 @@ namespace SistemaInventarioIT
             dgUbicacion.DataSource = iUbicacion.CopyAnonymusToDataTable();
             dgUbicacion.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;*/
             carga_form();
+            vacio = 1;
         }
 
         private void dgUbicacion_SelectionChanged(object sender, EventArgs e)
         {
-            if (dgUbicacion.RowCount > 0)
+            try
             {
-                try
+                if (vacio == 1)
                 {
-                    idUbicacion = (int)Convert.ToInt64(dgUbicacion.SelectedCells[0].Value);
-                    //idUbicacion = Convert.ToInt64(dgUbicacion.SelectedCells[0].Value);
-                    var tUbicacion = entityInventario.Ubicacion.FirstOrDefault(x => x.IdUbicacion == idUbicacion);
-                    txtUbicacion.Text = tUbicacion.Nombre_Ubicacion;
-                    txtDescripcion.Text = tUbicacion.Descripcion;
-                    edit = true;
+                    cleanText();
                 }
-                catch(Exception)
-                {
-                    dgUbicacion.ClearSelection();
-                }
+                idUbicacion = (int)Convert.ToInt64(dgUbicacion.SelectedCells[0].Value);
+                //idUbicacion = Convert.ToInt64(dgUbicacion.SelectedCells[0].Value);
+                var tUbicacion = entityInventario.Ubicacion.FirstOrDefault(x => x.IdUbicacion == idUbicacion);
+                txtUbicacion.Text = tUbicacion.Nombre_Ubicacion;
+                txtDescripcion.Text = tUbicacion.Descripcion;
+                chkEstado.Checked = tUbicacion.Estado_Ubicacion;
+                edit = true;
             }
-        }
-
-        
+            catch(Exception)
+            {
+                dgUbicacion.ClearSelection();
+            }
+            
+        }   
     }
 }

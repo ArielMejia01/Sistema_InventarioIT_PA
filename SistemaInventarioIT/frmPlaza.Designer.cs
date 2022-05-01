@@ -39,7 +39,7 @@ namespace SistemaInventarioIT
             this.ibNuevo = new FontAwesome.Sharp.IconButton();
             this.ibAgregar = new FontAwesome.Sharp.IconButton();
             this.label4 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.chkEstado = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgPlaza)).BeginInit();
             this.SuspendLayout();
@@ -156,23 +156,23 @@ namespace SistemaInventarioIT
             this.label4.TabIndex = 53;
             this.label4.Text = "Estado";
             // 
-            // checkBox1
+            // chkEstado
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(312, 199);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(183, 20);
-            this.checkBox1.TabIndex = 54;
-            this.checkBox1.Text = "Habilitado / Deshabilitado";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.chkEstado.AutoSize = true;
+            this.chkEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkEstado.Location = new System.Drawing.Point(312, 199);
+            this.chkEstado.Name = "chkEstado";
+            this.chkEstado.Size = new System.Drawing.Size(183, 20);
+            this.chkEstado.TabIndex = 54;
+            this.chkEstado.Text = "Habilitado / Deshabilitado";
+            this.chkEstado.UseVisualStyleBackColor = true;
             // 
             // frmPlaza
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(688, 476);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.chkEstado);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.ibAgregar);
             this.Controls.Add(this.ibNuevo);
@@ -205,6 +205,6 @@ namespace SistemaInventarioIT
         private FontAwesome.Sharp.IconButton ibNuevo;
         private FontAwesome.Sharp.IconButton ibAgregar;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox chkEstado;
     }
 }

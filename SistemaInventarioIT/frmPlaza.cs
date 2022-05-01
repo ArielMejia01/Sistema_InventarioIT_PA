@@ -38,6 +38,7 @@ namespace SistemaInventarioIT
                 var tPlaza = entityInventario.Plaza.FirstOrDefault(p => p.IdPlaza == idPlaza);
                 tPlaza.Nombre_Plaza = txtPlaza.Text;
                 tPlaza.Descripcion = txtDescripcion.Text;
+                tPlaza.Estado_Plaza = chkEstado.Checked;
                 entityInventario.SaveChanges();
                 MessageBox.Show("¡Cambios Guardados!");
             }
@@ -46,6 +47,7 @@ namespace SistemaInventarioIT
                 Plaza tPlaza = new Plaza();
                 tPlaza.Nombre_Plaza = txtPlaza.Text;
                 tPlaza.Descripcion = txtDescripcion.Text;
+                tPlaza.Estado_Plaza = chkEstado.Checked;
                 entityInventario.Plaza.Add(tPlaza);
                 entityInventario.SaveChanges();
                 MessageBox.Show("¡Datos Guardados!");
@@ -53,6 +55,7 @@ namespace SistemaInventarioIT
             idPlaza = 0;
             edit = false;
             carga_form();
+            cleanText();
         }
 
         private void carga_form()
@@ -62,7 +65,8 @@ namespace SistemaInventarioIT
                          {
                              i.IdPlaza,
                              i.Nombre_Plaza,
-                             i.Descripcion
+                             i.Descripcion,
+                             i.Estado_Plaza
                          };
             dgPlaza.DataSource = iPlaza.CopyAnonymusToDataTable();
             dgPlaza.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
@@ -78,14 +82,12 @@ namespace SistemaInventarioIT
         {
             txtPlaza.Text = "";
             txtDescripcion.Text = "";
+            chkEstado.Checked = false;
             dgPlaza.ClearSelection();
         }
         private void ibNuevo_Click(object sender, EventArgs e)
         {
-            txtPlaza.Text = "";
-            txtDescripcion.Text = "";
-            idPlaza = 0;
-            edit = false;
+            cleanText();
         }
 
         private void dgPlaza_SelectionChanged(object sender, EventArgs e)
@@ -97,10 +99,11 @@ namespace SistemaInventarioIT
                     cleanText();
                 }
                 idPlaza = (int)Convert.ToInt64(dgPlaza.SelectedCells[0].Value);
-                    var iPlaza = entityInventario.Plaza.FirstOrDefault(x => x.IdPlaza == idPlaza);
-                    txtPlaza.Text = iPlaza.Nombre_Plaza;
-                    txtDescripcion.Text = iPlaza.Descripcion;
-                    edit = true;
+                var iPlaza = entityInventario.Plaza.FirstOrDefault(x => x.IdPlaza == idPlaza);
+                txtPlaza.Text = iPlaza.Nombre_Plaza;
+                txtDescripcion.Text = iPlaza.Descripcion;
+                chkEstado.Checked = iPlaza.Estado_Plaza;
+                edit = true;
             }
             catch (Exception)
             {

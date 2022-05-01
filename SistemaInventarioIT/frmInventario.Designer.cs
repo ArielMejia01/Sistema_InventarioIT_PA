@@ -296,9 +296,13 @@ namespace SistemaInventarioIT
             // 
             // dgInventario
             // 
+            this.dgInventario.AllowUserToAddRows = false;
+            this.dgInventario.AllowUserToDeleteRows = false;
             this.dgInventario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgInventario.Location = new System.Drawing.Point(81, 275);
             this.dgInventario.Name = "dgInventario";
+            this.dgInventario.ReadOnly = true;
+            this.dgInventario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgInventario.Size = new System.Drawing.Size(517, 108);
             this.dgInventario.TabIndex = 56;
             this.dgInventario.SelectionChanged += new System.EventHandler(this.dgInventario_SelectionChanged_1);
