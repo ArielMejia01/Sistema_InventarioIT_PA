@@ -119,8 +119,8 @@ namespace SistemaInventarioIT
         
         private void carga_form()
         {
-            
             var ubicacion = from u in entityInventario.Ubicacion
+                            where u.Estado_Ubicacion == true
                             select u;
             DataTable dtUbicacion = new DataTable();
             dtUbicacion = ubicacion.CopyAnonymusToDataTable();
@@ -130,6 +130,7 @@ namespace SistemaInventarioIT
             cmbUbicacion.ValueMember = dtUbicacion.Columns[0].ColumnName;
 
             var plaza = from p in entityInventario.Plaza
+                        where p.Estado_Plaza == true
                         select p;
             DataTable dtPlaza = new DataTable();
             dtPlaza = plaza.CopyAnonymusToDataTable();
@@ -138,6 +139,7 @@ namespace SistemaInventarioIT
             cmbPlaza.ValueMember = dtPlaza.Columns[0].ColumnName;
 
             var categoria = from c in entityInventario.Categoria
+                            where c.Estado_Categoria == true
                             select c;
             DataTable dtCategoria = new DataTable();
             dtCategoria = categoria.CopyAnonymusToDataTable();
@@ -146,6 +148,7 @@ namespace SistemaInventarioIT
             cmbCategoria.ValueMember = dtCategoria.Columns[0].ColumnName;
 
             var estado = from e in entityInventario.Estado
+                         where e.Estado_Estado == true
                          select e;
             DataTable dtEstado = new DataTable();
             dtEstado = estado.CopyAnonymusToDataTable();
