@@ -21,7 +21,7 @@ namespace SistemaInventarioIT
             InitializeComponent();
         }
 
-        
+
 
         private void ibAgregar_Click(object sender, EventArgs e)
         {
@@ -76,13 +76,13 @@ namespace SistemaInventarioIT
         private void carga_form()
         {
             var iUbicacion = from i in entityInventario.Ubicacion
-                         select new
-                         {
-                             i.IdUbicacion,
-                             i.Nombre_Ubicacion,
-                             i.Descripcion,
-                             i.Estado_Ubicacion
-                         };
+                             select new
+                             {
+                                 i.IdUbicacion,
+                                 i.Nombre_Ubicacion,
+                                 i.Descripcion,
+                                 i.Estado_Ubicacion
+                             };
             dgUbicacion.DataSource = iUbicacion.CopyAnonymusToDataTable();
             dgUbicacion.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }
@@ -118,11 +118,32 @@ namespace SistemaInventarioIT
                 chkEstado.Checked = tUbicacion.Estado_Ubicacion;
                 edit = true;
             }
-            catch(Exception)
+            catch (Exception)
             {
                 dgUbicacion.ClearSelection();
             }
-            
-        }   
+
+        }
+
+        private void dgUbicacion_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (vacio == 1)
+            {
+                vacio = 2;
+            }
+        }
+
+        private void dgUbicacion_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (vacio == 1)
+            {
+                vacio = 2;
+            }
+        }
+
+        private void txtDescripcion_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

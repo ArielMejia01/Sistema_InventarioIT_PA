@@ -109,6 +109,14 @@ namespace SistemaInventarioIT
             {
                 dgPlaza.ClearSelection();
             }
-        }        
+        }
+
+        private void dgPlaza_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (vacio == 1)
+            {
+                vacio = 2;
+            }
+        }
     }
 }

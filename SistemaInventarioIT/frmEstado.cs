@@ -106,5 +106,13 @@ namespace SistemaInventarioIT
                 dgEstado.ClearSelection();
             }
         }
+
+        private void dgEstado_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (vacio == 1)
+            {
+                vacio = 2;
+            }
+        }
     }
 }

@@ -64,7 +64,7 @@ namespace SistemaInventarioIT
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(279, 9);
+            this.label1.Location = new System.Drawing.Point(291, 13);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(106, 18);
             this.label1.TabIndex = 0;
@@ -305,7 +305,7 @@ namespace SistemaInventarioIT
             this.dgInventario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgInventario.Size = new System.Drawing.Size(517, 108);
             this.dgInventario.TabIndex = 56;
-            this.dgInventario.SelectionChanged += new System.EventHandler(this.dgInventario_SelectionChanged_1);
+            this.dgInventario.SelectionChanged += new System.EventHandler(this.dgInventario_SelectionChanged_1);            
             // 
             // frmInventario
             // 

@@ -112,5 +112,13 @@ namespace SistemaInventarioIT
             }
             
         }
+
+        private void dgCategoria_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (vacio == 1)
+            {
+                vacio = 2;
+            }
+        }
     }
 }
