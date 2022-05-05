@@ -82,6 +82,8 @@ namespace SistemaInventarioIT
                 tInventario.Serial = txtSerial.Text;
                 tInventario.Descripcion = txtDescripcion.Text;
                 tInventario.Cantidad = Convert.ToInt32(txtCantidad.Text);
+                tInventario.Categoria = Convert.ToInt32(cmbCategoria.SelectedValue);
+                tInventario.Estado = Convert.ToInt32(cmbEstado.SelectedValue);
                 //tInventario.Categoria = txtCategoria.Text;
                 //tInventario.Estado = chkEstado.Checked;
                 tInventario.Modelo = txtModelo.Text;
@@ -101,6 +103,8 @@ namespace SistemaInventarioIT
                 inventario.Serial = txtSerial.Text;
                 inventario.Descripcion = txtDescripcion.Text;
                 inventario.Cantidad = Convert.ToInt32(txtCantidad.Text);
+                inventario.Categoria = Convert.ToInt32(cmbCategoria.SelectedValue);
+                inventario.Estado = Convert.ToInt32(cmbEstado.SelectedValue);
                 //inventario.Categoria = txtCategoria.Text;
                 //inventario.Estado = chkEstado.Checked;
                 inventario.Modelo = txtModelo.Text;
@@ -232,23 +236,32 @@ namespace SistemaInventarioIT
             idInventario = 0;
             editar = false;
             dgInventario.ClearSelection();
+            //carga_form();
         }
 
         private void FiltrarInventario(string nombre)
         {
             var fInventario = from i in entityInventario.Inventario
                               where i.Nombre.Contains(nombre)
+                              join y
+                              in entityInventario.Ubicacion on i.Ubicacion equals y.IdUbicacion
+                              join p
+                              in entityInventario.Plaza on i.Plaza equals p.IdPlaza
+                              join c
+                              in entityInventario.Categoria on i.Categoria equals c.IdCategoria
+                              join e
+                              in entityInventario.Estado on i.Estado equals e.IdEstado
                               select new
                               {
                                   i.IdInventario,
                                   i.Nombre,
-                                  i.Ubicacion,
-                                  i.Plaza,
+                                  y.Nombre_Ubicacion,
+                                  p.Nombre_Plaza,
                                   i.Serial,
                                   i.Cantidad,
                                   i.Descripcion,
-                                  i.Categoria,
-                                  i.Estado,
+                                  c.Nombre_Categoria,
+                                  e.Nombre_Estado,
                                   i.Modelo,
                                   i.Garantia
                               };
