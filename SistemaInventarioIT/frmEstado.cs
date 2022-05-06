@@ -121,6 +121,12 @@ namespace SistemaInventarioIT
             }
         }
 
-        
+        private void dgEstado_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (vacio == 1)
+            {
+                vacio = 2;
+            }
+        }
     }
 }

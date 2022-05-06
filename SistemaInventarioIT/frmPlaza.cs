@@ -120,5 +120,13 @@ namespace SistemaInventarioIT
                 vacio = 2;
             }
         }
+
+        private void dgPlaza_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (vacio == 1)
+            {
+                vacio = 2;
+            }
+        }
     }
 }

@@ -103,7 +103,7 @@ namespace SistemaInventarioIT
             this.txtNombre.Location = new System.Drawing.Point(317, 82);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(197, 20);
-            this.txtNombre.TabIndex = 4;
+            this.txtNombre.TabIndex = 1;
             // 
             // txtDescripcion
             // 
@@ -111,7 +111,7 @@ namespace SistemaInventarioIT
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(197, 47);
-            this.txtDescripcion.TabIndex = 5;
+            this.txtDescripcion.TabIndex = 2;
             // 
             // chkEstado
             // 
@@ -120,7 +120,7 @@ namespace SistemaInventarioIT
             this.chkEstado.Location = new System.Drawing.Point(317, 190);
             this.chkEstado.Name = "chkEstado";
             this.chkEstado.Size = new System.Drawing.Size(183, 20);
-            this.chkEstado.TabIndex = 6;
+            this.chkEstado.TabIndex = 3;
             this.chkEstado.Text = "Habilitado / Deshabilitado";
             this.chkEstado.UseVisualStyleBackColor = true;
             // 
@@ -128,6 +128,8 @@ namespace SistemaInventarioIT
             // 
             this.dgEstado.AllowUserToAddRows = false;
             this.dgEstado.AllowUserToDeleteRows = false;
+            this.dgEstado.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgEstado.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgEstado.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
             this.dgEstado.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgEstado.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -164,6 +166,7 @@ namespace SistemaInventarioIT
             this.dgEstado.TabIndex = 7;
             this.dgEstado.SelectionChanged += new System.EventHandler(this.dgEstado_SelectionChanged);
             this.dgEstado.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgEstado_MouseClick);
+            this.dgEstado.MouseMove += new System.Windows.Forms.MouseEventHandler(this.dgEstado_MouseMove);
             // 
             // ibAgregar
             // 
@@ -176,7 +179,7 @@ namespace SistemaInventarioIT
             this.ibAgregar.Location = new System.Drawing.Point(130, 391);
             this.ibAgregar.Name = "ibAgregar";
             this.ibAgregar.Size = new System.Drawing.Size(92, 34);
-            this.ibAgregar.TabIndex = 50;
+            this.ibAgregar.TabIndex = 4;
             this.ibAgregar.Text = "Agregar";
             this.ibAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ibAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -193,7 +196,7 @@ namespace SistemaInventarioIT
             this.ibNuevo.Location = new System.Drawing.Point(242, 391);
             this.ibNuevo.Name = "ibNuevo";
             this.ibNuevo.Size = new System.Drawing.Size(92, 34);
-            this.ibNuevo.TabIndex = 53;
+            this.ibNuevo.TabIndex = 5;
             this.ibNuevo.Text = "Nuevo";
             this.ibNuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.ibNuevo.UseVisualStyleBackColor = true;

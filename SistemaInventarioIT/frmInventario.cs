@@ -144,31 +144,7 @@ namespace SistemaInventarioIT
             catch (Exception)
             {
                 dgInventario.ClearSelection();
-            }
-
-            /*if (dgInventario.RowCount > 0)
-            {
-                try
-                {
-                    idInventario = Convert.ToInt32(dgInventario.SelectedCells[0].Value);
-                    var tInventario = entityInventario.Inventario.FirstOrDefault(x => x.IdInventario == idInventario);
-                    txtNombre.Text = tInventario.Nombre;
-                    cmbUbicacion.SelectedValue = tInventario.Ubicacion;
-                    cmbPlaza.SelectedValue = tInventario.Plaza;
-                    txtSerial.Text = tInventario.Serial;
-                    txtDescripcion.Text = tInventario.Descripcion;
-                    txtCantidad.Text = Convert.ToString(tInventario.Cantidad);
-                    cmbCategoria.SelectedValue = tInventario.Categoria;
-                    cmbEstado.SelectedValue = tInventario.Estado;
-                    txtModelo.Text = tInventario.Modelo;
-                    dtFecha.Value = (DateTime)tInventario.Garantia;
-                    editar = true;
-                }
-                catch (Exception)
-                {
-
-                }
-            }*/
+            }            
         }
 
         private void ibNuevo_Click(object sender, EventArgs e)

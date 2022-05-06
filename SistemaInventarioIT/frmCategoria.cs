@@ -121,5 +121,13 @@ namespace SistemaInventarioIT
                 vacio = 2;
             }
         }
+
+        private void dgCategoria_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (vacio == 1)
+            {
+                vacio = 2;
+            }
+        }
     }
 }
