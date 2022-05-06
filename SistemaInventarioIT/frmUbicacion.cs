@@ -21,7 +21,11 @@ namespace SistemaInventarioIT
             InitializeComponent();
         }
 
-
+        private void frmUbicacion_Load(object sender, EventArgs e)
+        {
+            carga_form();
+            vacio = 1;
+        }
 
         private void ibAgregar_Click(object sender, EventArgs e)
         {
@@ -42,7 +46,7 @@ namespace SistemaInventarioIT
                 tUbicacion.Descripcion = txtDescripcion.Text;
                 tUbicacion.Estado_Ubicacion = chkEstado.Checked;
                 entityInventario.SaveChanges();
-                MessageBox.Show("¡Cambios Guardados!");
+                MessageBox.Show("¡Cambios Guardados Correctamente!");
             }
             else
             {
@@ -52,58 +56,16 @@ namespace SistemaInventarioIT
                 tNombreUbicacion.Estado_Ubicacion = chkEstado.Checked;
                 entityInventario.Ubicacion.Add(tNombreUbicacion);
                 entityInventario.SaveChanges();
-                MessageBox.Show("¡Datos Guardados!");
+                MessageBox.Show("¡Datos Guardados Correctamente!");
             }
             idUbicacion = 0;
             edit = false;
             carga_form();
-            cleanText();
-        }
-
-        private void cleanText()
-        {
-            txtUbicacion.Text = "";
-            txtDescripcion.Text = "";
-            chkEstado.Checked = false;
-            dgUbicacion.ClearSelection();
-        }
-
-        private void ibNuevo_Click(object sender, EventArgs e)
-        {
-            cleanText();
-        }
-
-        private void carga_form()
-        {
-            var iUbicacion = from i in entityInventario.Ubicacion
-                             select new
-                             {
-                                 i.IdUbicacion,
-                                 i.Nombre_Ubicacion,
-                                 i.Descripcion,
-                                 i.Estado_Ubicacion
-                             };
-            dgUbicacion.DataSource = iUbicacion.CopyAnonymusToDataTable();
-            dgUbicacion.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-        }
-
-        private void frmUbicacion_Load(object sender, EventArgs e)
-        {
-            /*var iUbicacion = from i in entityInventario.Ubicacion
-                             select new
-                             {
-                                 i.IdUbicacion,
-                                 i.Nombre_Ubicacion,
-                                 i.Descripcion
-                             };
-            dgUbicacion.DataSource = iUbicacion.CopyAnonymusToDataTable();
-            dgUbicacion.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;*/
-            carga_form();
-            vacio = 1;
+            cleanText();          
         }
 
         private void dgUbicacion_SelectionChanged(object sender, EventArgs e)
-        {
+        {       
             try
             {
                 if (vacio == 1)
@@ -125,6 +87,34 @@ namespace SistemaInventarioIT
 
         }
 
+        private void ibNuevo_Click(object sender, EventArgs e)
+        {
+            cleanText();
+        }
+
+        private void carga_form()
+        {
+            var iUbicacion = from i in entityInventario.Ubicacion
+                             select new
+                             {
+                                 i.IdUbicacion,
+                                 i.Nombre_Ubicacion,
+                                 i.Descripcion,
+                                 i.Estado_Ubicacion
+                             };
+            dgUbicacion.DataSource = iUbicacion.CopyAnonymusToDataTable();
+            dgUbicacion.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+        }
+
+        private void cleanText()
+        {
+            txtUbicacion.Text = "";
+            txtDescripcion.Text = "";
+            chkEstado.Checked = false;
+            edit = false;
+            dgUbicacion.ClearSelection();
+        }                   
+       
         private void dgUbicacion_MouseClick(object sender, MouseEventArgs e)
         {
             if (vacio == 1)

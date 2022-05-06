@@ -15,24 +15,32 @@ namespace SistemaInventarioIT
         DBInventarioITPAEntities entityInventario = new DBInventarioITPAEntities();
         int idInventario = 0;
         bool editar = false;
+        int vacio;
         public frmInventario()
         {
             InitializeComponent();
         }
 
-        
+        private void frmInventario_Load(object sender, EventArgs e)
+        {
+            carga_form();
+            vacio = 1;
+            //cmbUbicacion.Text = "Seleccionar...";
+            //cmbPlaza.Text = "Seleccionar...";
+
+        }
 
         /*Consultar que campos seran obligatorios y que no*/
         /*en la bd yo tengo que: el serial, la cantidad, la descripcion, la categoria, el modelo y la garantia
          allow nulls(que permiten nulos)*/
         private void ibAgregar_Click(object sender, EventArgs e)
         {
-            /*if (txtNombre.Text.Equals(""))
+            if (txtNombre.Text.Equals(""))
             {
                 MessageBox.Show("¡Ingrese el nombre del articulo!");
                 return;
             }
-            if (cmbUbicacion.SelectedIndex==-1)
+            /*if (cmbUbicacion.SelectedIndex==-1)
             {
                 MessageBox.Show("¡Seleccione la ubicación!");
                 return;
@@ -41,7 +49,7 @@ namespace SistemaInventarioIT
             {
                 MessageBox.Show("¡Seleccione una plaza!");
                 return;
-            }
+            }*/
             if (txtSerial.Text.Equals(""))
             {
                 MessageBox.Show("¡Ingrese el serial!");
@@ -56,22 +64,12 @@ namespace SistemaInventarioIT
             {
                 MessageBox.Show("¡Ingrese una cantidad valida!");
                 return;
-            }
-            if (txtCategoria.Text.Equals(""))
-            {
-                MessageBox.Show("¡Ingrese la categoria!");
-                return;
-            }
-            if (chkEstado.Checked.Equals(""))
-            {
-                MessageBox.Show("¡Seleccione el estado!");
-                return;
-            }
+            }           
             if (txtModelo.Text.Equals(""))
             {
                 MessageBox.Show("¡Ingrese el modelo!");
                 return;
-            }*/
+            }
             if (editar)
             {
 
@@ -118,9 +116,67 @@ namespace SistemaInventarioIT
             idInventario = 0;
             editar = false;
             carga_form();
+            cleanText();
         }
 
-        
+        private void dgInventario_SelectionChanged_1(object sender, EventArgs e)
+        {
+            try
+            {
+                if (vacio == 1)
+                {
+                    cleanText();
+                }
+                idInventario = Convert.ToInt32(dgInventario.SelectedCells[0].Value);
+                var tInventario = entityInventario.Inventario.FirstOrDefault(x => x.IdInventario == idInventario);
+                txtNombre.Text = tInventario.Nombre;
+                cmbUbicacion.SelectedValue = tInventario.Ubicacion;
+                cmbPlaza.SelectedValue = tInventario.Plaza;
+                txtSerial.Text = tInventario.Serial;
+                txtDescripcion.Text = tInventario.Descripcion;
+                txtCantidad.Text = Convert.ToString(tInventario.Cantidad);
+                cmbCategoria.SelectedValue = tInventario.Categoria;
+                cmbEstado.SelectedValue = tInventario.Estado;
+                txtModelo.Text = tInventario.Modelo;
+                dtFecha.Value = (DateTime)tInventario.Garantia;
+                editar = true;
+            }
+            catch (Exception)
+            {
+                dgInventario.ClearSelection();
+            }
+
+            /*if (dgInventario.RowCount > 0)
+            {
+                try
+                {
+                    idInventario = Convert.ToInt32(dgInventario.SelectedCells[0].Value);
+                    var tInventario = entityInventario.Inventario.FirstOrDefault(x => x.IdInventario == idInventario);
+                    txtNombre.Text = tInventario.Nombre;
+                    cmbUbicacion.SelectedValue = tInventario.Ubicacion;
+                    cmbPlaza.SelectedValue = tInventario.Plaza;
+                    txtSerial.Text = tInventario.Serial;
+                    txtDescripcion.Text = tInventario.Descripcion;
+                    txtCantidad.Text = Convert.ToString(tInventario.Cantidad);
+                    cmbCategoria.SelectedValue = tInventario.Categoria;
+                    cmbEstado.SelectedValue = tInventario.Estado;
+                    txtModelo.Text = tInventario.Modelo;
+                    dtFecha.Value = (DateTime)tInventario.Garantia;
+                    editar = true;
+                }
+                catch (Exception)
+                {
+
+                }
+            }*/
+        }
+
+        private void ibNuevo_Click(object sender, EventArgs e)
+        {
+            cleanText();
+        }
+
+
         private void carga_form()
         {
             var ubicacion = from u in entityInventario.Ubicacion
@@ -189,42 +245,7 @@ namespace SistemaInventarioIT
             dgInventario.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }
 
-        private void frmInventario_Load(object sender, EventArgs e)
-        {
-            carga_form();
-            cmbUbicacion.Text = "Seleccionar...";
-            cmbPlaza.Text = "Seleccionar...";
-
-        }
-
-        private void dgInventario_SelectionChanged(object sender, EventArgs e)
-        {
-            if (dgInventario.RowCount > 0)
-            {
-                try
-                {
-                    idInventario = Convert.ToInt32(dgInventario.SelectedCells[0].Value);
-                    var tInventario = entityInventario.Inventario.FirstOrDefault(x => x.IdInventario == idInventario);
-                    txtNombre.Text = tInventario.Nombre;
-                    cmbUbicacion.SelectedValue = tInventario.Ubicacion;
-                    cmbPlaza.SelectedValue = tInventario.Plaza;
-                    txtSerial.Text = tInventario.Serial;
-                    txtDescripcion.Text = tInventario.Descripcion;
-                    txtCantidad.Text = Convert.ToString(tInventario.Cantidad);
-                    cmbCategoria.SelectedValue = tInventario.Categoria;
-                    cmbEstado.SelectedValue = tInventario.Estado;
-                    txtModelo.Text = tInventario.Modelo;
-                    dtFecha.Value = (DateTime)tInventario.Garantia;
-                    editar = true;
-                }
-                catch (Exception)
-                {
-
-                }
-            }
-        }
-
-        private void ibNuevo_Click(object sender, EventArgs e)
+        private void cleanText()
         {
             txtNombre.Text = "";
             txtSerial.Text = "";
@@ -235,10 +256,11 @@ namespace SistemaInventarioIT
             txtModelo.Text = "";
             idInventario = 0;
             editar = false;
+            //txtBuscar.Text = string.Empty;
+            //txtBuscar.Text = "";
             dgInventario.ClearSelection();
-            //carga_form();
         }
-
+        
         private void FiltrarInventario(string nombre)
         {
             var fInventario = from i in entityInventario.Inventario
@@ -288,33 +310,23 @@ namespace SistemaInventarioIT
             if (txtBuscar.Text == "")
             {
                 txtBuscar.Text = "Buscar...";
+                carga_form();
             }
         }
 
-        private void dgInventario_SelectionChanged_1(object sender, EventArgs e)
+        private void dgInventario_MouseClick(object sender, MouseEventArgs e)
         {
-            if (dgInventario.RowCount > 0)
+            if (vacio == 1)
             {
-                try
-                {
-                    idInventario = Convert.ToInt32(dgInventario.SelectedCells[0].Value);
-                    var tInventario = entityInventario.Inventario.FirstOrDefault(x => x.IdInventario == idInventario);
-                    txtNombre.Text = tInventario.Nombre;
-                    cmbUbicacion.SelectedValue = tInventario.Ubicacion;
-                    cmbPlaza.SelectedValue = tInventario.Plaza;
-                    txtSerial.Text = tInventario.Serial;
-                    txtDescripcion.Text = tInventario.Descripcion;
-                    txtCantidad.Text = Convert.ToString(tInventario.Cantidad);
-                    cmbCategoria.SelectedValue = tInventario.Categoria;
-                    cmbEstado.SelectedValue = tInventario.Estado;
-                    txtModelo.Text = tInventario.Modelo;
-                    dtFecha.Value = (DateTime)tInventario.Garantia;
-                    editar = true;
-                }
-                catch (Exception)
-                {
+                vacio = 2;
+            }
+        }
 
-                }
+        private void dgInventario_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (vacio == 1)
+            {
+                vacio = 2;
             }
         }
     }

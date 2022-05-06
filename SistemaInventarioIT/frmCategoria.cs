@@ -27,38 +27,16 @@ namespace SistemaInventarioIT
             vacio = 1;
         }
 
-        private void carga_form()
-        {
-            var iCategoria = from i in entityInventario.Categoria
-                             select new
-                             {
-                                 i.IdCategoria,
-                                 i.Nombre_Categoria,
-                                 i.Descripcion,
-                                 i.Estado_Categoria
-                             };
-            dgCategoria.DataSource = iCategoria.CopyAnonymusToDataTable();
-            dgCategoria.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-        }
-
-        private void cleanText()
-        {
-            txtNombre.Text = "";
-            txtDescripcion.Text = "";
-            chkEstado.Checked = false;
-            dgCategoria.ClearSelection();
-        }
-
         private void ibAgregar_Click(object sender, EventArgs e)
         {
             if (txtNombre.Text.Equals(""))
             {
-                MessageBox.Show("Ingrese el Nombre de la Categoria");
+                MessageBox.Show("¡Ingrese el nombre de la categoria!");
                 return;
             }
             if (txtDescripcion.Text.Equals(""))
             {
-                MessageBox.Show("Ingrese la Descripción");
+                MessageBox.Show("¡Ingrese la descripción de la categoria!");
                 return;
             }
             if (edit)
@@ -68,7 +46,7 @@ namespace SistemaInventarioIT
                 tCategoria.Descripcion = txtDescripcion.Text;
                 tCategoria.Estado_Categoria = chkEstado.Checked;
                 entityInventario.SaveChanges();
-                MessageBox.Show("Cambios guardados");
+                MessageBox.Show("¡Cambios Guardados Correctamente!");
             }
             else
             {
@@ -78,16 +56,11 @@ namespace SistemaInventarioIT
                 tNombreCategoria.Estado_Categoria = chkEstado.Checked;
                 entityInventario.Categoria.Add(tNombreCategoria);
                 entityInventario.SaveChanges();
-                MessageBox.Show("Datos guardados");
+                MessageBox.Show("¡Datos Guardados Correctamente!");
             }
             idCategoria = 0;
             edit = false;
             carga_form();
-            cleanText();
-        }
-
-        private void ibNuevo_Click(object sender, EventArgs e)
-        {
             cleanText();
         }
 
@@ -110,9 +83,37 @@ namespace SistemaInventarioIT
             {
                 dgCategoria.ClearSelection();
             }
-            
+
         }
 
+        private void ibNuevo_Click(object sender, EventArgs e)
+        {
+            cleanText();
+        }
+
+        private void carga_form()
+        {
+            var iCategoria = from i in entityInventario.Categoria
+                             select new
+                             {
+                                 i.IdCategoria,
+                                 i.Nombre_Categoria,
+                                 i.Descripcion,
+                                 i.Estado_Categoria
+                             };
+            dgCategoria.DataSource = iCategoria.CopyAnonymusToDataTable();
+            dgCategoria.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+        }
+
+        private void cleanText()
+        {
+            txtNombre.Text = "";
+            txtDescripcion.Text = "";
+            chkEstado.Checked = false;
+            edit = false;
+            dgCategoria.ClearSelection();
+        }
+            
         private void dgCategoria_MouseClick(object sender, MouseEventArgs e)
         {
             if (vacio == 1)

@@ -197,6 +197,7 @@ namespace SistemaInventarioIT
             this.ibNuevo.Text = "Nuevo";
             this.ibNuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.ibNuevo.UseVisualStyleBackColor = true;
+            this.ibNuevo.Click += new System.EventHandler(this.ibNuevo_Click);
             // 
             // frmEstado
             // 

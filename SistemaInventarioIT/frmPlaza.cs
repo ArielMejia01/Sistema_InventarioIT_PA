@@ -21,16 +21,22 @@ namespace SistemaInventarioIT
             InitializeComponent();
         }
 
+        private void frmPlaza_Load(object sender, EventArgs e)
+        {
+            carga_form();
+            vacio = 1;
+        }
+
         private void ibAgregar_Click(object sender, EventArgs e)
         {
             if (txtPlaza.Text.Equals(""))
             {
-                MessageBox.Show("!Ingrese el nombre de la plaza¡");
+                MessageBox.Show("¡Ingrese el nombre de la plaza!");
                 return;
             }
             if (txtDescripcion.Text.Equals(""))
             {
-                MessageBox.Show("!Ingrese la descripción¡");
+                MessageBox.Show("¡Ingrese la descripción de la plaza!");
                 return;
             }
             if (edit)
@@ -40,7 +46,7 @@ namespace SistemaInventarioIT
                 tPlaza.Descripcion = txtDescripcion.Text;
                 tPlaza.Estado_Plaza = chkEstado.Checked;
                 entityInventario.SaveChanges();
-                MessageBox.Show("¡Cambios Guardados!");
+                MessageBox.Show("¡Cambios Guardados Correctamente!");
             }
             else
             {
@@ -50,43 +56,11 @@ namespace SistemaInventarioIT
                 tPlaza.Estado_Plaza = chkEstado.Checked;
                 entityInventario.Plaza.Add(tPlaza);
                 entityInventario.SaveChanges();
-                MessageBox.Show("¡Datos Guardados!");
+                MessageBox.Show("¡Datos Guardados Correctamente!");
             }
             idPlaza = 0;
             edit = false;
             carga_form();
-            cleanText();
-        }
-
-        private void carga_form()
-        {
-            var iPlaza = from i in entityInventario.Plaza
-                         select new
-                         {
-                             i.IdPlaza,
-                             i.Nombre_Plaza,
-                             i.Descripcion,
-                             i.Estado_Plaza
-                         };
-            dgPlaza.DataSource = iPlaza.CopyAnonymusToDataTable();
-            dgPlaza.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-        }
-
-        private void frmPlaza_Load(object sender, EventArgs e)
-        {
-            carga_form();
-            vacio = 1;
-        }
-
-        private void cleanText()
-        {
-            txtPlaza.Text = "";
-            txtDescripcion.Text = "";
-            chkEstado.Checked = false;
-            dgPlaza.ClearSelection();
-        }
-        private void ibNuevo_Click(object sender, EventArgs e)
-        {
             cleanText();
         }
 
@@ -111,6 +85,34 @@ namespace SistemaInventarioIT
             }
         }
 
+        private void ibNuevo_Click(object sender, EventArgs e)
+        {
+            cleanText();
+        }
+
+        private void carga_form()
+        {
+            var iPlaza = from i in entityInventario.Plaza
+                         select new
+                         {
+                             i.IdPlaza,
+                             i.Nombre_Plaza,
+                             i.Descripcion,
+                             i.Estado_Plaza
+                         };
+            dgPlaza.DataSource = iPlaza.CopyAnonymusToDataTable();
+            dgPlaza.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+        }
+
+        private void cleanText()
+        {
+            txtPlaza.Text = "";
+            txtDescripcion.Text = "";
+            chkEstado.Checked = false;
+            edit = false;
+            dgPlaza.ClearSelection();
+        }
+                                
         private void dgPlaza_MouseClick(object sender, MouseEventArgs e)
         {
             if (vacio == 1)

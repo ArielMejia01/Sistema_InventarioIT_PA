@@ -143,7 +143,7 @@ namespace SistemaInventarioIT
             this.dgCategoria.ColumnHeadersHeight = 27;
             this.dgCategoria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgCategoria.EnableHeadersVisualStyles = false;
-            this.dgCategoria.Location = new System.Drawing.Point(85, 252);
+            this.dgCategoria.Location = new System.Drawing.Point(94, 252);
             this.dgCategoria.Name = "dgCategoria";
             this.dgCategoria.ReadOnly = true;
             this.dgCategoria.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -161,7 +161,7 @@ namespace SistemaInventarioIT
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             this.dgCategoria.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgCategoria.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgCategoria.Size = new System.Drawing.Size(501, 124);
+            this.dgCategoria.Size = new System.Drawing.Size(492, 124);
             this.dgCategoria.TabIndex = 7;
             this.dgCategoria.SelectionChanged += new System.EventHandler(this.dgCategoria_SelectionChanged);
             this.dgCategoria.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgCategoria_MouseClick);

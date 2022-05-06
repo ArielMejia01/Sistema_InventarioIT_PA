@@ -27,30 +27,16 @@ namespace SistemaInventarioIT
             vacio = 1;
         }
 
-        private void cargaForm()
-        {
-            var iEstado = from i in entityInventario.Estado
-                          select new
-                          {
-                              i.IdEstado,
-                              i.Nombre_Estado,
-                              i.Descripcion,
-                              i.Estado_Estado
-                          };
-            dgEstado.DataSource = iEstado.CopyAnonymusToDataTable();
-            dgEstado.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-        }
-
         private void ibAgregar_Click(object sender, EventArgs e)
         {
             if (txtNombre.Text.Equals(""))
             {
-                MessageBox.Show("Ingrese el Nombre del Estado");
+                MessageBox.Show("¡Ingrese el nombre del estado!");
                 return;
             }
             if (txtDescripcion.Text.Equals(""))
             {
-                MessageBox.Show("Ingrese la descipción");
+                MessageBox.Show("¡Ingrese la descipción del estado!");
                 return;
             }
             if (edit)
@@ -60,7 +46,7 @@ namespace SistemaInventarioIT
                 tEstado.Descripcion = txtDescripcion.Text;
                 tEstado.Estado_Estado = chkEstado.Checked;
                 entityInventario.SaveChanges();
-                MessageBox.Show("Cambios Guardados");
+                MessageBox.Show("¡Cambios Guardados Correctamente!");
             }
             else
             {
@@ -70,20 +56,12 @@ namespace SistemaInventarioIT
                 tNombreEstado.Estado_Estado = chkEstado.Checked;
                 entityInventario.Estado.Add(tNombreEstado);
                 entityInventario.SaveChanges();
-                MessageBox.Show("Datos Guardados");
+                MessageBox.Show("¡Datos Guardados Correctamente!");
             }
             idEstado = 0;
             edit = false;
             cargaForm();
             cleanText();
-        }
-
-        private void cleanText()
-        {
-            txtNombre.Text = "";
-            txtDescripcion.Text = "";
-            chkEstado.Checked = false;
-            dgEstado.ClearSelection();
         }
 
         private void dgEstado_SelectionChanged(object sender, EventArgs e)
@@ -107,6 +85,34 @@ namespace SistemaInventarioIT
             }
         }
 
+        private void ibNuevo_Click(object sender, EventArgs e)
+        {
+            cleanText();
+        }
+
+        private void cargaForm()
+        {
+            var iEstado = from i in entityInventario.Estado
+                          select new
+                          {
+                              i.IdEstado,
+                              i.Nombre_Estado,
+                              i.Descripcion,
+                              i.Estado_Estado
+                          };
+            dgEstado.DataSource = iEstado.CopyAnonymusToDataTable();
+            dgEstado.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+        }
+        
+        private void cleanText()
+        {
+            txtNombre.Text = "";
+            txtDescripcion.Text = "";
+            chkEstado.Checked = false;
+            edit = false;
+            dgEstado.ClearSelection();
+        }        
+
         private void dgEstado_MouseClick(object sender, MouseEventArgs e)
         {
             if (vacio == 1)
@@ -114,5 +120,7 @@ namespace SistemaInventarioIT
                 vacio = 2;
             }
         }
+
+        
     }
 }
