@@ -128,5 +128,42 @@ namespace SistemaInventarioIT
                 vacio = 2;
             }
         }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FiltrarEstado(string nombre)
+        {
+            var fEstado = from e in entityInventario.Estado
+                          where e.Nombre_Estado.Contains(nombre)
+                          select new
+                          {
+                              e.IdEstado,
+                              e.Nombre_Estado,
+                              e.Descripcion,
+                              e.Estado_Estado
+                          };
+            dgEstado.DataSource = fEstado.CopyAnonymusToDataTable();
+            dgEstado.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+        }
+
+        private void txtBuscar_Enter(object sender, EventArgs e)
+        {
+            if (txtBuscar.Text == "Buscar...")
+            {
+                txtBuscar.Text = "";
+            }
+        }
+
+        private void txtBuscar_Leave(object sender, EventArgs e)
+        {
+            if (txtBuscar.Text == "")
+            {
+                txtBuscar.Text = "Buscar...";
+                cargaForm();
+            }
+        }
     }
 }

@@ -35,7 +35,7 @@ namespace SistemaInventarioIT
             this.ibCategoria = new FontAwesome.Sharp.IconButton();
             this.ibPlaza = new FontAwesome.Sharp.IconButton();
             this.ibUbicación = new FontAwesome.Sharp.IconButton();
-            this.ibEstanteCentro = new FontAwesome.Sharp.IconButton();
+            this.ibSalida = new FontAwesome.Sharp.IconButton();
             this.ibInventario = new FontAwesome.Sharp.IconButton();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -56,7 +56,7 @@ namespace SistemaInventarioIT
             this.panelLateral.Controls.Add(this.ibCategoria);
             this.panelLateral.Controls.Add(this.ibPlaza);
             this.panelLateral.Controls.Add(this.ibUbicación);
-            this.panelLateral.Controls.Add(this.ibEstanteCentro);
+            this.panelLateral.Controls.Add(this.ibSalida);
             this.panelLateral.Controls.Add(this.ibInventario);
             this.panelLateral.Controls.Add(this.panelLogo);
             this.panelLateral.Dock = System.Windows.Forms.DockStyle.Left;
@@ -157,28 +157,28 @@ namespace SistemaInventarioIT
             this.ibUbicación.UseVisualStyleBackColor = false;
             this.ibUbicación.Click += new System.EventHandler(this.ibUbicación_Click);
             // 
-            // ibEstanteCentro
+            // ibSalida
             // 
-            this.ibEstanteCentro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(59)))), ((int)(((byte)(120)))));
-            this.ibEstanteCentro.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ibEstanteCentro.FlatAppearance.BorderSize = 0;
-            this.ibEstanteCentro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ibEstanteCentro.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ibEstanteCentro.IconChar = FontAwesome.Sharp.IconChar.Buffer;
-            this.ibEstanteCentro.IconColor = System.Drawing.Color.White;
-            this.ibEstanteCentro.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ibEstanteCentro.IconSize = 26;
-            this.ibEstanteCentro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ibEstanteCentro.Location = new System.Drawing.Point(0, 132);
-            this.ibEstanteCentro.Name = "ibEstanteCentro";
-            this.ibEstanteCentro.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.ibEstanteCentro.Size = new System.Drawing.Size(180, 45);
-            this.ibEstanteCentro.TabIndex = 8;
-            this.ibEstanteCentro.Text = "Estante Centro";
-            this.ibEstanteCentro.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ibEstanteCentro.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.ibEstanteCentro.UseVisualStyleBackColor = false;
-            this.ibEstanteCentro.Click += new System.EventHandler(this.ibEstanteCentro_Click);
+            this.ibSalida.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(59)))), ((int)(((byte)(120)))));
+            this.ibSalida.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ibSalida.FlatAppearance.BorderSize = 0;
+            this.ibSalida.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ibSalida.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ibSalida.IconChar = FontAwesome.Sharp.IconChar.Buffer;
+            this.ibSalida.IconColor = System.Drawing.Color.White;
+            this.ibSalida.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ibSalida.IconSize = 26;
+            this.ibSalida.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ibSalida.Location = new System.Drawing.Point(0, 132);
+            this.ibSalida.Name = "ibSalida";
+            this.ibSalida.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.ibSalida.Size = new System.Drawing.Size(180, 45);
+            this.ibSalida.TabIndex = 8;
+            this.ibSalida.Text = "Salidas";
+            this.ibSalida.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ibSalida.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ibSalida.UseVisualStyleBackColor = false;
+            this.ibSalida.Click += new System.EventHandler(this.ibEstanteCentro_Click);
             // 
             // ibInventario
             // 
@@ -273,7 +273,7 @@ namespace SistemaInventarioIT
         private FontAwesome.Sharp.IconButton ibInventario;
         private FontAwesome.Sharp.IconButton ibPlaza;
         private FontAwesome.Sharp.IconButton ibUbicación;
-        private FontAwesome.Sharp.IconButton ibEstanteCentro;
+        private FontAwesome.Sharp.IconButton ibSalida;
         private FontAwesome.Sharp.IconButton ibCategoria;
         private FontAwesome.Sharp.IconButton ibEstado;
     }

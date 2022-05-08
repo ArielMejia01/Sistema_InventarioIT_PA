@@ -128,5 +128,42 @@ namespace SistemaInventarioIT
                 vacio = 2;
             }
         }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            FiltrarPlaza(txtBuscar.Text);
+        }
+
+        private void FiltrarPlaza(string nombre)
+        {
+            var fPlaza = from p in entityInventario.Plaza
+                         where p.Nombre_Plaza.Contains(nombre)
+                         select new
+                         {
+                             p.IdPlaza,
+                             p.Nombre_Plaza,
+                             p.Descripcion,
+                             p.Estado_Plaza
+                         };
+            dgPlaza.DataSource = fPlaza.CopyAnonymusToDataTable();
+            dgPlaza.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+        }
+
+        private void txtBuscar_Leave(object sender, EventArgs e)
+        {
+            if (txtBuscar.Text == "")
+            {
+                txtBuscar.Text = "Buscar...";
+                carga_form();
+            }
+        }
+
+        private void txtBuscar_Enter(object sender, EventArgs e)
+        {
+            if (txtBuscar.Text == "Buscar...")
+            {
+                txtBuscar.Text = "";
+            }
+        }
     }
 }

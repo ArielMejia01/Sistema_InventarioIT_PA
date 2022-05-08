@@ -43,6 +43,7 @@ namespace SistemaInventarioIT
             this.ibNuevo = new FontAwesome.Sharp.IconButton();
             this.label4 = new System.Windows.Forms.Label();
             this.chkEstado = new System.Windows.Forms.CheckBox();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgUbicacion)).BeginInit();
             this.SuspendLayout();
@@ -157,7 +158,7 @@ namespace SistemaInventarioIT
             this.ibAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.ibAgregar.IconSize = 30;
             this.ibAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ibAgregar.Location = new System.Drawing.Point(113, 398);
+            this.ibAgregar.Location = new System.Drawing.Point(99, 399);
             this.ibAgregar.Name = "ibAgregar";
             this.ibAgregar.Size = new System.Drawing.Size(92, 34);
             this.ibAgregar.TabIndex = 4;
@@ -174,7 +175,7 @@ namespace SistemaInventarioIT
             this.ibNuevo.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(71)))), ((int)(((byte)(135)))));
             this.ibNuevo.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.ibNuevo.IconSize = 25;
-            this.ibNuevo.Location = new System.Drawing.Point(234, 398);
+            this.ibNuevo.Location = new System.Drawing.Point(215, 399);
             this.ibNuevo.Name = "ibNuevo";
             this.ibNuevo.Size = new System.Drawing.Size(92, 34);
             this.ibNuevo.TabIndex = 5;
@@ -204,11 +205,24 @@ namespace SistemaInventarioIT
             this.chkEstado.Text = "Habilitado / Deshabilitado";
             this.chkEstado.UseVisualStyleBackColor = true;
             // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscar.Location = new System.Drawing.Point(351, 413);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(247, 21);
+            this.txtBuscar.TabIndex = 53;
+            this.txtBuscar.Text = "Buscar...";
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
+            this.txtBuscar.Enter += new System.EventHandler(this.txtBuscar_Enter);
+            this.txtBuscar.Leave += new System.EventHandler(this.txtBuscar_Leave);
+            // 
             // frmUbicacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(688, 476);
+            this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.chkEstado);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.ibNuevo);
@@ -243,5 +257,6 @@ namespace SistemaInventarioIT
         private FontAwesome.Sharp.IconButton ibNuevo;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.CheckBox chkEstado;
+        private System.Windows.Forms.TextBox txtBuscar;
     }
 }

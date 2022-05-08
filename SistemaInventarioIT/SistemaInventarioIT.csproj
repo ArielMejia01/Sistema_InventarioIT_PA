@@ -104,6 +104,12 @@
     <Compile Include="frmPlaza.Designer.cs">
       <DependentUpon>frmPlaza.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSalidas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSalidas.Designer.cs">
+      <DependentUpon>frmSalidas.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmUbicacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,6 +160,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPlaza.resx">
       <DependentUpon>frmPlaza.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSalidas.resx">
+      <DependentUpon>frmSalidas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmUbicacion.resx">
       <DependentUpon>frmUbicacion.cs</DependentUpon>

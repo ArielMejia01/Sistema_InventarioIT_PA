@@ -135,5 +135,42 @@ namespace SistemaInventarioIT
         {
 
         }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            FiltrarUbicacion(txtBuscar.Text);
+        }
+
+        private void FiltrarUbicacion(string nombre)
+        {
+            var fUbicacion = from i in entityInventario.Ubicacion
+                             where i.Nombre_Ubicacion.Contains(nombre)
+                             select new
+                             {
+                                 i.IdUbicacion,
+                                 i.Nombre_Ubicacion,
+                                 i.Descripcion,
+                                 i.Estado_Ubicacion
+                             };
+            dgUbicacion.DataSource = fUbicacion.CopyAnonymusToDataTable();
+            dgUbicacion.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+        }
+
+        private void txtBuscar_Enter(object sender, EventArgs e)
+        {
+            if (txtBuscar.Text == "Buscar...")
+            {
+                txtBuscar.Text = "";
+            }
+        }
+
+        private void txtBuscar_Leave(object sender, EventArgs e)
+        {
+            if (txtBuscar.Text == "")
+            {
+                txtBuscar.Text = "Buscar...";
+                carga_form();
+            }
+        }
     }
 }
