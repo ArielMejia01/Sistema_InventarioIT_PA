@@ -126,7 +126,7 @@ namespace SistemaInventarioIT
             this.dgPlaza.ColumnHeadersHeight = 27;
             this.dgPlaza.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgPlaza.EnableHeadersVisualStyles = false;
-            this.dgPlaza.Location = new System.Drawing.Point(112, 252);
+            this.dgPlaza.Location = new System.Drawing.Point(112, 272);
             this.dgPlaza.Name = "dgPlaza";
             this.dgPlaza.ReadOnly = true;
             this.dgPlaza.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -145,7 +145,7 @@ namespace SistemaInventarioIT
             this.dgPlaza.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgPlaza.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgPlaza.Size = new System.Drawing.Size(459, 124);
-            this.dgPlaza.TabIndex = 5;
+            this.dgPlaza.TabIndex = 5;            
             this.dgPlaza.SelectionChanged += new System.EventHandler(this.dgPlaza_SelectionChanged);
             this.dgPlaza.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgPlaza_MouseClick);
             this.dgPlaza.MouseMove += new System.Windows.Forms.MouseEventHandler(this.dgPlaza_MouseMove);
@@ -157,7 +157,7 @@ namespace SistemaInventarioIT
             this.ibNuevo.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(71)))), ((int)(((byte)(135)))));
             this.ibNuevo.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.ibNuevo.IconSize = 25;
-            this.ibNuevo.Location = new System.Drawing.Point(223, 398);
+            this.ibNuevo.Location = new System.Drawing.Point(223, 417);
             this.ibNuevo.Name = "ibNuevo";
             this.ibNuevo.Size = new System.Drawing.Size(92, 34);
             this.ibNuevo.TabIndex = 5;
@@ -174,7 +174,7 @@ namespace SistemaInventarioIT
             this.ibAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.ibAgregar.IconSize = 30;
             this.ibAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ibAgregar.Location = new System.Drawing.Point(113, 398);
+            this.ibAgregar.Location = new System.Drawing.Point(113, 417);
             this.ibAgregar.Name = "ibAgregar";
             this.ibAgregar.Size = new System.Drawing.Size(92, 34);
             this.ibAgregar.TabIndex = 4;
@@ -208,7 +208,7 @@ namespace SistemaInventarioIT
             // txtBuscar
             // 
             this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscar.Location = new System.Drawing.Point(356, 411);
+            this.txtBuscar.Location = new System.Drawing.Point(356, 430);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(215, 21);
             this.txtBuscar.TabIndex = 54;
@@ -220,18 +220,20 @@ namespace SistemaInventarioIT
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(170, 226);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(169, 229);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(55, 13);
+            this.label5.Size = new System.Drawing.Size(88, 20);
             this.label5.TabIndex = 55;
             this.label5.Text = "Ubicacion";
             // 
             // cmbUbicacion
             // 
+            this.cmbUbicacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbUbicacion.FormattingEnabled = true;
-            this.cmbUbicacion.Location = new System.Drawing.Point(325, 221);
+            this.cmbUbicacion.Location = new System.Drawing.Point(317, 232);
             this.cmbUbicacion.Name = "cmbUbicacion";
-            this.cmbUbicacion.Size = new System.Drawing.Size(189, 21);
+            this.cmbUbicacion.Size = new System.Drawing.Size(197, 21);
             this.cmbUbicacion.TabIndex = 56;
             // 
             // frmPlaza

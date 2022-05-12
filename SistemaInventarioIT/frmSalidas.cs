@@ -13,9 +13,9 @@ namespace SistemaInventarioIT
     public partial class frmSalidas : Form
     {
         DBInventarioITPAEntities entityInventario = new DBInventarioITPAEntities();
-        int idInventario = 0;
         int vacio;
         bool editar = false;
+        int idInventario = 0;
         public frmSalidas()
         {
             InitializeComponent();
@@ -23,7 +23,35 @@ namespace SistemaInventarioIT
 
         private void ibAgregar_Click(object sender, EventArgs e)
         {
+            /*if (txtDestino.Text.Equals(""))
+            {
+                MessageBox.Show("¡Ingrese el destino del articulo!");
+                return;
+            }*/
+            if (editar)
+            {
+                var tInventario = entityInventario.Inventario.FirstOrDefault(i => i.IdInventario == idInventario);
+                tInventario.Salida = chkSalida.Checked;
+                tInventario.Destino = txtDestino.Text;
+                entityInventario.SaveChanges();
+                MessageBox.Show("¡Cambios Guardados!");
+                cargaForm();
+            }
+            else
+            {
+                Inventario inventario = new Inventario();
+                inventario.Salida = chkSalida.Checked;
+                inventario.Destino = txtDestino.Text;
 
+                entityInventario.Inventario.Add(inventario);
+                entityInventario.SaveChanges();
+                cargaForm();
+                MessageBox.Show("¡Salida Guardada!");
+            }
+            idInventario = 0;
+            editar = false;
+            cargaForm();
+            cleanText();
         }
 
         private void ibVerSalidas_Click(object sender, EventArgs e)
@@ -32,82 +60,7 @@ namespace SistemaInventarioIT
             salidas.Show();
         }
 
-        private void frmSalidas_Load(object sender, EventArgs e)
-        {
-            carga_form();
-            vacio = 1;
-        }
-
-        private void carga_form()
-        {
-            /*var ubicacion = from u in entityInventario.Ubicacion
-                            where u.Estado_Ubicacion == true
-                            select u;
-            DataTable dtUbicacion = new DataTable();
-            dtUbicacion = ubicacion.CopyAnonymusToDataTable();
-
-            cmbUbicacion.DataSource = dtUbicacion;
-            cmbUbicacion.DisplayMember = dtUbicacion.Columns[1].ColumnName;
-            cmbUbicacion.ValueMember = dtUbicacion.Columns[0].ColumnName;
-
-            var plaza = from p in entityInventario.Plaza
-                        where p.Estado_Plaza == true
-                        select p;
-            DataTable dtPlaza = new DataTable();
-            dtPlaza = plaza.CopyAnonymusToDataTable();
-            cmbPlaza.DataSource = dtPlaza;
-            cmbPlaza.DisplayMember = dtPlaza.Columns[1].ColumnName;
-            cmbPlaza.ValueMember = dtPlaza.Columns[0].ColumnName;
-
-            var categoria = from c in entityInventario.Categoria
-                            where c.Estado_Categoria == true
-                            select c;
-            DataTable dtCategoria = new DataTable();
-            dtCategoria = categoria.CopyAnonymusToDataTable();
-            cmbCategoria.DataSource = dtCategoria;
-            cmbCategoria.DisplayMember = dtCategoria.Columns[1].ColumnName;
-            cmbCategoria.ValueMember = dtCategoria.Columns[0].ColumnName;
-
-            var estado = from e in entityInventario.Estado
-                         where e.Estado_Estado == true
-                         select e;
-            DataTable dtEstado = new DataTable();
-            dtEstado = estado.CopyAnonymusToDataTable();
-            cmbEstado.DataSource = dtEstado;
-            cmbEstado.DisplayMember = dtEstado.Columns[1].ColumnName;
-            cmbEstado.ValueMember = dtEstado.Columns[0].ColumnName;*/
-
-
-            var inventario = from i in entityInventario.Inventario
-                             join y
-                             in entityInventario.Ubicacion on i.Ubicacion equals y.IdUbicacion
-                             join p
-                             in entityInventario.Plaza on i.Plaza equals p.IdPlaza
-                             join c
-                             in entityInventario.Categoria on i.Categoria equals c.IdCategoria
-                             join e
-                             in entityInventario.Estado on i.Estado equals e.IdEstado
-                             where i.Salida == true
-                             select new
-                             {
-                                 i.IdInventario,
-                                 i.Nombre,
-                                 y.Nombre_Ubicacion,
-                                 p.Nombre_Plaza,
-                                 i.Serial,
-                                 i.Cantidad,
-                                 i.Descripcion,
-                                 c.Nombre_Categoria,
-                                 e.Nombre_Estado,
-                                 i.Modelo,
-                                 i.Garantia,
-                                 i.Salida,
-                                 i.Destino
-                             };
-
-            dgSalida.DataSource = inventario.CopyAnonymusToDataTable();
-            dgSalida.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-        }
+        
 
         private void dgSalida_SelectionChanged(object sender, EventArgs e)
         {
@@ -118,17 +71,22 @@ namespace SistemaInventarioIT
                     cleanText();
                 }
                 idInventario = Convert.ToInt32(dgSalida.SelectedCells[0].Value);
-                var tInventario = entityInventario.Inventario.FirstOrDefault(x => x.IdInventario == idInventario);
-                //txtNombre.Text = tInventario.Nombre;
-                //cmbUbicacion.SelectedValue = tInventario.Ubicacion;
-                //cmbPlaza.SelectedValue = tInventario.Plaza;
-                //txtSerial.Text = tInventario.Serial;
-                //txtDescripcion.Text = tInventario.Descripcion;
-                //txtCantidad.Text = Convert.ToString(tInventario.Cantidad);
-                //cmbCategoria.SelectedValue = tInventario.Categoria;
-                //cmbEstado.SelectedValue = tInventario.Estado;
-                //txtModelo.Text = tInventario.Modelo;
-                //dtFecha.Value = (DateTime)tInventario.Garantia;
+                var tSalidas = entityInventario.Inventario.FirstOrDefault(x => x.IdInventario == idInventario);
+                chkSalida.Checked = (bool)tSalidas.Salida;
+                editar = true;
+            }
+            catch (Exception)
+            {
+                dgSalida.ClearSelection();
+            }
+            /*try
+            {
+                if (vacio == 1)
+                {
+                    cleanText();
+                }
+                idInventario = Convert.ToInt32(dgSalida.SelectedCells[0].Value);
+                var tInventario = entityInventario.Inventario.FirstOrDefault(x => x.IdInventario == idInventario);                
                 chkSalida.Checked = Convert.ToBoolean(tInventario.Salida);
                 txtDestino.Text = tInventario.Destino;
                 editar = true;
@@ -136,7 +94,7 @@ namespace SistemaInventarioIT
             catch (Exception)
             {
                 dgSalida.ClearSelection();
-            }
+            }*/
         }
 
         private void cleanText()
@@ -162,6 +120,60 @@ namespace SistemaInventarioIT
         private void ibNuevo_Click(object sender, EventArgs e)
         {
             cleanText();
+        }
+
+        private void frmSalidas_Load(object sender, EventArgs e)
+        {
+            cargaForm();
+            vacio = 1;
+        }
+
+        private void cargaForm()
+        {
+            var salida = from s in entityInventario.Inventario
+                         join y
+                         in entityInventario.Ubicacion on s.Ubicacion equals y.IdUbicacion
+                         join p
+                         in entityInventario.Plaza on s.Plaza equals p.IdPlaza
+                         join c
+                         in entityInventario.Categoria on s.Categoria equals c.IdCategoria
+                         join e
+                         in entityInventario.Estado on s.Estado equals e.IdEstado
+                         where s.Salida == false
+                         select new
+                         {
+                             s.IdInventario,
+                             s.Nombre,
+                             y.Nombre_Ubicacion,
+                             p.Nombre_Plaza,
+                             s.Serial,
+                             s.Cantidad,
+                             s.Descripcion,
+                             c.Nombre_Categoria,
+                             e.Nombre_Estado,
+                             s.Modelo,
+                             s.Garantia,
+                             s.Salida,
+                             s.Destino
+                         };
+            dgSalida.DataSource = salida.CopyAnonymusToDataTable();
+            dgSalida.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+        }
+
+        private void dgSalida_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (vacio == 1)
+            {
+                vacio = 2;
+            }
+        }
+
+        private void dgSalida_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (vacio == 1)
+            {
+                vacio = 2;
+            }
         }
     }
 }

@@ -16,9 +16,7 @@ namespace SistemaInventarioIT
         int idInventario = 0;
         bool editar = false;
         int vacio;
-        int contador=0;
-        //intcambioCombo;
-        //stringseleccionUbicacion;
+        int contador = 0;        
         public frmInventario()
         {
             InitializeComponent();
@@ -33,9 +31,6 @@ namespace SistemaInventarioIT
 
         }
 
-        /*Consultar que campos seran obligatorios y que no*/
-        /*en la bd yo tengo que: el serial, la cantidad, la descripcion, la categoria, el modelo y la garantia
-         allow nulls(que permiten nulos)*/
         private void ibAgregar_Click(object sender, EventArgs e)
         {
             if (txtNombre.Text.Equals(""))
@@ -53,26 +48,26 @@ namespace SistemaInventarioIT
                 MessageBox.Show("¡Seleccione una plaza!");
                 return;
             }*/
-            if (txtSerial.Text.Equals(""))
+            /*if (txtSerial.Text.Equals(""))
             {
                 MessageBox.Show("¡Ingrese el serial!");
                 return;
-            }
-            if (txtDescripcion.Text.Equals(""))
+            }*/
+            /*if (txtDescripcion.Text.Equals(""))
             {
                 MessageBox.Show("¡Ingrese la descripción!");
                 return;
-            }
+            }*/
             if (Convert.ToDecimal(txtCantidad.Text) <= 0)
             {
                 MessageBox.Show("¡Ingrese una cantidad valida!");
                 return;
             }           
-            if (txtModelo.Text.Equals(""))
+            /*if (txtModelo.Text.Equals(""))
             {
                 MessageBox.Show("¡Ingrese el modelo!");
                 return;
-            }
+            }*/
             if (editar)
             {
 
@@ -84,13 +79,13 @@ namespace SistemaInventarioIT
                 tInventario.Descripcion = txtDescripcion.Text;
                 tInventario.Cantidad = Convert.ToInt32(txtCantidad.Text);
                 tInventario.Categoria = Convert.ToInt32(cmbCategoria.SelectedValue);
-                tInventario.Estado = Convert.ToInt32(cmbEstado.SelectedValue);
-                tInventario.Salida = true;
-                tInventario.Destino = "";
+                tInventario.Estado = Convert.ToInt32(cmbEstado.SelectedValue);                
                 //tInventario.Categoria = txtCategoria.Text;
                 //tInventario.Estado = chkEstado.Checked;
                 tInventario.Modelo = txtModelo.Text;
                 tInventario.Garantia = dtFecha.Value;
+                tInventario.Salida = false;
+                tInventario.Destino = "";
 
                 entityInventario.SaveChanges();
                 MessageBox.Show("¡Cambios Guardados!");
@@ -112,6 +107,10 @@ namespace SistemaInventarioIT
                 //inventario.Estado = chkEstado.Checked;
                 inventario.Modelo = txtModelo.Text;
                 inventario.Garantia = dtFecha.Value;
+                inventario.Salida = false;
+                inventario.Destino = "";
+
+
 
                 entityInventario.Inventario.Add(inventario);
                 entityInventario.SaveChanges();
@@ -353,22 +352,7 @@ namespace SistemaInventarioIT
                 cmbPlaza.DataSource = dtPlaza;
                 cmbPlaza.DisplayMember = dtPlaza.Columns[1].ColumnName;
                 cmbPlaza.ValueMember = dtPlaza.Columns[0].ColumnName;
-            }
-            /*if (cambioCombo > 2)
-            {
-                var plaza = from p in entityInventario.Plaza
-                            where p.Estado_Plaza == true
-                            select p;
-                DataTable dtPlaza = new DataTable();
-                dtPlaza = plaza.CopyAnonymusToDataTable();
-                cmbPlaza.DataSource = dtPlaza;
-                cmbPlaza.DisplayMember = dtPlaza.Columns[1].ColumnName;
-                cmbPlaza.ValueMember = dtPlaza.Columns[0].ColumnName;
-            }*/
-            //else(cambioCombo = cambioCombo + 1)
-            //MessageBox.Show("Cambio en el combobox");
-            
-
+            }                       
         }
     }
 }

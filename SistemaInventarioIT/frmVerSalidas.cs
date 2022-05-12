@@ -77,7 +77,7 @@ namespace SistemaInventarioIT
                              in entityInventario.Categoria on i.Categoria equals c.IdCategoria
                              join e
                              in entityInventario.Estado on i.Estado equals e.IdEstado
-                             where i.Salida == false
+                             where i.Salida == true
                              select new
                              {
                                  i.IdInventario,

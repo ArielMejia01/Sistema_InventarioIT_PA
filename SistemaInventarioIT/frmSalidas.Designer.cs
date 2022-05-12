@@ -29,6 +29,9 @@ namespace SistemaInventarioIT
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.dgSalida = new System.Windows.Forms.DataGridView();
@@ -70,13 +73,45 @@ namespace SistemaInventarioIT
             // 
             this.dgSalida.AllowUserToAddRows = false;
             this.dgSalida.AllowUserToDeleteRows = false;
-            this.dgSalida.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgSalida.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgSalida.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgSalida.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            this.dgSalida.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgSalida.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(71)))), ((int)(((byte)(135)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(71)))), ((int)(((byte)(135)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgSalida.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgSalida.ColumnHeadersHeight = 20;
+            this.dgSalida.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgSalida.EnableHeadersVisualStyles = false;
             this.dgSalida.Location = new System.Drawing.Point(83, 221);
             this.dgSalida.Name = "dgSalida";
             this.dgSalida.ReadOnly = true;
+            this.dgSalida.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(71)))), ((int)(((byte)(135)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgSalida.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(71)))), ((int)(((byte)(135)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            this.dgSalida.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgSalida.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgSalida.Size = new System.Drawing.Size(517, 142);
             this.dgSalida.TabIndex = 1;
             this.dgSalida.SelectionChanged += new System.EventHandler(this.dgSalida_SelectionChanged);
+            this.dgSalida.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgSalida_MouseClick);
+            this.dgSalida.MouseMove += new System.Windows.Forms.MouseEventHandler(this.dgSalida_MouseMove);
             // 
             // txtBucar
             // 
@@ -85,6 +120,7 @@ namespace SistemaInventarioIT
             this.txtBucar.Name = "txtBucar";
             this.txtBucar.Size = new System.Drawing.Size(193, 21);
             this.txtBucar.TabIndex = 2;
+            this.txtBucar.Text = "Buscar...";
             // 
             // label2
             // 
@@ -99,18 +135,20 @@ namespace SistemaInventarioIT
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(103, 162);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(93, 162);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(36, 13);
+            this.label3.Size = new System.Drawing.Size(59, 20);
             this.label3.TabIndex = 4;
             this.label3.Text = "Salida";
             // 
             // chkSalida
             // 
             this.chkSalida.AutoSize = true;
-            this.chkSalida.Location = new System.Drawing.Point(145, 162);
+            this.chkSalida.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkSalida.Location = new System.Drawing.Point(174, 164);
             this.chkSalida.Name = "chkSalida";
-            this.chkSalida.Size = new System.Drawing.Size(109, 17);
+            this.chkSalida.Size = new System.Drawing.Size(133, 20);
             this.chkSalida.TabIndex = 5;
             this.chkSalida.Text = "Disponible / Salio";
             this.chkSalida.UseVisualStyleBackColor = true;
@@ -118,17 +156,18 @@ namespace SistemaInventarioIT
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(306, 163);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(385, 164);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(43, 13);
+            this.label4.Size = new System.Drawing.Size(71, 20);
             this.label4.TabIndex = 6;
             this.label4.Text = "Destino";
             // 
             // txtDestino
             // 
-            this.txtDestino.Location = new System.Drawing.Point(367, 160);
+            this.txtDestino.Location = new System.Drawing.Point(467, 166);
             this.txtDestino.Name = "txtDestino";
-            this.txtDestino.Size = new System.Drawing.Size(100, 20);
+            this.txtDestino.Size = new System.Drawing.Size(133, 20);
             this.txtDestino.TabIndex = 7;
             // 
             // ibAgregar

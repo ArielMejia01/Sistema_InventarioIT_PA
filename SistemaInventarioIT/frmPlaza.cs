@@ -79,6 +79,7 @@ namespace SistemaInventarioIT
                 txtPlaza.Text = iPlaza.Nombre_Plaza;
                 txtDescripcion.Text = iPlaza.Descripcion;
                 chkEstado.Checked = iPlaza.Estado_Plaza;
+                cmbUbicacion.SelectedValue = iPlaza.Ubicacion;
                 edit = true;
             }
             catch (Exception)
@@ -176,6 +177,6 @@ namespace SistemaInventarioIT
             {
                 txtBuscar.Text = "";
             }
-        }
+        }        
     }
 }
