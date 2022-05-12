@@ -74,7 +74,7 @@ namespace SistemaInventarioIT
             this.ibReporte.FlatAppearance.BorderSize = 0;
             this.ibReporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ibReporte.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ibReporte.IconChar = FontAwesome.Sharp.IconChar.Cubes;
+            this.ibReporte.IconChar = FontAwesome.Sharp.IconChar.Edit;
             this.ibReporte.IconColor = System.Drawing.Color.White;
             this.ibReporte.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.ibReporte.IconSize = 25;
@@ -97,7 +97,7 @@ namespace SistemaInventarioIT
             this.ibEstado.FlatAppearance.BorderSize = 0;
             this.ibEstado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ibEstado.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ibEstado.IconChar = FontAwesome.Sharp.IconChar.Cubes;
+            this.ibEstado.IconChar = FontAwesome.Sharp.IconChar.WaveSquare;
             this.ibEstado.IconColor = System.Drawing.Color.White;
             this.ibEstado.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.ibEstado.IconSize = 25;
@@ -120,7 +120,7 @@ namespace SistemaInventarioIT
             this.ibCategoria.FlatAppearance.BorderSize = 0;
             this.ibCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ibCategoria.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ibCategoria.IconChar = FontAwesome.Sharp.IconChar.Cubes;
+            this.ibCategoria.IconChar = FontAwesome.Sharp.IconChar.Shapes;
             this.ibCategoria.IconColor = System.Drawing.Color.White;
             this.ibCategoria.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.ibCategoria.IconSize = 25;
@@ -169,7 +169,7 @@ namespace SistemaInventarioIT
             this.ibUbicación.IconChar = FontAwesome.Sharp.IconChar.LocationArrow;
             this.ibUbicación.IconColor = System.Drawing.Color.White;
             this.ibUbicación.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ibUbicación.IconSize = 26;
+            this.ibUbicación.IconSize = 24;
             this.ibUbicación.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ibUbicación.Location = new System.Drawing.Point(0, 177);
             this.ibUbicación.Name = "ibUbicación";
@@ -189,7 +189,7 @@ namespace SistemaInventarioIT
             this.ibSalida.FlatAppearance.BorderSize = 0;
             this.ibSalida.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ibSalida.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ibSalida.IconChar = FontAwesome.Sharp.IconChar.Buffer;
+            this.ibSalida.IconChar = FontAwesome.Sharp.IconChar.Directions;
             this.ibSalida.IconColor = System.Drawing.Color.White;
             this.ibSalida.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.ibSalida.IconSize = 26;

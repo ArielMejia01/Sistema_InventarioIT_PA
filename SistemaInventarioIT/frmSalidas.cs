@@ -34,7 +34,7 @@ namespace SistemaInventarioIT
                 tInventario.Salida = chkSalida.Checked;
                 tInventario.Destino = txtDestino.Text;
                 entityInventario.SaveChanges();
-                MessageBox.Show("¡Cambios Guardados!");
+                MessageBox.Show("¡Salida Guardada!");
                 cargaForm();
             }
             else
@@ -57,7 +57,7 @@ namespace SistemaInventarioIT
         private void ibVerSalidas_Click(object sender, EventArgs e)
         {
             frmVerSalidas salidas = new frmVerSalidas();
-            salidas.Show();
+            salidas.Show();   
         }
 
         
@@ -73,6 +73,7 @@ namespace SistemaInventarioIT
                 idInventario = Convert.ToInt32(dgSalida.SelectedCells[0].Value);
                 var tSalidas = entityInventario.Inventario.FirstOrDefault(x => x.IdInventario == idInventario);
                 chkSalida.Checked = (bool)tSalidas.Salida;
+                txtDestino.Text = tSalidas.Destino;
                 editar = true;
             }
             catch (Exception)
@@ -175,5 +176,61 @@ namespace SistemaInventarioIT
                 vacio = 2;
             }
         }
+
+        private void txtBucar_TextChanged(object sender, EventArgs e)
+        {
+            filtrarSalidas(txtBucar.Text);
+        }
+
+        private void filtrarSalidas(string nombre)
+        {
+            var fInventario = from i in entityInventario.Inventario
+                              where i.Nombre.Contains(nombre)
+                              join y
+                              in entityInventario.Ubicacion on i.Ubicacion equals y.IdUbicacion
+                              join p
+                              in entityInventario.Plaza on i.Plaza equals p.IdPlaza
+                              join c
+                              in entityInventario.Categoria on i.Categoria equals c.IdCategoria
+                              join e
+                              in entityInventario.Estado on i.Estado equals e.IdEstado
+                              where i.Salida == false
+                              select new
+                              {
+                                  i.IdInventario,
+                                  i.Nombre,
+                                  y.Nombre_Ubicacion,
+                                  p.Nombre_Plaza,
+                                  i.Serial,
+                                  i.Cantidad,
+                                  i.Descripcion,
+                                  c.Nombre_Categoria,
+                                  e.Nombre_Estado,
+                                  i.Modelo,
+                                  i.Garantia,
+                                  i.Salida,
+                                  i.Destino
+                              };
+            dgSalida.DataSource = fInventario.CopyAnonymusToDataTable();
+            dgSalida.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+
+        }
+
+        private void txtBucar_Enter(object sender, EventArgs e)
+        {
+            if (txtBucar.Text == "Buscar...")
+            {
+                txtBucar.Text = "";
+            }
+        }
+
+        private void txtBucar_Leave(object sender, EventArgs e)
+        {
+            if (txtBucar.Text == "")
+            {
+                txtBucar.Text = "Buscar...";
+                cargaForm();
+            }
+        }        
     }
 }

@@ -206,7 +206,8 @@ namespace SistemaInventarioIT
                                in entityInventario.Categoria on i.Categoria equals c.IdCategoria
                                join e
                                in entityInventario.Estado on i.Estado equals e.IdEstado
-                               select new
+                               where i.Salida == false
+                             select new
                                {
                                    i.IdInventario,
                                    i.Nombre,
@@ -218,7 +219,8 @@ namespace SistemaInventarioIT
                                    c.Nombre_Categoria,
                                    e.Nombre_Estado,
                                    i.Modelo,
-                                   i.Garantia
+                                   i.Garantia,
+                                   i.Salida
                                };
 
             dgInventario.DataSource = inventario.CopyAnonymusToDataTable();
@@ -253,6 +255,7 @@ namespace SistemaInventarioIT
                               in entityInventario.Categoria on i.Categoria equals c.IdCategoria
                               join e
                               in entityInventario.Estado on i.Estado equals e.IdEstado
+                              where i.Salida == false
                               select new
                               {
                                   i.IdInventario,
@@ -265,7 +268,8 @@ namespace SistemaInventarioIT
                                   c.Nombre_Categoria,
                                   e.Nombre_Estado,
                                   i.Modelo,
-                                  i.Garantia
+                                  i.Garantia,
+                                  i.Salida
                               };
             dgInventario.DataSource = fInventario.CopyAnonymusToDataTable();
             dgInventario.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
