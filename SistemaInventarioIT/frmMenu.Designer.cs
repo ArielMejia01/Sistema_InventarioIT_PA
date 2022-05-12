@@ -31,6 +31,7 @@ namespace SistemaInventarioIT
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenu));
             this.panelLateral = new System.Windows.Forms.Panel();
+            this.ibReporte = new FontAwesome.Sharp.IconButton();
             this.ibEstado = new FontAwesome.Sharp.IconButton();
             this.ibCategoria = new FontAwesome.Sharp.IconButton();
             this.ibPlaza = new FontAwesome.Sharp.IconButton();
@@ -52,6 +53,7 @@ namespace SistemaInventarioIT
             // 
             this.panelLateral.AutoScroll = true;
             this.panelLateral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(59)))), ((int)(((byte)(120)))));
+            this.panelLateral.Controls.Add(this.ibReporte);
             this.panelLateral.Controls.Add(this.ibEstado);
             this.panelLateral.Controls.Add(this.ibCategoria);
             this.panelLateral.Controls.Add(this.ibPlaza);
@@ -64,6 +66,29 @@ namespace SistemaInventarioIT
             this.panelLateral.Name = "panelLateral";
             this.panelLateral.Size = new System.Drawing.Size(180, 476);
             this.panelLateral.TabIndex = 0;
+            // 
+            // ibReporte
+            // 
+            this.ibReporte.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(59)))), ((int)(((byte)(120)))));
+            this.ibReporte.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ibReporte.FlatAppearance.BorderSize = 0;
+            this.ibReporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ibReporte.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ibReporte.IconChar = FontAwesome.Sharp.IconChar.Cubes;
+            this.ibReporte.IconColor = System.Drawing.Color.White;
+            this.ibReporte.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ibReporte.IconSize = 25;
+            this.ibReporte.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ibReporte.Location = new System.Drawing.Point(0, 357);
+            this.ibReporte.Name = "ibReporte";
+            this.ibReporte.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.ibReporte.Size = new System.Drawing.Size(180, 45);
+            this.ibReporte.TabIndex = 13;
+            this.ibReporte.Text = "Reporte";
+            this.ibReporte.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ibReporte.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ibReporte.UseVisualStyleBackColor = false;
+            this.ibReporte.Click += new System.EventHandler(this.ibReporte_Click);
             // 
             // ibEstado
             // 
@@ -276,6 +301,7 @@ namespace SistemaInventarioIT
         private FontAwesome.Sharp.IconButton ibSalida;
         private FontAwesome.Sharp.IconButton ibCategoria;
         private FontAwesome.Sharp.IconButton ibEstado;
+        private FontAwesome.Sharp.IconButton ibReporte;
     }
 }
 

@@ -16,6 +16,9 @@ namespace SistemaInventarioIT
         int idInventario = 0;
         bool editar = false;
         int vacio;
+        int contador=0;
+        //intcambioCombo;
+        //stringseleccionUbicacion;
         public frmInventario()
         {
             InitializeComponent();
@@ -82,6 +85,8 @@ namespace SistemaInventarioIT
                 tInventario.Cantidad = Convert.ToInt32(txtCantidad.Text);
                 tInventario.Categoria = Convert.ToInt32(cmbCategoria.SelectedValue);
                 tInventario.Estado = Convert.ToInt32(cmbEstado.SelectedValue);
+                tInventario.Salida = true;
+                tInventario.Destino = "";
                 //tInventario.Categoria = txtCategoria.Text;
                 //tInventario.Estado = chkEstado.Checked;
                 tInventario.Modelo = txtModelo.Text;
@@ -304,6 +309,66 @@ namespace SistemaInventarioIT
             {
                 vacio = 2;
             }
+        }
+
+        private void cmbUbicacion_SelectedValueChanged(object sender, EventArgs e)
+        {
+            
+            if (cmbUbicacion.SelectedIndex==0)
+            {
+                //contador = contador + 1;
+                if (contador > 2)
+                {
+                    int r = Convert.ToInt32(cmbUbicacion.SelectedValue);
+                    //MessageBox.Show(Convert.ToString(cmbUbicacion.SelectedValue));
+
+                    var plaza = from p in entityInventario.Plaza
+                                where p.Ubicacion == r
+                                select p;
+                    DataTable dtPlaza = new DataTable();
+                    dtPlaza = plaza.CopyAnonymusToDataTable();
+                    cmbPlaza.DataSource = dtPlaza;
+                    cmbPlaza.DisplayMember = dtPlaza.Columns[1].ColumnName;
+                    cmbPlaza.ValueMember = dtPlaza.Columns[0].ColumnName;
+                }
+                else
+                {
+                    contador = contador + 1;
+                }
+                
+                //MessageBox.Show(Convert.ToString(cmbUbicacion.SelectedValue));
+
+               
+            }
+            else
+            {
+                int r = Convert.ToInt32(cmbUbicacion.SelectedValue);
+                //MessageBox.Show(Convert.ToString(cmbUbicacion.SelectedValue));
+                
+                var plaza = from p in entityInventario.Plaza
+                            where p.Ubicacion == r
+                            select p;
+                DataTable dtPlaza = new DataTable();
+                dtPlaza = plaza.CopyAnonymusToDataTable();
+                cmbPlaza.DataSource = dtPlaza;
+                cmbPlaza.DisplayMember = dtPlaza.Columns[1].ColumnName;
+                cmbPlaza.ValueMember = dtPlaza.Columns[0].ColumnName;
+            }
+            /*if (cambioCombo > 2)
+            {
+                var plaza = from p in entityInventario.Plaza
+                            where p.Estado_Plaza == true
+                            select p;
+                DataTable dtPlaza = new DataTable();
+                dtPlaza = plaza.CopyAnonymusToDataTable();
+                cmbPlaza.DataSource = dtPlaza;
+                cmbPlaza.DisplayMember = dtPlaza.Columns[1].ColumnName;
+                cmbPlaza.ValueMember = dtPlaza.Columns[0].ColumnName;
+            }*/
+            //else(cambioCombo = cambioCombo + 1)
+            //MessageBox.Show("Cambio en el combobox");
+            
+
         }
     }
 }

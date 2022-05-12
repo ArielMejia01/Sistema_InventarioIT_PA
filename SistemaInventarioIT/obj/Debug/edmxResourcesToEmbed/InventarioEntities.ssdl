@@ -34,6 +34,8 @@
     <Property Name="Modelo" Type="nvarchar" MaxLength="100" />
     <Property Name="Garantia" Type="date" />
     <Property Name="FechaRegistro" Type="varchar" MaxLength="30" />
+    <Property Name="Salida" Type="bit" />
+    <Property Name="Destino" Type="nvarchar" MaxLength="500" />
   </EntityType>
   <EntityType Name="Plaza">
     <Key>
@@ -43,6 +45,7 @@
     <Property Name="Nombre_Plaza" Type="varchar" MaxLength="200" Nullable="false" />
     <Property Name="Descripcion" Type="varchar" MaxLength="200" Nullable="false" />
     <Property Name="Estado_Plaza" Type="bit" Nullable="false" />
+    <Property Name="Ubicacion" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Ubicacion">
     <Key>
@@ -101,6 +104,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Plaza_Ubicacion">
+    <End Role="Ubicacion" Type="Self.Ubicacion" Multiplicity="1" />
+    <End Role="Plaza" Type="Self.Plaza" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ubicacion">
+        <PropertyRef Name="IdUbicacion" />
+      </Principal>
+      <Dependent Role="Plaza">
+        <PropertyRef Name="Ubicacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="DBInventarioITPAModelStoreContainer">
     <EntitySet Name="Categoria" EntityType="Self.Categoria" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Estado" EntityType="Self.Estado" Schema="dbo" store:Type="Tables" />
@@ -122,6 +137,10 @@
     <AssociationSet Name="FK_Inventario_Ubicacion" Association="Self.FK_Inventario_Ubicacion">
       <End Role="Ubicacion" EntitySet="Ubicacion" />
       <End Role="Inventario" EntitySet="Inventario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Plaza_Ubicacion" Association="Self.FK_Plaza_Ubicacion">
+      <End Role="Ubicacion" EntitySet="Ubicacion" />
+      <End Role="Plaza" EntitySet="Plaza" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

@@ -20,3 +20,4 @@ C:\Users\Ariel Mejia\Desktop\SistemaInventarioIT\SistemaInventarioIT\obj\Debug\S
 C:\Users\Ariel Mejia\Desktop\SistemaInventarioIT\SistemaInventarioIT\obj\Debug\SistemaInventarioIT.frmCategoria.resources
 C:\Users\Ariel Mejia\Desktop\SistemaInventarioIT\SistemaInventarioIT\obj\Debug\SistemaInventarioIT.frmEstado.resources
 C:\Users\Ariel Mejia\Desktop\SistemaInventarioIT\SistemaInventarioIT\obj\Debug\SistemaInventarioIT.frmSalidas.resources
+C:\Users\Ariel Mejia\Desktop\SistemaInventarioIT\SistemaInventarioIT\obj\Debug\SistemaInventarioIT.frmVerSalidas.resources

@@ -45,6 +45,7 @@ namespace SistemaInventarioIT
                 tPlaza.Nombre_Plaza = txtPlaza.Text;
                 tPlaza.Descripcion = txtDescripcion.Text;
                 tPlaza.Estado_Plaza = chkEstado.Checked;
+                tPlaza.Ubicacion = Convert.ToInt32(cmbUbicacion.SelectedValue);
                 entityInventario.SaveChanges();
                 MessageBox.Show("¡Cambios Guardados Correctamente!");
             }
@@ -54,6 +55,7 @@ namespace SistemaInventarioIT
                 tPlaza.Nombre_Plaza = txtPlaza.Text;
                 tPlaza.Descripcion = txtDescripcion.Text;
                 tPlaza.Estado_Plaza = chkEstado.Checked;
+                tPlaza.Ubicacion = Convert.ToInt32(cmbUbicacion.SelectedValue);
                 entityInventario.Plaza.Add(tPlaza);
                 entityInventario.SaveChanges();
                 MessageBox.Show("¡Datos Guardados Correctamente!");
@@ -92,6 +94,16 @@ namespace SistemaInventarioIT
 
         private void carga_form()
         {
+            var ubicacion = from u in entityInventario.Ubicacion
+                            where u.Estado_Ubicacion == true
+                            select u;
+            DataTable dtUbicacion = new DataTable();
+            dtUbicacion = ubicacion.CopyAnonymusToDataTable();
+
+            cmbUbicacion.DataSource = dtUbicacion;
+            cmbUbicacion.DisplayMember = dtUbicacion.Columns[1].ColumnName;
+            cmbUbicacion.ValueMember = dtUbicacion.Columns[0].ColumnName;
+
             var iPlaza = from i in entityInventario.Plaza
                          select new
                          {

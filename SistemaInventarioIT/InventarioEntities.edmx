@@ -39,6 +39,8 @@
           <Property Name="Modelo" Type="nvarchar" MaxLength="100" />
           <Property Name="Garantia" Type="date" />
           <Property Name="FechaRegistro" Type="varchar" MaxLength="30" />
+          <Property Name="Salida" Type="bit" />
+          <Property Name="Destino" Type="nvarchar" MaxLength="500" />
         </EntityType>
         <EntityType Name="Plaza">
           <Key>
@@ -48,6 +50,7 @@
           <Property Name="Nombre_Plaza" Type="varchar" MaxLength="200" Nullable="false" />
           <Property Name="Descripcion" Type="varchar" MaxLength="200" Nullable="false" />
           <Property Name="Estado_Plaza" Type="bit" Nullable="false" />
+          <Property Name="Ubicacion" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Ubicacion">
           <Key>
@@ -106,6 +109,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Plaza_Ubicacion">
+          <End Role="Ubicacion" Type="Self.Ubicacion" Multiplicity="1" />
+          <End Role="Plaza" Type="Self.Plaza" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ubicacion">
+              <PropertyRef Name="IdUbicacion" />
+            </Principal>
+            <Dependent Role="Plaza">
+              <PropertyRef Name="Ubicacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="DBInventarioITPAModelStoreContainer">
           <EntitySet Name="Categoria" EntityType="Self.Categoria" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Estado" EntityType="Self.Estado" Schema="dbo" store:Type="Tables" />
@@ -127,6 +142,10 @@
           <AssociationSet Name="FK_Inventario_Ubicacion" Association="Self.FK_Inventario_Ubicacion">
             <End Role="Ubicacion" EntitySet="Ubicacion" />
             <End Role="Inventario" EntitySet="Inventario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Plaza_Ubicacion" Association="Self.FK_Plaza_Ubicacion">
+            <End Role="Ubicacion" EntitySet="Ubicacion" />
+            <End Role="Plaza" EntitySet="Plaza" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -154,6 +173,10 @@
           <AssociationSet Name="FK_Inventario_Ubicacion" Association="DBInventarioITPAModel.FK_Inventario_Ubicacion">
             <End Role="Ubicacion" EntitySet="Ubicacion" />
             <End Role="Inventario" EntitySet="Inventario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Plaza_Ubicacion" Association="DBInventarioITPAModel.FK_Plaza_Ubicacion">
+            <End Role="Ubicacion" EntitySet="Ubicacion" />
+            <End Role="Plaza" EntitySet="Plaza" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="Categoria">
@@ -196,6 +219,8 @@
           <NavigationProperty Name="Estado1" Relationship="DBInventarioITPAModel.FK_Inventario_Estado" FromRole="Inventario" ToRole="Estado" />
           <NavigationProperty Name="Plaza1" Relationship="DBInventarioITPAModel.FK_Inventario_Plaza" FromRole="Inventario" ToRole="Plaza" />
           <NavigationProperty Name="Ubicacion1" Relationship="DBInventarioITPAModel.FK_Inventario_Ubicacion" FromRole="Inventario" ToRole="Ubicacion" />
+          <Property Name="Salida" Type="Boolean" />
+          <Property Name="Destino" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Plaza">
           <Key>
@@ -206,6 +231,8 @@
           <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="Estado_Plaza" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Inventario" Relationship="DBInventarioITPAModel.FK_Inventario_Plaza" FromRole="Plaza" ToRole="Inventario" />
+          <Property Name="Ubicacion" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Ubicacion1" Relationship="DBInventarioITPAModel.FK_Plaza_Ubicacion" FromRole="Plaza" ToRole="Ubicacion" />
         </EntityType>
         <EntityType Name="Ubicacion">
           <Key>
@@ -216,6 +243,7 @@
           <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
           <Property Name="Estado_Ubicacion" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Inventario" Relationship="DBInventarioITPAModel.FK_Inventario_Ubicacion" FromRole="Ubicacion" ToRole="Inventario" />
+          <NavigationProperty Name="Plaza" Relationship="DBInventarioITPAModel.FK_Plaza_Ubicacion" FromRole="Ubicacion" ToRole="Plaza" />
         </EntityType>
         <Association Name="FK_Inventario_Categoria">
           <End Type="DBInventarioITPAModel.Categoria" Role="Categoria" Multiplicity="1" />
@@ -265,6 +293,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Plaza_Ubicacion">
+          <End Type="DBInventarioITPAModel.Ubicacion" Role="Ubicacion" Multiplicity="1" />
+          <End Type="DBInventarioITPAModel.Plaza" Role="Plaza" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ubicacion">
+              <PropertyRef Name="IdUbicacion" />
+            </Principal>
+            <Dependent Role="Plaza">
+              <PropertyRef Name="Ubicacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -294,6 +334,8 @@
           <EntitySetMapping Name="Inventario">
             <EntityTypeMapping TypeName="DBInventarioITPAModel.Inventario">
               <MappingFragment StoreEntitySet="Inventario">
+                <ScalarProperty Name="Destino" ColumnName="Destino" />
+                <ScalarProperty Name="Salida" ColumnName="Salida" />
                 <ScalarProperty Name="FechaRegistro" ColumnName="FechaRegistro" />
                 <ScalarProperty Name="Garantia" ColumnName="Garantia" />
                 <ScalarProperty Name="Modelo" ColumnName="Modelo" />
@@ -312,6 +354,7 @@
           <EntitySetMapping Name="Plaza">
             <EntityTypeMapping TypeName="DBInventarioITPAModel.Plaza">
               <MappingFragment StoreEntitySet="Plaza">
+                <ScalarProperty Name="Ubicacion" ColumnName="Ubicacion" />
                 <ScalarProperty Name="Estado_Plaza" ColumnName="Estado_Plaza" />
                 <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
                 <ScalarProperty Name="Nombre_Plaza" ColumnName="Nombre_Plaza" />

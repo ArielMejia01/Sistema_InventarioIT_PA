@@ -164,5 +164,10 @@ namespace SistemaInventarioIT
         {
             formularioHijoAbiero(new frmEstado());
         }
+
+        private void ibReporte_Click(object sender, EventArgs e)
+        {
+            formularioHijoAbiero(new frmReporte());
+        }
     }
 }

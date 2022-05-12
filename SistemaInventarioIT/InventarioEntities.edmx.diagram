@@ -7,13 +7,14 @@
       <Diagram DiagramId="a24fbe2204cb477ab79f65dfa6d32d95" Name="Diagram1" ZoomLevel="74">
         <EntityTypeShape EntityType="DBInventarioITPAModel.Categoria" Width="1.5" PointX="3.75" PointY="5" />
         <EntityTypeShape EntityType="DBInventarioITPAModel.Estado" Width="1.5" PointX="9" PointY="2" />
-        <EntityTypeShape EntityType="DBInventarioITPAModel.Inventario" Width="1.5" PointX="6.25" PointY="2.625" />
-        <EntityTypeShape EntityType="DBInventarioITPAModel.Plaza" Width="1.5" PointX="8.875" PointY="4.875" />
-        <EntityTypeShape EntityType="DBInventarioITPAModel.Ubicacion" Width="1.5" PointX="3.75" PointY="2.125" />
+        <EntityTypeShape EntityType="DBInventarioITPAModel.Inventario" Width="1.5" PointX="5.875" PointY="1.875" />
+        <EntityTypeShape EntityType="DBInventarioITPAModel.Plaza" Width="1.5" PointX="8.875" PointY="5.125" />
+        <EntityTypeShape EntityType="DBInventarioITPAModel.Ubicacion" Width="1.5" PointX="11.375" PointY="4.75" />
         <AssociationConnector Association="DBInventarioITPAModel.FK_Inventario_Categoria" />
         <AssociationConnector Association="DBInventarioITPAModel.FK_Inventario_Estado" />
         <AssociationConnector Association="DBInventarioITPAModel.FK_Inventario_Plaza" />
         <AssociationConnector Association="DBInventarioITPAModel.FK_Inventario_Ubicacion" />
+        <AssociationConnector Association="DBInventarioITPAModel.FK_Plaza_Ubicacion" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

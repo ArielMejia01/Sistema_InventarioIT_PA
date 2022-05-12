@@ -26,6 +26,8 @@ namespace SistemaInventarioIT
         public string Modelo { get; set; }
         public Nullable<System.DateTime> Garantia { get; set; }
         public string FechaRegistro { get; set; }
+        public Nullable<bool> Salida { get; set; }
+        public string Destino { get; set; }
     
         public virtual Categoria Categoria1 { get; set; }
         public virtual Estado Estado1 { get; set; }

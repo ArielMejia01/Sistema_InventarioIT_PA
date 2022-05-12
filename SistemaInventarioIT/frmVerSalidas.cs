@@ -10,32 +10,22 @@ using System.Windows.Forms;
 
 namespace SistemaInventarioIT
 {
-    public partial class frmSalidas : Form
+    public partial class frmVerSalidas : Form
     {
         DBInventarioITPAEntities entityInventario = new DBInventarioITPAEntities();
-        int idInventario = 0;
-        int vacio;
-        bool editar = false;
-        public frmSalidas()
+        public frmVerSalidas()
         {
             InitializeComponent();
         }
 
-        private void ibAgregar_Click(object sender, EventArgs e)
+        private void ibRegresar_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
-        private void ibVerSalidas_Click(object sender, EventArgs e)
-        {
-            frmVerSalidas salidas = new frmVerSalidas();
-            salidas.Show();
-        }
-
-        private void frmSalidas_Load(object sender, EventArgs e)
+        private void frmVerSalidas_Load(object sender, EventArgs e)
         {
             carga_form();
-            vacio = 1;
         }
 
         private void carga_form()
@@ -87,7 +77,7 @@ namespace SistemaInventarioIT
                              in entityInventario.Categoria on i.Categoria equals c.IdCategoria
                              join e
                              in entityInventario.Estado on i.Estado equals e.IdEstado
-                             where i.Salida == true
+                             where i.Salida == false
                              select new
                              {
                                  i.IdInventario,
@@ -105,63 +95,8 @@ namespace SistemaInventarioIT
                                  i.Destino
                              };
 
-            dgSalida.DataSource = inventario.CopyAnonymusToDataTable();
-            dgSalida.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-        }
-
-        private void dgSalida_SelectionChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                if (vacio == 1)
-                {
-                    cleanText();
-                }
-                idInventario = Convert.ToInt32(dgSalida.SelectedCells[0].Value);
-                var tInventario = entityInventario.Inventario.FirstOrDefault(x => x.IdInventario == idInventario);
-                //txtNombre.Text = tInventario.Nombre;
-                //cmbUbicacion.SelectedValue = tInventario.Ubicacion;
-                //cmbPlaza.SelectedValue = tInventario.Plaza;
-                //txtSerial.Text = tInventario.Serial;
-                //txtDescripcion.Text = tInventario.Descripcion;
-                //txtCantidad.Text = Convert.ToString(tInventario.Cantidad);
-                //cmbCategoria.SelectedValue = tInventario.Categoria;
-                //cmbEstado.SelectedValue = tInventario.Estado;
-                //txtModelo.Text = tInventario.Modelo;
-                //dtFecha.Value = (DateTime)tInventario.Garantia;
-                chkSalida.Checked = Convert.ToBoolean(tInventario.Salida);
-                txtDestino.Text = tInventario.Destino;
-                editar = true;
-            }
-            catch (Exception)
-            {
-                dgSalida.ClearSelection();
-            }
-        }
-
-        private void cleanText()
-        {
-            //txtNombre.Text = "";
-            //txtSerial.Text = "";
-            //txtDescripcion.Text = "";
-            //txtCantidad.Text = "";
-            //txtCategoria.Text = "";
-            //chkEstado.Checked = false;
-            //txtModelo.Text = "";
-            //idInventario = 0;
-            //editar = false;
-            //txtBuscar.Text = string.Empty;
-            //txtBuscar.Text = "";
-            //dgInventario.ClearSelection();
-            chkSalida.Checked = false;
-            txtDestino.Text = "";
-            editar = false;
-            dgSalida.ClearSelection();
-        }
-
-        private void ibNuevo_Click(object sender, EventArgs e)
-        {
-            cleanText();
+            dgVerSalidas.DataSource = inventario.CopyAnonymusToDataTable();
+            dgVerSalidas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }
     }
 }

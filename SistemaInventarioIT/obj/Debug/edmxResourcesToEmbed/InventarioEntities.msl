@@ -24,6 +24,8 @@
     <EntitySetMapping Name="Inventario">
       <EntityTypeMapping TypeName="DBInventarioITPAModel.Inventario">
         <MappingFragment StoreEntitySet="Inventario">
+          <ScalarProperty Name="Destino" ColumnName="Destino" />
+          <ScalarProperty Name="Salida" ColumnName="Salida" />
           <ScalarProperty Name="FechaRegistro" ColumnName="FechaRegistro" />
           <ScalarProperty Name="Garantia" ColumnName="Garantia" />
           <ScalarProperty Name="Modelo" ColumnName="Modelo" />
@@ -42,6 +44,7 @@
     <EntitySetMapping Name="Plaza">
       <EntityTypeMapping TypeName="DBInventarioITPAModel.Plaza">
         <MappingFragment StoreEntitySet="Plaza">
+          <ScalarProperty Name="Ubicacion" ColumnName="Ubicacion" />
           <ScalarProperty Name="Estado_Plaza" ColumnName="Estado_Plaza" />
           <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
           <ScalarProperty Name="Nombre_Plaza" ColumnName="Nombre_Plaza" />

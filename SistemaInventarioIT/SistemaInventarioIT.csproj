@@ -104,6 +104,12 @@
     <Compile Include="frmPlaza.Designer.cs">
       <DependentUpon>frmPlaza.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmReporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReporte.Designer.cs">
+      <DependentUpon>frmReporte.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSalidas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +121,12 @@
     </Compile>
     <Compile Include="frmUbicacion.Designer.cs">
       <DependentUpon>frmUbicacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVerSalidas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVerSalidas.Designer.cs">
+      <DependentUpon>frmVerSalidas.cs</DependentUpon>
     </Compile>
     <Compile Include="Inventario.cs">
       <DependentUpon>InventarioEntities.tt</DependentUpon>
@@ -166,6 +178,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmUbicacion.resx">
       <DependentUpon>frmUbicacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVerSalidas.resx">
+      <DependentUpon>frmVerSalidas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -58,8 +58,6 @@ namespace SistemaInventarioIT
             this.cmbCategoria = new System.Windows.Forms.ComboBox();
             this.cmbEstado = new System.Windows.Forms.ComboBox();
             this.dgInventario = new System.Windows.Forms.DataGridView();
-            this.label12 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.panelTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgInventario)).BeginInit();
             this.SuspendLayout();
@@ -129,7 +127,7 @@ namespace SistemaInventarioIT
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(361, 68);
+            this.label6.Location = new System.Drawing.Point(359, 68);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(57, 13);
             this.label6.TabIndex = 28;
@@ -159,7 +157,7 @@ namespace SistemaInventarioIT
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(361, 142);
+            this.label9.Location = new System.Drawing.Point(361, 139);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(46, 13);
             this.label9.TabIndex = 31;
@@ -169,7 +167,7 @@ namespace SistemaInventarioIT
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(359, 179);
+            this.label10.Location = new System.Drawing.Point(359, 177);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(48, 13);
             this.label10.TabIndex = 32;
@@ -201,7 +199,7 @@ namespace SistemaInventarioIT
             // 
             // txtCantidad
             // 
-            this.txtCantidad.Location = new System.Drawing.Point(433, 65);
+            this.txtCantidad.Location = new System.Drawing.Point(433, 61);
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(197, 20);
             this.txtCantidad.TabIndex = 6;
@@ -211,12 +209,12 @@ namespace SistemaInventarioIT
             this.txtDescripcion.Location = new System.Drawing.Point(125, 211);
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(197, 41);
+            this.txtDescripcion.Size = new System.Drawing.Size(197, 26);
             this.txtDescripcion.TabIndex = 5;
             // 
             // txtModelo
             // 
-            this.txtModelo.Location = new System.Drawing.Point(433, 176);
+            this.txtModelo.Location = new System.Drawing.Point(433, 170);
             this.txtModelo.Name = "txtModelo";
             this.txtModelo.Size = new System.Drawing.Size(200, 20);
             this.txtModelo.TabIndex = 9;
@@ -229,6 +227,7 @@ namespace SistemaInventarioIT
             this.cmbUbicacion.Name = "cmbUbicacion";
             this.cmbUbicacion.Size = new System.Drawing.Size(197, 21);
             this.cmbUbicacion.TabIndex = 2;
+            this.cmbUbicacion.SelectedValueChanged += new System.EventHandler(this.cmbUbicacion_SelectedValueChanged);
             // 
             // cmbPlaza
             // 
@@ -241,7 +240,7 @@ namespace SistemaInventarioIT
             // 
             // dtFecha
             // 
-            this.dtFecha.Location = new System.Drawing.Point(433, 214);
+            this.dtFecha.Location = new System.Drawing.Point(433, 208);
             this.dtFecha.Name = "dtFecha";
             this.dtFecha.Size = new System.Drawing.Size(200, 20);
             this.dtFecha.TabIndex = 10;
@@ -266,7 +265,7 @@ namespace SistemaInventarioIT
             // 
             // ibNuevo
             // 
-            this.ibNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ibNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ibNuevo.IconChar = FontAwesome.Sharp.IconChar.Clipboard;
             this.ibNuevo.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(71)))), ((int)(((byte)(135)))));
             this.ibNuevo.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -284,7 +283,7 @@ namespace SistemaInventarioIT
             // 
             this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBuscar.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.txtBuscar.Location = new System.Drawing.Point(351, 431);
+            this.txtBuscar.Location = new System.Drawing.Point(351, 425);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(247, 21);
             this.txtBuscar.TabIndex = 13;
@@ -297,7 +296,7 @@ namespace SistemaInventarioIT
             // 
             this.cmbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCategoria.FormattingEnabled = true;
-            this.cmbCategoria.Location = new System.Drawing.Point(433, 101);
+            this.cmbCategoria.Location = new System.Drawing.Point(433, 96);
             this.cmbCategoria.Name = "cmbCategoria";
             this.cmbCategoria.Size = new System.Drawing.Size(197, 21);
             this.cmbCategoria.TabIndex = 7;
@@ -306,7 +305,7 @@ namespace SistemaInventarioIT
             // 
             this.cmbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEstado.FormattingEnabled = true;
-            this.cmbEstado.Location = new System.Drawing.Point(433, 136);
+            this.cmbEstado.Location = new System.Drawing.Point(433, 131);
             this.cmbEstado.Name = "cmbEstado";
             this.cmbEstado.Size = new System.Drawing.Size(197, 21);
             this.cmbEstado.TabIndex = 8;
@@ -331,7 +330,7 @@ namespace SistemaInventarioIT
             this.dgInventario.ColumnHeadersHeight = 20;
             this.dgInventario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgInventario.EnableHeadersVisualStyles = false;
-            this.dgInventario.Location = new System.Drawing.Point(81, 295);
+            this.dgInventario.Location = new System.Drawing.Point(81, 261);
             this.dgInventario.Name = "dgInventario";
             this.dgInventario.ReadOnly = true;
             this.dgInventario.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -349,39 +348,17 @@ namespace SistemaInventarioIT
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             this.dgInventario.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgInventario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgInventario.Size = new System.Drawing.Size(517, 108);
+            this.dgInventario.Size = new System.Drawing.Size(517, 142);
             this.dgInventario.TabIndex = 56;
             this.dgInventario.SelectionChanged += new System.EventHandler(this.dgInventario_SelectionChanged_1);
             this.dgInventario.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgInventario_MouseClick);
             this.dgInventario.MouseMove += new System.Windows.Forms.MouseEventHandler(this.dgInventario_MouseMove);
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(361, 253);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(42, 13);
-            this.label12.TabIndex = 57;
-            this.label12.Text = "Salida";
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(438, 254);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(100, 17);
-            this.checkBox1.TabIndex = 58;
-            this.checkBox1.Text = "Salio / No Salio";
-            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // frmInventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(688, 476);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.label12);
             this.Controls.Add(this.dgInventario);
             this.Controls.Add(this.cmbEstado);
             this.Controls.Add(this.cmbCategoria);
@@ -446,7 +423,5 @@ namespace SistemaInventarioIT
         private System.Windows.Forms.ComboBox cmbCategoria;
         private System.Windows.Forms.ComboBox cmbEstado;
         private System.Windows.Forms.DataGridView dgInventario;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
