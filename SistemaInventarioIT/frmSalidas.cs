@@ -29,14 +29,25 @@ namespace SistemaInventarioIT
 
         private void ibAgregar_Click(object sender, EventArgs e)
         {
+            //resta
+            int cantidad;
+            int suma;
             /*if (txtDestino.Text.Equals(""))
             {
                 MessageBox.Show("¡Ingrese el destino del articulo!");
                 return;
             }*/
+            if (chkSalida.Checked == false)
+            {
+                MessageBox.Show("!Marcar salida para realizar la operación¡");
+                return;
+            }
             if (editar)
             {
                 var tInventario = entityInventario.Inventario.FirstOrDefault(i => i.IdInventario == idInventario);
+                //resta
+                cantidad = Convert.ToInt32(tInventario.Cantidad);
+                suma = cantidad - 1;
                 tInventario.Salida = chkSalida.Checked;
                 tInventario.Destino = txtDestino.Text;
                 entityInventario.SaveChanges();
@@ -48,6 +59,9 @@ namespace SistemaInventarioIT
                 Inventario inventario = new Inventario();
                 inventario.Salida = chkSalida.Checked;
                 inventario.Destino = txtDestino.Text;
+                //resta
+                cantidad = Convert.ToInt32(inventario.Cantidad);
+                suma = cantidad - 1;
 
                 entityInventario.Inventario.Add(inventario);
                 entityInventario.SaveChanges();
@@ -62,6 +76,9 @@ namespace SistemaInventarioIT
 
         private void dgSalida_SelectionChanged(object sender, EventArgs e)
         {
+            //resta
+            int cantidad;
+            int suma;
             try
             {
                 if (vacio == 1)
@@ -72,6 +89,9 @@ namespace SistemaInventarioIT
                 var tSalidas = entityInventario.Inventario.FirstOrDefault(x => x.IdInventario == idInventario);
                 chkSalida.Checked = (bool)tSalidas.Salida;
                 txtDestino.Text = tSalidas.Destino;
+                //resta
+                cantidad = Convert.ToInt32(tSalidas.Cantidad);
+                suma = cantidad - 1;
                 editar = true;
             }
             catch (Exception)
@@ -118,19 +138,7 @@ namespace SistemaInventarioIT
         }
 
         private void cleanText()
-        {
-            //txtNombre.Text = "";
-            //txtSerial.Text = "";
-            //txtDescripcion.Text = "";
-            //txtCantidad.Text = "";
-            //txtCategoria.Text = "";
-            //chkEstado.Checked = false;
-            //txtModelo.Text = "";
-            //idInventario = 0;
-            //editar = false;
-            //txtBuscar.Text = string.Empty;
-            //txtBuscar.Text = "";
-            //dgInventario.ClearSelection();
+        {            
             chkSalida.Checked = false;
             txtDestino.Text = "";
             editar = false;

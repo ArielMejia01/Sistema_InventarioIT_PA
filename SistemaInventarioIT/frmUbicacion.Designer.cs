@@ -126,7 +126,7 @@ namespace SistemaInventarioIT
             this.dgUbicacion.ColumnHeadersHeight = 27;
             this.dgUbicacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgUbicacion.EnableHeadersVisualStyles = false;
-            this.dgUbicacion.Location = new System.Drawing.Point(99, 252);
+            this.dgUbicacion.Location = new System.Drawing.Point(99, 229);
             this.dgUbicacion.Name = "dgUbicacion";
             this.dgUbicacion.ReadOnly = true;
             this.dgUbicacion.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -144,7 +144,7 @@ namespace SistemaInventarioIT
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             this.dgUbicacion.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgUbicacion.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgUbicacion.Size = new System.Drawing.Size(499, 124);
+            this.dgUbicacion.Size = new System.Drawing.Size(499, 147);
             this.dgUbicacion.TabIndex = 5;
             this.dgUbicacion.SelectionChanged += new System.EventHandler(this.dgUbicacion_SelectionChanged);
             this.dgUbicacion.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgUbicacion_MouseClick);
@@ -207,7 +207,8 @@ namespace SistemaInventarioIT
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscar.ForeColor = System.Drawing.SystemColors.GrayText;
             this.txtBuscar.Location = new System.Drawing.Point(351, 405);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(247, 21);

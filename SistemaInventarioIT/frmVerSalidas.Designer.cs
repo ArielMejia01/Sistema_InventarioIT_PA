@@ -94,7 +94,7 @@ namespace SistemaInventarioIT
             this.dgVerSalidas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgVerSalidas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgVerSalidas.EnableHeadersVisualStyles = false;
-            this.dgVerSalidas.Location = new System.Drawing.Point(48, 193);
+            this.dgVerSalidas.Location = new System.Drawing.Point(48, 171);
             this.dgVerSalidas.Name = "dgVerSalidas";
             this.dgVerSalidas.ReadOnly = true;
             this.dgVerSalidas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -112,7 +112,7 @@ namespace SistemaInventarioIT
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             this.dgVerSalidas.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgVerSalidas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgVerSalidas.Size = new System.Drawing.Size(775, 238);
+            this.dgVerSalidas.Size = new System.Drawing.Size(775, 278);
             this.dgVerSalidas.TabIndex = 2;
             this.dgVerSalidas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgVerSalidas_CellDoubleClick);
             this.dgVerSalidas.SelectionChanged += new System.EventHandler(this.dgVerSalidas_SelectionChanged);
@@ -141,7 +141,8 @@ namespace SistemaInventarioIT
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscar.ForeColor = System.Drawing.SystemColors.GrayText;
             this.txtBuscar.Location = new System.Drawing.Point(95, 90);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(193, 21);
@@ -159,7 +160,7 @@ namespace SistemaInventarioIT
             this.ibAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.ibAgregar.IconSize = 30;
             this.ibAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ibAgregar.Location = new System.Drawing.Point(150, 446);
+            this.ibAgregar.Location = new System.Drawing.Point(95, 464);
             this.ibAgregar.Name = "ibAgregar";
             this.ibAgregar.Size = new System.Drawing.Size(138, 34);
             this.ibAgregar.TabIndex = 13;
@@ -185,9 +186,9 @@ namespace SistemaInventarioIT
             this.chkCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkCancelar.Location = new System.Drawing.Point(176, 145);
             this.chkCancelar.Name = "chkCancelar";
-            this.chkCancelar.Size = new System.Drawing.Size(81, 20);
+            this.chkCancelar.Size = new System.Drawing.Size(136, 20);
             this.chkCancelar.TabIndex = 15;
-            this.chkCancelar.Text = "Cancelar";
+            this.chkCancelar.Text = "Artículo con salida";
             this.chkCancelar.UseVisualStyleBackColor = true;
             // 
             // ibNuevo
@@ -197,7 +198,7 @@ namespace SistemaInventarioIT
             this.ibNuevo.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(71)))), ((int)(((byte)(135)))));
             this.ibNuevo.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.ibNuevo.IconSize = 25;
-            this.ibNuevo.Location = new System.Drawing.Point(335, 445);
+            this.ibNuevo.Location = new System.Drawing.Point(267, 464);
             this.ibNuevo.Name = "ibNuevo";
             this.ibNuevo.Size = new System.Drawing.Size(92, 34);
             this.ibNuevo.TabIndex = 16;

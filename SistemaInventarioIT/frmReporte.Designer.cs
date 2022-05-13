@@ -82,7 +82,7 @@ namespace SistemaInventarioIT
             this.dgReporte.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgReporte.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgReporte.EnableHeadersVisualStyles = false;
-            this.dgReporte.Location = new System.Drawing.Point(50, 149);
+            this.dgReporte.Location = new System.Drawing.Point(48, 126);
             this.dgReporte.Name = "dgReporte";
             this.dgReporte.ReadOnly = true;
             this.dgReporte.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -100,12 +100,13 @@ namespace SistemaInventarioIT
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             this.dgReporte.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgReporte.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgReporte.Size = new System.Drawing.Size(588, 206);
+            this.dgReporte.Size = new System.Drawing.Size(588, 267);
             this.dgReporte.TabIndex = 1;
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscar.ForeColor = System.Drawing.SystemColors.GrayText;
             this.txtBuscar.Location = new System.Drawing.Point(93, 86);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(215, 21);
@@ -122,7 +123,7 @@ namespace SistemaInventarioIT
             this.ibExportarExcel.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(71)))), ((int)(((byte)(135)))));
             this.ibExportarExcel.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.ibExportarExcel.IconSize = 30;
-            this.ibExportarExcel.Location = new System.Drawing.Point(102, 377);
+            this.ibExportarExcel.Location = new System.Drawing.Point(102, 412);
             this.ibExportarExcel.Name = "ibExportarExcel";
             this.ibExportarExcel.Size = new System.Drawing.Size(103, 41);
             this.ibExportarExcel.TabIndex = 3;

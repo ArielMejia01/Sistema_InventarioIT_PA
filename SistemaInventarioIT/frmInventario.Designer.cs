@@ -281,8 +281,8 @@ namespace SistemaInventarioIT
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscar.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscar.ForeColor = System.Drawing.SystemColors.GrayText;
             this.txtBuscar.Location = new System.Drawing.Point(351, 425);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(247, 22);
@@ -330,7 +330,7 @@ namespace SistemaInventarioIT
             this.dgInventario.ColumnHeadersHeight = 20;
             this.dgInventario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgInventario.EnableHeadersVisualStyles = false;
-            this.dgInventario.Location = new System.Drawing.Point(81, 261);
+            this.dgInventario.Location = new System.Drawing.Point(52, 248);
             this.dgInventario.Name = "dgInventario";
             this.dgInventario.ReadOnly = true;
             this.dgInventario.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -348,7 +348,7 @@ namespace SistemaInventarioIT
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             this.dgInventario.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgInventario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgInventario.Size = new System.Drawing.Size(517, 142);
+            this.dgInventario.Size = new System.Drawing.Size(581, 160);
             this.dgInventario.TabIndex = 56;
             this.dgInventario.SelectionChanged += new System.EventHandler(this.dgInventario_SelectionChanged_1);
             this.dgInventario.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgInventario_MouseClick);

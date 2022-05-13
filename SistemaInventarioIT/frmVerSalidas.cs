@@ -13,9 +13,10 @@ namespace SistemaInventarioIT
     public partial class frmVerSalidas : Form
     {
         DBInventarioITPAEntities entityInventario = new DBInventarioITPAEntities();
-        int vacio;
         int idInventario = 0;
         bool editar = false;
+        int vacio;        
+        
         public frmVerSalidas(frmSalidas SalidasArt)
         {
             InitializeComponent();
@@ -39,11 +40,15 @@ namespace SistemaInventarioIT
         {
             carga_form();
             vacio = 1;
-
         }
 
         private void ibAgregar_Click(object sender, EventArgs e)
         {
+            if (chkCancelar.Checked == true)
+            {
+                MessageBox.Show("!Desmarcar salida del artículo para realizar la operación¡");
+                return;
+            }
             if (editar)
             {
                 var tInventario = entityInventario.Inventario.FirstOrDefault(i => i.IdInventario == idInventario);
@@ -71,25 +76,7 @@ namespace SistemaInventarioIT
             carga_form();
             cleanText();
         }
-
-        private void dgVerSalidas_SelectionChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                if (vacio == 1)
-                {
-                    cleanText();
-                }
-                idInventario = Convert.ToInt32(dgVerSalidas.SelectedCells[0].Value);
-                var tSalidas = entityInventario.Inventario.FirstOrDefault(x => x.IdInventario == idInventario);
-                chkCancelar.Checked = (bool)tSalidas.Salida;
-                editar = true;
-            }
-            catch (Exception)
-            {
-                dgVerSalidas.ClearSelection();
-            }
-        }
+        
 
         private void ibNuevo_Click(object sender, EventArgs e)
         {
@@ -130,32 +117,21 @@ namespace SistemaInventarioIT
         }
 
         
-
+        //Metodo para limpiar el grid y otros componentes del form
         private void cleanText()
-        {
-            //txtNombre.Text = "";
-            //txtSerial.Text = "";
-            //txtDescripcion.Text = "";
-            //txtCantidad.Text = "";
-            //txtCategoria.Text = "";
-            //chkEstado.Checked = false;
-            //txtModelo.Text = "";
-            //idInventario = 0;
-            //editar = false;
-            //txtBuscar.Text = string.Empty;
-            //txtBuscar.Text = "";
-            //dgInventario.ClearSelection();
-            chkCancelar.Checked = false;
-            //txtDestino.Text = "";
+        {            
+            chkCancelar.Checked = false;            
             editar = false;
             dgVerSalidas.ClearSelection();
         }
 
+        //Regresar al formulario anterior "el de Salidas"
         private void ibRegresar_Click(object sender, EventArgs e)
         {
             this.Close();            
         }               
         
+        //Funcionamiento para realizar la busqueda de una salida en el text box
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
             filtrarSalidas(txtBuscar.Text);
@@ -212,6 +188,7 @@ namespace SistemaInventarioIT
             }
         }     
 
+        //Realizar una cancelación de salida con un doble click en el campo que se requiera.
         private void dgVerSalidas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (editar)
@@ -221,8 +198,9 @@ namespace SistemaInventarioIT
                 tInventario.Salida = false;
 
                 entityInventario.SaveChanges();
-                MessageBox.Show("¡Cambios Guardados!");
-                //carga_form();
+                MessageBox.Show("¡Salida Cancelada!");                
+                carga_form();
+                Agregar();
             }
             else
             {
@@ -230,15 +208,31 @@ namespace SistemaInventarioIT
                 inventario.Salida = false;
 
                 entityInventario.Inventario.Add(inventario);
-                entityInventario.SaveChanges();
-                //carga_form();
-                MessageBox.Show("¡Reversion!");
+                entityInventario.SaveChanges();                
+                MessageBox.Show("¡Salida Cancelada!");                
+                carga_form();
+                Agregar();
             }
         }
 
-        
-
-        
+        private void dgVerSalidas_SelectionChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (vacio == 1)
+                {
+                    cleanText();
+                }
+                idInventario = Convert.ToInt32(dgVerSalidas.SelectedCells[0].Value);
+                var tSalidas = entityInventario.Inventario.FirstOrDefault(x => x.IdInventario == idInventario);
+                chkCancelar.Checked = (bool)tSalidas.Salida;
+                editar = true;
+            }
+            catch (Exception)
+            {
+                dgVerSalidas.ClearSelection();
+            }
+        }
 
         private void dgVerSalidas_MouseMove(object sender, MouseEventArgs e)
         {
@@ -255,7 +249,5 @@ namespace SistemaInventarioIT
                 vacio = 2;
             }
         }
-
-        
     }
 }

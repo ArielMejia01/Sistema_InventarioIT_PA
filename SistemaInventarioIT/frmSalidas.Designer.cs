@@ -29,9 +29,9 @@ namespace SistemaInventarioIT
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.dgSalida = new System.Windows.Forms.DataGridView();
@@ -78,36 +78,36 @@ namespace SistemaInventarioIT
             this.dgSalida.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
             this.dgSalida.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgSalida.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(71)))), ((int)(((byte)(135)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(71)))), ((int)(((byte)(135)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgSalida.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(71)))), ((int)(((byte)(135)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(71)))), ((int)(((byte)(135)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgSalida.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgSalida.ColumnHeadersHeight = 20;
             this.dgSalida.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgSalida.EnableHeadersVisualStyles = false;
-            this.dgSalida.Location = new System.Drawing.Point(83, 221);
+            this.dgSalida.Location = new System.Drawing.Point(51, 185);
             this.dgSalida.Name = "dgSalida";
             this.dgSalida.ReadOnly = true;
             this.dgSalida.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(71)))), ((int)(((byte)(135)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgSalida.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(71)))), ((int)(((byte)(135)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            this.dgSalida.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(71)))), ((int)(((byte)(135)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgSalida.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(71)))), ((int)(((byte)(135)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            this.dgSalida.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgSalida.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgSalida.Size = new System.Drawing.Size(517, 142);
+            this.dgSalida.Size = new System.Drawing.Size(581, 213);
             this.dgSalida.TabIndex = 1;
             this.dgSalida.SelectionChanged += new System.EventHandler(this.dgSalida_SelectionChanged);
             this.dgSalida.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgSalida_MouseClick);
@@ -115,8 +115,9 @@ namespace SistemaInventarioIT
             // 
             // txtBucar
             // 
-            this.txtBucar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBucar.Location = new System.Drawing.Point(97, 94);
+            this.txtBucar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBucar.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.txtBucar.Location = new System.Drawing.Point(90, 94);
             this.txtBucar.Name = "txtBucar";
             this.txtBucar.Size = new System.Drawing.Size(193, 21);
             this.txtBucar.TabIndex = 2;
@@ -129,7 +130,7 @@ namespace SistemaInventarioIT
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(93, 71);
+            this.label2.Location = new System.Drawing.Point(86, 71);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(131, 20);
             this.label2.TabIndex = 3;
@@ -139,7 +140,7 @@ namespace SistemaInventarioIT
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(79, 166);
+            this.label3.Location = new System.Drawing.Point(86, 142);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(59, 20);
             this.label3.TabIndex = 4;
@@ -149,7 +150,7 @@ namespace SistemaInventarioIT
             // 
             this.chkSalida.AutoSize = true;
             this.chkSalida.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkSalida.Location = new System.Drawing.Point(159, 166);
+            this.chkSalida.Location = new System.Drawing.Point(170, 144);
             this.chkSalida.Name = "chkSalida";
             this.chkSalida.Size = new System.Drawing.Size(104, 20);
             this.chkSalida.TabIndex = 5;
@@ -160,7 +161,7 @@ namespace SistemaInventarioIT
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(379, 168);
+            this.label4.Location = new System.Drawing.Point(354, 142);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(71, 20);
             this.label4.TabIndex = 6;
@@ -168,7 +169,7 @@ namespace SistemaInventarioIT
             // 
             // txtDestino
             // 
-            this.txtDestino.Location = new System.Drawing.Point(467, 170);
+            this.txtDestino.Location = new System.Drawing.Point(460, 142);
             this.txtDestino.Name = "txtDestino";
             this.txtDestino.Size = new System.Drawing.Size(133, 20);
             this.txtDestino.TabIndex = 7;
@@ -181,7 +182,7 @@ namespace SistemaInventarioIT
             this.ibAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.ibAgregar.IconSize = 30;
             this.ibAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ibAgregar.Location = new System.Drawing.Point(97, 390);
+            this.ibAgregar.Location = new System.Drawing.Point(97, 414);
             this.ibAgregar.Name = "ibAgregar";
             this.ibAgregar.Size = new System.Drawing.Size(138, 34);
             this.ibAgregar.TabIndex = 12;
@@ -198,7 +199,7 @@ namespace SistemaInventarioIT
             this.ibNuevo.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(71)))), ((int)(((byte)(135)))));
             this.ibNuevo.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.ibNuevo.IconSize = 25;
-            this.ibNuevo.Location = new System.Drawing.Point(296, 390);
+            this.ibNuevo.Location = new System.Drawing.Point(297, 414);
             this.ibNuevo.Name = "ibNuevo";
             this.ibNuevo.Size = new System.Drawing.Size(92, 34);
             this.ibNuevo.TabIndex = 13;
@@ -215,7 +216,7 @@ namespace SistemaInventarioIT
             this.ibVerSalidas.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.ibVerSalidas.IconSize = 25;
             this.ibVerSalidas.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.ibVerSalidas.Location = new System.Drawing.Point(453, 390);
+            this.ibVerSalidas.Location = new System.Drawing.Point(467, 414);
             this.ibVerSalidas.Name = "ibVerSalidas";
             this.ibVerSalidas.Size = new System.Drawing.Size(114, 34);
             this.ibVerSalidas.TabIndex = 14;

@@ -113,9 +113,9 @@ namespace SistemaInventarioIT
 
 
                 entityInventario.Inventario.Add(inventario);
-                entityInventario.SaveChanges();
-                carga_form();
+                entityInventario.SaveChanges();                
                 MessageBox.Show("¡Datos Guardados!");
+                carga_form();
             }
             idInventario = 0;
             editar = false;

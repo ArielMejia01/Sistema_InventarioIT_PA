@@ -75,7 +75,7 @@ namespace SistemaInventarioIT
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(169, 82);
+            this.label2.Location = new System.Drawing.Point(169, 65);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 20);
             this.label2.TabIndex = 1;
@@ -85,7 +85,7 @@ namespace SistemaInventarioIT
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(169, 136);
+            this.label3.Location = new System.Drawing.Point(169, 112);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(103, 20);
             this.label3.TabIndex = 2;
@@ -93,17 +93,17 @@ namespace SistemaInventarioIT
             // 
             // txtPlaza
             // 
-            this.txtPlaza.Location = new System.Drawing.Point(317, 82);
+            this.txtPlaza.Location = new System.Drawing.Point(317, 65);
             this.txtPlaza.Name = "txtPlaza";
             this.txtPlaza.Size = new System.Drawing.Size(197, 20);
             this.txtPlaza.TabIndex = 1;
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(317, 124);
+            this.txtDescripcion.Location = new System.Drawing.Point(317, 106);
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(197, 47);
+            this.txtDescripcion.Size = new System.Drawing.Size(197, 26);
             this.txtDescripcion.TabIndex = 2;
             // 
             // dgPlaza
@@ -126,7 +126,7 @@ namespace SistemaInventarioIT
             this.dgPlaza.ColumnHeadersHeight = 27;
             this.dgPlaza.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgPlaza.EnableHeadersVisualStyles = false;
-            this.dgPlaza.Location = new System.Drawing.Point(112, 272);
+            this.dgPlaza.Location = new System.Drawing.Point(112, 245);
             this.dgPlaza.Name = "dgPlaza";
             this.dgPlaza.ReadOnly = true;
             this.dgPlaza.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -144,7 +144,7 @@ namespace SistemaInventarioIT
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             this.dgPlaza.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgPlaza.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgPlaza.Size = new System.Drawing.Size(459, 124);
+            this.dgPlaza.Size = new System.Drawing.Size(459, 151);
             this.dgPlaza.TabIndex = 5;
             this.dgPlaza.SelectionChanged += new System.EventHandler(this.dgPlaza_SelectionChanged);
             this.dgPlaza.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgPlaza_MouseClick);
@@ -188,7 +188,7 @@ namespace SistemaInventarioIT
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(169, 187);
+            this.label4.Location = new System.Drawing.Point(169, 158);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(66, 20);
             this.label4.TabIndex = 53;
@@ -198,7 +198,7 @@ namespace SistemaInventarioIT
             // 
             this.chkEstado.AutoSize = true;
             this.chkEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkEstado.Location = new System.Drawing.Point(317, 190);
+            this.chkEstado.Location = new System.Drawing.Point(317, 158);
             this.chkEstado.Name = "chkEstado";
             this.chkEstado.Size = new System.Drawing.Size(183, 20);
             this.chkEstado.TabIndex = 3;
@@ -207,7 +207,8 @@ namespace SistemaInventarioIT
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscar.ForeColor = System.Drawing.SystemColors.GrayText;
             this.txtBuscar.Location = new System.Drawing.Point(356, 423);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(215, 21);
@@ -221,7 +222,7 @@ namespace SistemaInventarioIT
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(169, 229);
+            this.label5.Location = new System.Drawing.Point(169, 208);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(88, 20);
             this.label5.TabIndex = 55;
@@ -231,7 +232,7 @@ namespace SistemaInventarioIT
             // 
             this.cmbUbicacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbUbicacion.FormattingEnabled = true;
-            this.cmbUbicacion.Location = new System.Drawing.Point(317, 232);
+            this.cmbUbicacion.Location = new System.Drawing.Point(317, 207);
             this.cmbUbicacion.Name = "cmbUbicacion";
             this.cmbUbicacion.Size = new System.Drawing.Size(197, 21);
             this.cmbUbicacion.TabIndex = 56;

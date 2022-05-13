@@ -84,7 +84,7 @@ namespace SistemaInventarioIT
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(169, 136);
+            this.label3.Location = new System.Drawing.Point(169, 130);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(103, 20);
             this.label3.TabIndex = 2;
@@ -102,14 +102,14 @@ namespace SistemaInventarioIT
             this.txtDescripcion.Location = new System.Drawing.Point(317, 124);
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(197, 47);
+            this.txtDescripcion.Size = new System.Drawing.Size(197, 26);
             this.txtDescripcion.TabIndex = 2;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(169, 187);
+            this.label4.Location = new System.Drawing.Point(169, 176);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(66, 20);
             this.label4.TabIndex = 5;
@@ -119,7 +119,7 @@ namespace SistemaInventarioIT
             // 
             this.chkEstado.AutoSize = true;
             this.chkEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkEstado.Location = new System.Drawing.Point(317, 190);
+            this.chkEstado.Location = new System.Drawing.Point(317, 176);
             this.chkEstado.Name = "chkEstado";
             this.chkEstado.Size = new System.Drawing.Size(183, 20);
             this.chkEstado.TabIndex = 3;
@@ -146,7 +146,7 @@ namespace SistemaInventarioIT
             this.dgCategoria.ColumnHeadersHeight = 27;
             this.dgCategoria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgCategoria.EnableHeadersVisualStyles = false;
-            this.dgCategoria.Location = new System.Drawing.Point(94, 252);
+            this.dgCategoria.Location = new System.Drawing.Point(94, 206);
             this.dgCategoria.Name = "dgCategoria";
             this.dgCategoria.ReadOnly = true;
             this.dgCategoria.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -164,7 +164,7 @@ namespace SistemaInventarioIT
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
             this.dgCategoria.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgCategoria.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgCategoria.Size = new System.Drawing.Size(492, 124);
+            this.dgCategoria.Size = new System.Drawing.Size(492, 174);
             this.dgCategoria.TabIndex = 7;
             this.dgCategoria.SelectionChanged += new System.EventHandler(this.dgCategoria_SelectionChanged);
             this.dgCategoria.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgCategoria_MouseClick);
@@ -195,7 +195,7 @@ namespace SistemaInventarioIT
             this.ibNuevo.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(71)))), ((int)(((byte)(135)))));
             this.ibNuevo.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.ibNuevo.IconSize = 25;
-            this.ibNuevo.Location = new System.Drawing.Point(234, 398);
+            this.ibNuevo.Location = new System.Drawing.Point(226, 398);
             this.ibNuevo.Name = "ibNuevo";
             this.ibNuevo.Size = new System.Drawing.Size(92, 34);
             this.ibNuevo.TabIndex = 5;
@@ -206,7 +206,8 @@ namespace SistemaInventarioIT
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscar.ForeColor = System.Drawing.SystemColors.GrayText;
             this.txtBuscar.Location = new System.Drawing.Point(371, 404);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(215, 21);

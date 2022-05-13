@@ -108,10 +108,10 @@ namespace SistemaInventarioIT
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(317, 124);
+            this.txtDescripcion.Location = new System.Drawing.Point(317, 130);
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(197, 47);
+            this.txtDescripcion.Size = new System.Drawing.Size(197, 26);
             this.txtDescripcion.TabIndex = 2;
             // 
             // chkEstado
@@ -145,7 +145,7 @@ namespace SistemaInventarioIT
             this.dgEstado.ColumnHeadersHeight = 27;
             this.dgEstado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgEstado.EnableHeadersVisualStyles = false;
-            this.dgEstado.Location = new System.Drawing.Point(105, 252);
+            this.dgEstado.Location = new System.Drawing.Point(105, 220);
             this.dgEstado.Name = "dgEstado";
             this.dgEstado.ReadOnly = true;
             this.dgEstado.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -163,7 +163,7 @@ namespace SistemaInventarioIT
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             this.dgEstado.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgEstado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgEstado.Size = new System.Drawing.Size(471, 124);
+            this.dgEstado.Size = new System.Drawing.Size(471, 160);
             this.dgEstado.TabIndex = 7;
             this.dgEstado.SelectionChanged += new System.EventHandler(this.dgEstado_SelectionChanged);
             this.dgEstado.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgEstado_MouseClick);
@@ -205,7 +205,8 @@ namespace SistemaInventarioIT
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscar.ForeColor = System.Drawing.SystemColors.GrayText;
             this.txtBuscar.Location = new System.Drawing.Point(361, 405);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(215, 21);
