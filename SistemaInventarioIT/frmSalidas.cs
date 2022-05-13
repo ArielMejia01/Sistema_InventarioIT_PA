@@ -21,6 +21,12 @@ namespace SistemaInventarioIT
             InitializeComponent();
         }
 
+        private void frmSalidas_Load(object sender, EventArgs e)
+        {
+            cargaForm();
+            vacio = 1;
+        }
+
         private void ibAgregar_Click(object sender, EventArgs e)
         {
             /*if (txtDestino.Text.Equals(""))
@@ -54,14 +60,6 @@ namespace SistemaInventarioIT
             cleanText();
         }
 
-        private void ibVerSalidas_Click(object sender, EventArgs e)
-        {
-            frmVerSalidas salidas = new frmVerSalidas();
-            salidas.Show();   
-        }
-
-        
-
         private void dgSalida_SelectionChanged(object sender, EventArgs e)
         {
             try
@@ -79,54 +77,12 @@ namespace SistemaInventarioIT
             catch (Exception)
             {
                 dgSalida.ClearSelection();
-            }
-            /*try
-            {
-                if (vacio == 1)
-                {
-                    cleanText();
-                }
-                idInventario = Convert.ToInt32(dgSalida.SelectedCells[0].Value);
-                var tInventario = entityInventario.Inventario.FirstOrDefault(x => x.IdInventario == idInventario);                
-                chkSalida.Checked = Convert.ToBoolean(tInventario.Salida);
-                txtDestino.Text = tInventario.Destino;
-                editar = true;
-            }
-            catch (Exception)
-            {
-                dgSalida.ClearSelection();
-            }*/
-        }
-
-        private void cleanText()
-        {
-            //txtNombre.Text = "";
-            //txtSerial.Text = "";
-            //txtDescripcion.Text = "";
-            //txtCantidad.Text = "";
-            //txtCategoria.Text = "";
-            //chkEstado.Checked = false;
-            //txtModelo.Text = "";
-            //idInventario = 0;
-            //editar = false;
-            //txtBuscar.Text = string.Empty;
-            //txtBuscar.Text = "";
-            //dgInventario.ClearSelection();
-            chkSalida.Checked = false;
-            txtDestino.Text = "";
-            editar = false;
-            dgSalida.ClearSelection();
+            }            
         }
 
         private void ibNuevo_Click(object sender, EventArgs e)
         {
             cleanText();
-        }
-
-        private void frmSalidas_Load(object sender, EventArgs e)
-        {
-            cargaForm();
-            vacio = 1;
         }
 
         private void cargaForm()
@@ -160,6 +116,39 @@ namespace SistemaInventarioIT
             dgSalida.DataSource = salida.CopyAnonymusToDataTable();
             dgSalida.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }
+
+        private void cleanText()
+        {
+            //txtNombre.Text = "";
+            //txtSerial.Text = "";
+            //txtDescripcion.Text = "";
+            //txtCantidad.Text = "";
+            //txtCategoria.Text = "";
+            //chkEstado.Checked = false;
+            //txtModelo.Text = "";
+            //idInventario = 0;
+            //editar = false;
+            //txtBuscar.Text = string.Empty;
+            //txtBuscar.Text = "";
+            //dgInventario.ClearSelection();
+            chkSalida.Checked = false;
+            txtDestino.Text = "";
+            editar = false;
+            dgSalida.ClearSelection();
+        }
+
+        private void AgreUpdateEventHandler(object sender, frmVerSalidas.UpdateEventArgs args)
+        {
+            cargaForm();
+        }
+
+        private void ibVerSalidas_Click(object sender, EventArgs e)
+        {
+            frmVerSalidas salidas = new frmVerSalidas(this);
+            salidas.UpdateEventHandler += AgreUpdateEventHandler;
+            salidas.Show();
+            cargaForm();
+        }      
 
         private void dgSalida_MouseMove(object sender, MouseEventArgs e)
         {
@@ -231,6 +220,6 @@ namespace SistemaInventarioIT
                 txtBucar.Text = "Buscar...";
                 cargaForm();
             }
-        }        
+        }       
     }
 }

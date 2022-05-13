@@ -281,11 +281,11 @@ namespace SistemaInventarioIT
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBuscar.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.txtBuscar.Location = new System.Drawing.Point(351, 425);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(247, 21);
+            this.txtBuscar.Size = new System.Drawing.Size(247, 22);
             this.txtBuscar.TabIndex = 13;
             this.txtBuscar.Text = "Buscar...";
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);

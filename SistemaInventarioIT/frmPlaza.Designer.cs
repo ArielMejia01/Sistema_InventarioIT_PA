@@ -145,7 +145,7 @@ namespace SistemaInventarioIT
             this.dgPlaza.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgPlaza.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgPlaza.Size = new System.Drawing.Size(459, 124);
-            this.dgPlaza.TabIndex = 5;            
+            this.dgPlaza.TabIndex = 5;
             this.dgPlaza.SelectionChanged += new System.EventHandler(this.dgPlaza_SelectionChanged);
             this.dgPlaza.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgPlaza_MouseClick);
             this.dgPlaza.MouseMove += new System.Windows.Forms.MouseEventHandler(this.dgPlaza_MouseMove);
@@ -208,7 +208,7 @@ namespace SistemaInventarioIT
             // txtBuscar
             // 
             this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscar.Location = new System.Drawing.Point(356, 430);
+            this.txtBuscar.Location = new System.Drawing.Point(356, 423);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(215, 21);
             this.txtBuscar.TabIndex = 54;

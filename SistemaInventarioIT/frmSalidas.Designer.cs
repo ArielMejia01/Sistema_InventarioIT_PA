@@ -108,7 +108,7 @@ namespace SistemaInventarioIT
             this.dgSalida.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgSalida.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgSalida.Size = new System.Drawing.Size(517, 142);
-            this.dgSalida.TabIndex = 1;            
+            this.dgSalida.TabIndex = 1;
             this.dgSalida.SelectionChanged += new System.EventHandler(this.dgSalida_SelectionChanged);
             this.dgSalida.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgSalida_MouseClick);
             this.dgSalida.MouseMove += new System.Windows.Forms.MouseEventHandler(this.dgSalida_MouseMove);
@@ -139,7 +139,7 @@ namespace SistemaInventarioIT
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(93, 162);
+            this.label3.Location = new System.Drawing.Point(79, 166);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(59, 20);
             this.label3.TabIndex = 4;
@@ -149,7 +149,7 @@ namespace SistemaInventarioIT
             // 
             this.chkSalida.AutoSize = true;
             this.chkSalida.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkSalida.Location = new System.Drawing.Point(174, 164);
+            this.chkSalida.Location = new System.Drawing.Point(159, 166);
             this.chkSalida.Name = "chkSalida";
             this.chkSalida.Size = new System.Drawing.Size(104, 20);
             this.chkSalida.TabIndex = 5;
@@ -160,7 +160,7 @@ namespace SistemaInventarioIT
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(385, 164);
+            this.label4.Location = new System.Drawing.Point(379, 168);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(71, 20);
             this.label4.TabIndex = 6;
@@ -168,7 +168,7 @@ namespace SistemaInventarioIT
             // 
             // txtDestino
             // 
-            this.txtDestino.Location = new System.Drawing.Point(467, 166);
+            this.txtDestino.Location = new System.Drawing.Point(467, 170);
             this.txtDestino.Name = "txtDestino";
             this.txtDestino.Size = new System.Drawing.Size(133, 20);
             this.txtDestino.TabIndex = 7;

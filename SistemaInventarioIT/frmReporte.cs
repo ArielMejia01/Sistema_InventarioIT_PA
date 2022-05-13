@@ -89,5 +89,60 @@ namespace SistemaInventarioIT
             dgReporte.DataSource = salida.CopyAnonymusToDataTable();
             dgReporte.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            filtrarReporte(txtBuscar.Text);
+        }
+
+        private void filtrarReporte(string nombre)
+        {
+            var fReporte = from i in entityInventario.Inventario
+                              where i.Nombre.Contains(nombre)
+                              join y
+                              in entityInventario.Ubicacion on i.Ubicacion equals y.IdUbicacion
+                              join p
+                              in entityInventario.Plaza on i.Plaza equals p.IdPlaza
+                              join c
+                              in entityInventario.Categoria on i.Categoria equals c.IdCategoria
+                              join e
+                              in entityInventario.Estado on i.Estado equals e.IdEstado
+                              //where i.Salida == false
+                              select new
+                              {
+                                  i.IdInventario,
+                                  i.Nombre,
+                                  y.Nombre_Ubicacion,
+                                  p.Nombre_Plaza,
+                                  i.Serial,
+                                  i.Cantidad,
+                                  i.Descripcion,
+                                  c.Nombre_Categoria,
+                                  e.Nombre_Estado,
+                                  i.Modelo,
+                                  i.Garantia,
+                                  i.Salida
+                              };
+            dgReporte.DataSource = fReporte.CopyAnonymusToDataTable();
+            dgReporte.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+
+        }
+
+        private void txtBuscar_Enter(object sender, EventArgs e)
+        {
+            if (txtBuscar.Text == "Buscar...")
+            {
+                txtBuscar.Text = "";
+            }
+        }
+
+        private void txtBuscar_Leave(object sender, EventArgs e)
+        {
+            if (txtBuscar.Text == "")
+            {
+                txtBuscar.Text = "Buscar...";
+                cargaForm();
+            }
+        }
     }
 }
