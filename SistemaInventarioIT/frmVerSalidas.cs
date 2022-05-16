@@ -46,8 +46,13 @@ namespace SistemaInventarioIT
         {
             if (chkCancelar.Checked == true)
             {
-                MessageBox.Show("!Desmarcar salida del artículo para realizar la operación¡");
+                MessageBox.Show("!Desmarcar salida del artículo para realizar la operación¡", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
+            }
+            else
+            {
+                var tInventario = entityInventario.Inventario.FirstOrDefault(i => i.IdInventario == idInventario);
+                tInventario.Cantidad = 1;
             }
             if (editar)
             {
@@ -55,7 +60,7 @@ namespace SistemaInventarioIT
                 tInventario.Salida = chkCancelar.Checked;
                 //tInventario.Destino = txtDestino.Text;
                 entityInventario.SaveChanges();
-                MessageBox.Show("¡Salida Cancelada!");
+                MessageBox.Show("¡Salida Cancelada Correctamente!");
                 carga_form();
                 Agregar();
             }
@@ -67,7 +72,7 @@ namespace SistemaInventarioIT
 
                 entityInventario.Inventario.Add(inventario);
                 entityInventario.SaveChanges();
-                MessageBox.Show("¡Salida Cancelada!");
+                MessageBox.Show("¡Salida Cancelada Correctamente!");
                 carga_form();
                 Agregar();
             }
@@ -190,7 +195,17 @@ namespace SistemaInventarioIT
 
         //Realizar una cancelación de salida con un doble click en el campo que se requiera.
         private void dgVerSalidas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
+        {            
+            if (chkCancelar.Checked == true)
+            {
+                MessageBox.Show("!Desmarcar salida del artículo para realizar la operación¡", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            else
+            {
+                var tInventario = entityInventario.Inventario.FirstOrDefault(i => i.IdInventario == idInventario);
+                tInventario.Cantidad = 1;
+            }
             if (editar)
             {
 
@@ -198,7 +213,7 @@ namespace SistemaInventarioIT
                 tInventario.Salida = false;
 
                 entityInventario.SaveChanges();
-                MessageBox.Show("¡Salida Cancelada!");                
+                MessageBox.Show("¡Salida Cancelada Correctamente!");                
                 carga_form();
                 Agregar();
             }
@@ -209,7 +224,7 @@ namespace SistemaInventarioIT
 
                 entityInventario.Inventario.Add(inventario);
                 entityInventario.SaveChanges();                
-                MessageBox.Show("¡Salida Cancelada!");                
+                MessageBox.Show("¡Salida Cancelada Correctamente!");                
                 carga_form();
                 Agregar();
             }

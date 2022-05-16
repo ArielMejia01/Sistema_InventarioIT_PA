@@ -31,12 +31,12 @@ namespace SistemaInventarioIT
         {
             if (txtPlaza.Text.Equals(""))
             {
-                MessageBox.Show("¡Ingrese el nombre de la plaza!");
+                MessageBox.Show("¡Ingrese el nombre de la plaza!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             if (txtDescripcion.Text.Equals(""))
             {
-                MessageBox.Show("¡Ingrese la descripción de la plaza!");
+                MessageBox.Show("¡Ingrese la descripción de la plaza!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             if (edit)

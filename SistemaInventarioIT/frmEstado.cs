@@ -31,12 +31,12 @@ namespace SistemaInventarioIT
         {
             if (txtNombre.Text.Equals(""))
             {
-                MessageBox.Show("¡Ingrese el nombre del estado!");
+                MessageBox.Show("¡Ingrese el nombre del estado!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             if (txtDescripcion.Text.Equals(""))
             {
-                MessageBox.Show("¡Ingrese la descipción del estado!");
+                MessageBox.Show("¡Ingrese la descipción del estado!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             if (edit)

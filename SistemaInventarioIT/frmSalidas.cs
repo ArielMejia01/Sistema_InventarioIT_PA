@@ -30,8 +30,8 @@ namespace SistemaInventarioIT
         private void ibAgregar_Click(object sender, EventArgs e)
         {
             //resta
-            int cantidad;
-            int suma;
+            //int cantidad;
+            //int suma;
             /*if (txtDestino.Text.Equals(""))
             {
                 MessageBox.Show("¡Ingrese el destino del articulo!");
@@ -39,19 +39,24 @@ namespace SistemaInventarioIT
             }*/
             if (chkSalida.Checked == false)
             {
-                MessageBox.Show("!Marcar salida para realizar la operación¡");
-                return;
+                MessageBox.Show("!Marcar salida para realizar la operación¡", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;                
+            }
+            else
+            {
+                var tInventario = entityInventario.Inventario.FirstOrDefault(i => i.IdInventario == idInventario);
+                tInventario.Cantidad = 0;
             }
             if (editar)
             {
                 var tInventario = entityInventario.Inventario.FirstOrDefault(i => i.IdInventario == idInventario);
                 //resta
-                cantidad = Convert.ToInt32(tInventario.Cantidad);
-                suma = cantidad - 1;
+                //cantidad = Convert.ToInt32(tInventario.Cantidad);
+                //suma = cantidad - 1;
                 tInventario.Salida = chkSalida.Checked;
                 tInventario.Destino = txtDestino.Text;
                 entityInventario.SaveChanges();
-                MessageBox.Show("¡Salida Guardada!");
+                MessageBox.Show("¡Salida Guardada Correctamente!");
                 cargaForm();
             }
             else
@@ -60,13 +65,13 @@ namespace SistemaInventarioIT
                 inventario.Salida = chkSalida.Checked;
                 inventario.Destino = txtDestino.Text;
                 //resta
-                cantidad = Convert.ToInt32(inventario.Cantidad);
-                suma = cantidad - 1;
+                //cantidad = Convert.ToInt32(inventario.Cantidad);
+                //suma = cantidad - 1;
 
                 entityInventario.Inventario.Add(inventario);
                 entityInventario.SaveChanges();
                 cargaForm();
-                MessageBox.Show("¡Salida Guardada!");
+                MessageBox.Show("¡Salida Guardada Correctamente!");
             }
             idInventario = 0;
             editar = false;

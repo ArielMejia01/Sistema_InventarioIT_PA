@@ -25,49 +25,26 @@ namespace SistemaInventarioIT
         private void frmInventario_Load(object sender, EventArgs e)
         {
             carga_form();
-            vacio = 1;
-            //cmbUbicacion.Text = "Seleccionar...";
-            //cmbPlaza.Text = "Seleccionar...";
-
+            vacio = 1;            
         }
 
         private void ibAgregar_Click(object sender, EventArgs e)
         {
             if (txtNombre.Text.Equals(""))
             {
-                MessageBox.Show("¡Ingrese el nombre del articulo!");
+                MessageBox.Show("¡Ingrese el nombre del articulo!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            /*if (cmbUbicacion.SelectedIndex==-1)
+            if (txtCantidad.Text.Equals(""))
             {
-                MessageBox.Show("¡Seleccione la ubicación!");
+                MessageBox.Show("¡Ingrese una cantidad!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            if (cmbPlaza.SelectedIndex==-1)
-            {
-                MessageBox.Show("¡Seleccione una plaza!");
-                return;
-            }*/
-            /*if (txtSerial.Text.Equals(""))
-            {
-                MessageBox.Show("¡Ingrese el serial!");
-                return;
-            }*/
-            /*if (txtDescripcion.Text.Equals(""))
-            {
-                MessageBox.Show("¡Ingrese la descripción!");
-                return;
-            }*/
             if (Convert.ToDecimal(txtCantidad.Text) <= 0)
             {
-                MessageBox.Show("¡Ingrese una cantidad valida!");
+                MessageBox.Show("¡Ingrese una cantidad valida!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
-            }           
-            /*if (txtModelo.Text.Equals(""))
-            {
-                MessageBox.Show("¡Ingrese el modelo!");
-                return;
-            }*/
+            }                       
             if (editar)
             {
 
@@ -79,9 +56,7 @@ namespace SistemaInventarioIT
                 tInventario.Descripcion = txtDescripcion.Text;
                 tInventario.Cantidad = Convert.ToInt32(txtCantidad.Text);
                 tInventario.Categoria = Convert.ToInt32(cmbCategoria.SelectedValue);
-                tInventario.Estado = Convert.ToInt32(cmbEstado.SelectedValue);                
-                //tInventario.Categoria = txtCategoria.Text;
-                //tInventario.Estado = chkEstado.Checked;
+                tInventario.Estado = Convert.ToInt32(cmbEstado.SelectedValue);                           
                 tInventario.Modelo = txtModelo.Text;
                 tInventario.Garantia = dtFecha.Value;
                 tInventario.Salida = false;
@@ -102,9 +77,7 @@ namespace SistemaInventarioIT
                 inventario.Descripcion = txtDescripcion.Text;
                 inventario.Cantidad = Convert.ToInt32(txtCantidad.Text);
                 inventario.Categoria = Convert.ToInt32(cmbCategoria.SelectedValue);
-                inventario.Estado = Convert.ToInt32(cmbEstado.SelectedValue);
-                //inventario.Categoria = txtCategoria.Text;
-                //inventario.Estado = chkEstado.Checked;
+                inventario.Estado = Convert.ToInt32(cmbEstado.SelectedValue);               
                 inventario.Modelo = txtModelo.Text;
                 inventario.Garantia = dtFecha.Value;
                 inventario.Salida = false;
@@ -232,21 +205,17 @@ namespace SistemaInventarioIT
             txtNombre.Text = "";
             txtSerial.Text = "";
             txtDescripcion.Text = "";
-            txtCantidad.Text = "";
-            //txtCategoria.Text = "";
-            //chkEstado.Checked = false;
+            txtCantidad.Text = "";           
             txtModelo.Text = "";
             idInventario = 0;
-            editar = false;
-            //txtBuscar.Text = string.Empty;
-            //txtBuscar.Text = "";
+            editar = false;          
             dgInventario.ClearSelection();
         }
         
         private void FiltrarInventario(string nombre)
         {
             var fInventario = from i in entityInventario.Inventario
-                              where i.Nombre.Contains(nombre)
+                              where i.Nombre.Contains(nombre)                              
                               join y
                               in entityInventario.Ubicacion on i.Ubicacion equals y.IdUbicacion
                               join p
@@ -274,11 +243,11 @@ namespace SistemaInventarioIT
             dgInventario.DataSource = fInventario.CopyAnonymusToDataTable();
             dgInventario.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
 
-        }
+        }        
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
-            FiltrarInventario(txtBuscar.Text);
+            FiltrarInventario(txtBuscar.Text);            
         }
 
         private void txtBuscar_Enter(object sender, EventArgs e)
@@ -318,8 +287,7 @@ namespace SistemaInventarioIT
         {
             
             if (cmbUbicacion.SelectedIndex==0)
-            {
-                //contador = contador + 1;
+            {                
                 if (contador > 2)
                 {
                     int r = Convert.ToInt32(cmbUbicacion.SelectedValue);
@@ -339,15 +307,11 @@ namespace SistemaInventarioIT
                     contador = contador + 1;
                 }
                 
-                //MessageBox.Show(Convert.ToString(cmbUbicacion.SelectedValue));
-
-               
+                //MessageBox.Show(Convert.ToString(cmbUbicacion.SelectedValue));               
             }
             else
             {
-                int r = Convert.ToInt32(cmbUbicacion.SelectedValue);
-                //MessageBox.Show(Convert.ToString(cmbUbicacion.SelectedValue));
-                
+                int r = Convert.ToInt32(cmbUbicacion.SelectedValue);                                
                 var plaza = from p in entityInventario.Plaza
                             where p.Ubicacion == r
                             select p;
@@ -357,6 +321,32 @@ namespace SistemaInventarioIT
                 cmbPlaza.DisplayMember = dtPlaza.Columns[1].ColumnName;
                 cmbPlaza.ValueMember = dtPlaza.Columns[0].ColumnName;
             }                       
+        }
+
+        public static void validarSoloNumeros(KeyPressEventArgs n)
+        {
+            if (char.IsDigit(n.KeyChar))
+            {
+                n.Handled = false;
+            }
+            else if (char.IsSeparator(n.KeyChar))
+            {
+                n.Handled = false;
+            }
+            else if (char.IsControl(n.KeyChar) || n.KeyChar.ToString().Equals("."))
+            {
+                n.Handled = false;
+            }
+            else
+            {
+                n.Handled = true;
+                MessageBox.Show("Solo se permite ingresar numeros", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void txtCantidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validarSoloNumeros(e);
         }
     }
 }
