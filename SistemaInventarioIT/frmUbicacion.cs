@@ -20,13 +20,15 @@ namespace SistemaInventarioIT
         {
             InitializeComponent();
         }
-
+        //Cargando los datos al formulario de ubicacion
         private void frmUbicacion_Load(object sender, EventArgs e)
         {
             carga_form();
             vacio = 1;
         }
 
+
+        //metodo para agregar un registro, editar un campo y asi mismo alertas de seguridad en los textBox
         private void ibAgregar_Click(object sender, EventArgs e)
         {
             if (txtUbicacion.Text.Equals(""))
@@ -64,6 +66,7 @@ namespace SistemaInventarioIT
             cleanText();          
         }
 
+        //seleccionar un registro dentro del datagrid
         private void dgUbicacion_SelectionChanged(object sender, EventArgs e)
         {       
             try
@@ -92,6 +95,7 @@ namespace SistemaInventarioIT
             cleanText();
         }
 
+        //metodo que sera llamado en el load del formulario para cargar todos los datos dentro del formulario
         private void carga_form()
         {
             var iUbicacion = from i in entityInventario.Ubicacion
@@ -141,6 +145,7 @@ namespace SistemaInventarioIT
             FiltrarUbicacion(txtBuscar.Text);
         }
 
+        //Metodo para buscar una ubicacion por medio del nombre de la misma
         private void FiltrarUbicacion(string nombre)
         {
             var fUbicacion = from i in entityInventario.Ubicacion

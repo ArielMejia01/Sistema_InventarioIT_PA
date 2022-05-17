@@ -155,7 +155,7 @@ namespace SistemaInventarioIT
             this.ibCategoria.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.ibCategoria.Size = new System.Drawing.Size(180, 45);
             this.ibCategoria.TabIndex = 11;
-            this.ibCategoria.Text = "Categoria";
+            this.ibCategoria.Text = "Categoría";
             this.ibCategoria.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ibCategoria.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.ibCategoria.UseVisualStyleBackColor = false;
@@ -281,6 +281,7 @@ namespace SistemaInventarioIT
             this.panelInventario.Name = "panelInventario";
             this.panelInventario.Size = new System.Drawing.Size(688, 476);
             this.panelInventario.TabIndex = 1;
+            this.panelInventario.Paint += new System.Windows.Forms.PaintEventHandler(this.panelInventario_Paint);
             // 
             // pictureBox1
             // 

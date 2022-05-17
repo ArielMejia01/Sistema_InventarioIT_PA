@@ -22,12 +22,14 @@ namespace SistemaInventarioIT
             InitializeComponent();
         }
 
+        //Carga del formulario con los datos
         private void frmInventario_Load(object sender, EventArgs e)
         {
             carga_form();
             vacio = 1;            
         }
 
+        //Metodo para agregar un registro en el sistema
         private void ibAgregar_Click(object sender, EventArgs e)
         {
             if (txtNombre.Text.Equals(""))
@@ -96,6 +98,7 @@ namespace SistemaInventarioIT
             cleanText();
         }
 
+        //Metodo para seleccionar un campo dentro del datagrid
         private void dgInventario_SelectionChanged_1(object sender, EventArgs e)
         {
             try
@@ -129,7 +132,8 @@ namespace SistemaInventarioIT
             cleanText();
         }
 
-
+        /*Metodo para cargar todos los datos en el formulario, este metodo sera llamado en el
+        form del sistema, carga de los combobox de ubicacion, plaza, estado y categoria*/
         private void carga_form()
         {
             var ubicacion = from u in entityInventario.Ubicacion
@@ -212,6 +216,7 @@ namespace SistemaInventarioIT
             dgInventario.ClearSelection();
         }
         
+        //Busqueda de un articulo dentro del inventario por su nombre
         private void FiltrarInventario(string nombre)
         {
             var fInventario = from i in entityInventario.Inventario
@@ -282,7 +287,9 @@ namespace SistemaInventarioIT
                 vacio = 2;
             }
         }
-
+        /*Metodo para filtrar la plaza por medio de la ubicacion.
+         a forma de que el usuario solo pueda seleccionar las plazas disponibles por 
+         ubicacion*/
         private void cmbUbicacion_SelectedValueChanged(object sender, EventArgs e)
         {
             
@@ -323,6 +330,8 @@ namespace SistemaInventarioIT
             }                       
         }
 
+        /*Metodo que ayuda a solo validar numeros dentro del textBox de cantidad, para seguridad
+        y restriccion al usuario de que una cantidad solo es numero y no texto*/
         public static void validarSoloNumeros(KeyPressEventArgs n)
         {
             if (char.IsDigit(n.KeyChar))

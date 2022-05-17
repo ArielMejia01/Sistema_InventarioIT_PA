@@ -29,19 +29,20 @@ namespace SistemaInventarioIT
         {
             public string Data { get; set; }
         }
-
+        // Evento para agregar en el excel como reporte
         protected void Agregar()
         {
             UpdateEventArgs args = new UpdateEventArgs();
             UpdateEventHandler.Invoke(this, args);
         }
-
+        
         private void frmVerSalidas_Load(object sender, EventArgs e)
         {
             carga_form();
             vacio = 1;
         }
 
+        //Evento para agregar datos en el formulario
         private void ibAgregar_Click(object sender, EventArgs e)
         {
             if (chkCancelar.Checked == true)
@@ -88,6 +89,7 @@ namespace SistemaInventarioIT
             cleanText();
         }
 
+        //Cargar los datos de la base de datos en el formulario, este metodo sera llamado en el load del formulario
         private void carga_form()
         {
             var inventario = from i in entityInventario.Inventario
@@ -142,6 +144,7 @@ namespace SistemaInventarioIT
             filtrarSalidas(txtBuscar.Text);
         }
 
+        //Busqueda de una salida por nombre
         private void filtrarSalidas(string nombre)
         {
             var fInventario = from i in entityInventario.Inventario

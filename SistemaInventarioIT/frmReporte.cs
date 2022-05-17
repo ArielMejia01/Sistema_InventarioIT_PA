@@ -18,6 +18,7 @@ namespace SistemaInventarioIT
             InitializeComponent();
         }     
 
+        /*Metodo que ayuda a exportar los datos a excel, indicando las filas y columnas que tendra el libro*/
         public void ExportarDatos(DataGridView dataListado)
         {
             Microsoft.Office.Interop.Excel.Application exportarExcel = new Microsoft.Office.Interop.Excel.Application();
@@ -58,6 +59,7 @@ namespace SistemaInventarioIT
             cargaForm();
         }
 
+        //Metodo que carga todos los datos en el formulario
         private void cargaForm()
         {
             var salida = from s in entityInventario.Inventario
@@ -95,6 +97,7 @@ namespace SistemaInventarioIT
             filtrarReporte(txtBuscar.Text);
         }
 
+        //Busqueda de un articulo por medio del nombre
         private void filtrarReporte(string nombre)
         {
             var fReporte = from i in entityInventario.Inventario

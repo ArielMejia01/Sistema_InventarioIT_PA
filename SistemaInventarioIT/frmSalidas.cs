@@ -21,12 +21,14 @@ namespace SistemaInventarioIT
             InitializeComponent();
         }
 
+        //Carga el formulario con los datos del sistema, llamando el metodo de carga de formulario
         private void frmSalidas_Load(object sender, EventArgs e)
         {
             cargaForm();
             vacio = 1;
         }
 
+        //Agregar un registro al sistema, poder editarlo y tambien sus condicionales de seguridad
         private void ibAgregar_Click(object sender, EventArgs e)
         {
             //resta
@@ -79,6 +81,7 @@ namespace SistemaInventarioIT
             cleanText();
         }
 
+        //Seleccion de un registro en el datagrid view para poder hacer uso del mismo (edicion)
         private void dgSalida_SelectionChanged(object sender, EventArgs e)
         {
             //resta
@@ -110,6 +113,7 @@ namespace SistemaInventarioIT
             cleanText();
         }
 
+        //Metodo para cargar los datos al sistema. mostrar todos los datos ingresados 
         private void cargaForm()
         {
             var salida = from s in entityInventario.Inventario

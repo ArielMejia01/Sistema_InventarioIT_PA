@@ -21,12 +21,14 @@ namespace SistemaInventarioIT
             InitializeComponent();
         }
 
+        //evento para cargar la data en el formulario
         private void frmPlaza_Load(object sender, EventArgs e)
         {
             carga_form();
             vacio = 1;
         }
 
+        //Metodo para agregar datos en el sistema, editarlos y sus condicionales de seguridad
         private void ibAgregar_Click(object sender, EventArgs e)
         {
             if (txtPlaza.Text.Equals(""))
@@ -66,6 +68,7 @@ namespace SistemaInventarioIT
             cleanText();
         }
 
+        //Seleccionar un registro del datagrid para poder editarlo
         private void dgPlaza_SelectionChanged(object sender, EventArgs e)
         {
             try
@@ -93,6 +96,7 @@ namespace SistemaInventarioIT
             cleanText();
         }
 
+        //Metodo de carga de todos los datos del sistema en el formulario
         private void carga_form()
         {
             var ubicacion = from u in entityInventario.Ubicacion
@@ -147,6 +151,7 @@ namespace SistemaInventarioIT
             FiltrarPlaza(txtBuscar.Text);
         }
 
+        //Buscar una paza por medio del nombre
         private void FiltrarPlaza(string nombre)
         {
             var fPlaza = from p in entityInventario.Plaza

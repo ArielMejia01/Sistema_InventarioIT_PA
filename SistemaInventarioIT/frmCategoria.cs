@@ -11,7 +11,7 @@ using System.Windows.Forms;
 namespace SistemaInventarioIT
 {
     public partial class frmCategoria : Form
-    {
+    {        
         DBInventarioITPAEntities entityInventario = new DBInventarioITPAEntities();
         bool edit = false;
         long idCategoria = 0;
@@ -21,22 +21,24 @@ namespace SistemaInventarioIT
             InitializeComponent();
         }
 
+        //Evento para cargar el formulario con los datos.
         private void frmCategoria_Load(object sender, EventArgs e)
         {
             carga_form();            
             vacio = 1;
         }
 
+        //metodo para agregar datos en el sistema
         private void ibAgregar_Click(object sender, EventArgs e)
         {
             if (txtNombre.Text.Equals(""))
             {
-                MessageBox.Show("¡Ingrese el nombre de la categoria!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("¡Ingrese el nombre de la categoría!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             if (txtDescripcion.Text.Equals(""))
             {
-                MessageBox.Show("¡Ingrese la descripción de la categoria!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("¡Ingrese la descripción de la categoría!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             if (edit)
@@ -64,6 +66,7 @@ namespace SistemaInventarioIT
             cleanText();
         }
 
+        //Metodo para la seleccion de un campo en un gridview
         private void dgCategoria_SelectionChanged(object sender, EventArgs e)
         {
             try
@@ -85,12 +88,12 @@ namespace SistemaInventarioIT
             }
 
         }
-
+        //Limpiar los campos llenados para poder agregar uno nuevo
         private void ibNuevo_Click(object sender, EventArgs e)
         {
             cleanText();
         }
-
+        //metodo de carga de todos los datos, que se mandara a llamar al load del form
         private void carga_form()
         {
             var iCategoria = from i in entityInventario.Categoria
@@ -135,6 +138,7 @@ namespace SistemaInventarioIT
             FiltrarCategoria(txtBuscar.Text);
         }
 
+        //Metodo para buscar un articulo por nombre
         private void FiltrarCategoria(string nombre)
         {
             var fCategoria = from c in entityInventario.Categoria

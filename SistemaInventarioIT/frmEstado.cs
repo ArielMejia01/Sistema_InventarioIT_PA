@@ -21,12 +21,14 @@ namespace SistemaInventarioIT
             InitializeComponent();
         }
 
+        //Carga de los datos en el formulario
         private void frmEstado_Load(object sender, EventArgs e)
         {
             cargaForm();
             vacio = 1;
         }
 
+        //Metodo para agregar datos al sistema, editar un campo y condicionales para los mismo datos a agregar
         private void ibAgregar_Click(object sender, EventArgs e)
         {
             if (txtNombre.Text.Equals(""))
@@ -64,6 +66,7 @@ namespace SistemaInventarioIT
             cleanText();
         }
 
+        //Metodo para seleccionar un campo en el datagridview
         private void dgEstado_SelectionChanged(object sender, EventArgs e)
         {
             try
@@ -90,6 +93,7 @@ namespace SistemaInventarioIT
             cleanText();
         }
 
+        //Metodo de carga de datos que sera llamado en el load del form.
         private void cargaForm()
         {
             var iEstado = from i in entityInventario.Estado
@@ -134,6 +138,7 @@ namespace SistemaInventarioIT
             FiltrarEstado(txtBuscar.Text);
         }
 
+        //Busqueda de un estado por su nombre
         private void FiltrarEstado(string nombre)
         {
             var fEstado = from e in entityInventario.Estado
